@@ -1,241 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Carelink – Workforce Platform for LTC</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --orange: #ff6a2a;
-  --dark: #0f172a;
-  --gray: #64748b;
-  --light: #f8fafc;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: white;
-  color: var(--dark);
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  padding-top: 40px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  color: var(--gray);
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.btn {
-  background: var(--orange);
-  color: white;
-  padding: 14px 22px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn-secondary {
-  border: 1px solid #e2e8f0;
-  padding: 14px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--dark);
-}
-
-.mock {
-  flex: 1;
-  min-width: 300px;
-  background: linear-gradient(135deg, #fff, #f1f5f9);
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-.section {
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 34px;
-  margin-bottom: 10px;
-}
-
-.section p {
-  color: var(--gray);
-  margin-bottom: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  padding: 30px;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  background: white;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.alt {
-  background: var(--light);
-}
-
-.cta {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.footer {
-  text-align: center;
-  padding: 40px;
-  font-size: 14px;
-  color: #94a3b8;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .bg-carelink-orange { background-color: #F26522; }
+        .text-carelink-orange { color: #F26522; }
+        .bg-soft-orange { background-color: #FFF5F0; }
+    </style>
 </head>
+<body class="bg-white text-slate-800">
 
-<body>
+    <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <div class="text-carelink-orange text-2xl font-bold flex items-center">
+                <i class="fas fa-plus-square mr-2"></i> Carelink
+            </div>
+            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="#" class="hover:text-carelink-orange">Product</a>
+            <a href="#" class="hover:text-carelink-orange">Solutions</a>
+            <a href="#" class="hover:text-carelink-orange">Pricing</a>
+            <a href="#" class="hover:text-carelink-orange">Resources</a>
+            <a href="#" class="hover:text-carelink-orange">About Us</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-sm font-semibold">Log in</a>
+            <a href="#" class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">Book a Demo</a>
+        </div>
+    </nav>
 
-<!-- NAV -->
-<div class="nav container">
-  <div class="logo">Carelink</div>
-  <a href="#" class="btn">Book Demo</a>
-</div>
+    <section class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="bg-soft-orange text-carelink-orange text-xs font-bold px-3 py-1 rounded-full border border-orange-100">
+                Built for Long-Term Care & Retirement Homes
+            </span>
+            <h1 class="text-5xl font-extrabold mt-6 leading-tight">
+                Workforce scheduling for LTC — <span class="text-carelink-orange">without seniority headaches</span>
+            </h1>
+            <p class="text-slate-500 mt-6 text-lg">
+                Carelink automates seniority rules, reduces grievances, and gives you full control over staffing and agency usage.
+            </p>
+            <div class="mt-10 flex space-x-4">
+                <button class="bg-carelink-orange text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:scale-105 transition">Book a Demo</button>
+                <button class="border border-slate-200 px-8 py-4 rounded-lg font-bold flex items-center space-x-2 hover:bg-slate-50">
+                    <i class="far fa-play-circle text-carelink-orange text-xl"></i>
+                    <span>See How It Works</span>
+                </button>
+            </div>
+            <p class="mt-8 text-sm text-slate-400 flex items-center">
+                <i class="fas fa-shield-alt text-carelink-orange mr-2"></i> Trusted by LTC administrators and schedulers across Ontario
+            </p>
+        </div>
+        <div class="relative">
+            <div class="bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden">
+                <div class="bg-slate-50 border-b p-4 flex justify-between items-center">
+                    <span class="font-bold text-sm">Schedule</span>
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="h-64 bg-slate-50 rounded border-dashed border-2 border-slate-200 flex items-center justify-center text-slate-300">
+                        [Interactive Schedule UI]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<div class="container hero">
-  <div class="hero-text">
-    <h1>Workforce scheduling for LTC — without seniority headaches</h1>
-    <p>Automate union rules, reduce grievances, and take control of staffing and agency usage.</p>
+    <section class="bg-slate-50 py-20 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-16">Scheduling in LTC is broken</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clipboard-list text-carelink-orange"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Manual scheduling chaos</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Spreadsheets, phone calls, and last-minute changes lead to errors, overtime, and burnout.</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-carelink-orange"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Seniority rule violations</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Complex union rules are hard to follow manually — leading to grievances, fines, and lost trust.</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-carelink-orange"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Over-reliance on agencies</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">High agency usage drives up costs and creates gaps in consistency and quality of care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="buttons">
-      <a href="#" class="btn">Book a Demo</a>
-      <a href="#" class="btn-secondary">See How It Works</a>
-    </div>
-  </div>
+    <section class="py-24 max-w-7xl mx-auto px-8">
+        <h2 class="text-3xl font-bold text-center mb-16">Carelink puts rules, staffing, and visibility in one system</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition bg-white">
+                <i class="fas fa-user-gear text-carelink-orange text-2xl mb-4"></i>
+                <h4 class="font-bold mb-2 text-sm">Seniority Rule Engine</h4>
+                <p class="text-xs text-slate-500">Automatically applies union seniority rules to every shift — so you stay compliant.</p>
+            </div>
+            <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition bg-white">
+                <i class="fas fa-calendar-check text-carelink-orange text-2xl mb-4"></i>
+                <h4 class="font-bold mb-2 text-sm">Smart Shift Assignment</h4>
+                <p class="text-xs text-slate-500">Carelink matches shifts based on availability, qualifications, seniority, and rules.</p>
+            </div>
+            <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition bg-white">
+                <i class="fas fa-building text-carelink-orange text-2xl mb-4"></i>
+                <h4 class="font-bold mb-2 text-sm">Agency Usage Control</h4>
+                <p class="text-xs text-slate-500">Track agency usage, set limits, and reduce dependency with better planning.</p>
+            </div>
+            <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition bg-white">
+                <i class="fas fa-chart-line text-carelink-orange text-2xl mb-4"></i>
+                <h4 class="font-bold mb-2 text-sm">Real-Time Visibility</h4>
+                <p class="text-xs text-slate-500">Dashboards and reports give you instant insight into staffing gaps and coverage.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="mock">
-    Product Preview
-  </div>
-</div>
+    <section class="bg-white py-20 px-8 border-t border-slate-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="w-16 h-16 bg-soft-orange rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-plus-square text-carelink-orange text-2xl"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-4">See Carelink in action</h2>
+            <p class="text-slate-500 mb-8">Join other LTC leaders who are simplifying scheduling, reducing costs, and supporting their teams.</p>
+            <button class="bg-carelink-orange text-white px-10 py-4 rounded-lg font-bold shadow-lg hover:bg-orange-600">Book a Demo <i class="fas fa-arrow-right ml-2"></i></button>
+            <p class="mt-4 text-xs text-slate-400 font-medium">No commitment. Just clarity.</p>
+        </div>
+    </section>
 
-<!-- PROBLEM -->
-<div class="container section">
-  <h2>Scheduling in LTC is broken</h2>
-  <p>Manual processes create risk, inefficiency, and unnecessary cost.</p>
-
-  <div class="grid">
-    <div class="card">Manual scheduling chaos</div>
-    <div class="card">Seniority rule violations</div>
-    <div class="card">High agency dependency</div>
-  </div>
-</div>
-
-<!-- SOLUTION -->
-<div class="container section alt">
-  <h2>Built for real LTC operations</h2>
-  <p>Carelink brings structure, automation, and visibility to your workforce.</p>
-
-  <div class="grid">
-    <div class="card">Seniority Rule Engine</div>
-    <div class="card">Smart Shift Assignment</div>
-    <div class="card">Agency Usage Tracking</div>
-    <div class="card">Real-Time Visibility</div>
-  </div>
-</div>
-
-<!-- OUTCOMES -->
-<div class="container section">
-  <h2>What changes after Carelink</h2>
-
-  <div class="grid">
-    <div class="card">↓ Fewer grievances</div>
-    <div class="card">↓ Lower agency costs</div>
-    <div class="card">↑ Compliance</div>
-    <div class="card">↑ Staff satisfaction</div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-  <h2>See Carelink in action</h2>
-  <br/>
-  <a href="#" class="btn">Book a Demo</a>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  © 2026 Carelink Healthcare
-</div>
+    <footer class="bg-slate-900 text-slate-400 py-16 px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-5 gap-12">
+            <div class="col-span-2">
+                <div class="text-white text-xl font-bold flex items-center mb-4">
+                    <i class="fas fa-plus-square mr-2 text-carelink-orange"></i> Carelink
+                </div>
+                <p class="text-sm max-w-xs">The workforce platform built for Long-Term Care & Retirement Homes.</p>
+                <div class="mt-6 flex space-x-4">
+                    <i class="fab fa-linkedin hover:text-white cursor-pointer"></i>
+                    <i class="fab fa-twitter hover:text-white cursor-pointer"></i>
+                    <i class="fas fa-envelope hover:text-white cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 text-sm">Product</h5>
+                <ul class="text-xs space-y-3">
+                    <li>Features</li>
+                    <li>Integrations</li>
+                    <li>Security</li>
+                    <li>Updates</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 text-sm">Solutions</h5>
+                <ul class="text-xs space-y-3">
+                    <li>LTC Homes</li>
+                    <li>Retirement Homes</li>
+                    <li>Unionized Teams</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 text-sm">Book a Demo</h5>
+                <p class="text-xs mb-2">1 (833) 555-CARE</p>
+                <p class="text-xs">hello@carelinkhealthcare.com</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-slate-800 mt-12 pt-8 flex justify-between text-[10px] uppercase tracking-widest">
+            <p>© 2025 Carelink Healthcare. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

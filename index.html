@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Carelink – Workforce Platform for LTC</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --orange: #ff6a2a;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: white;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: var(--gray);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  background: var(--orange);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid #e2e8f0;
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.mock {
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(135deg, #fff, #f1f5f9);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.section {
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 30px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: white;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.alt {
+  background: var(--light);
+}
+
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav container">
+  <div class="logo">Carelink</div>
+  <a href="#" class="btn">Book Demo</a>
+</div>
+
+<!-- HERO -->
+<div class="container hero">
+  <div class="hero-text">
+    <h1>Workforce scheduling for LTC — without seniority headaches</h1>
+    <p>Automate union rules, reduce grievances, and take control of staffing and agency usage.</p>
+
+    <div class="buttons">
+      <a href="#" class="btn">Book a Demo</a>
+      <a href="#" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+
+  <div class="mock">
+    Product Preview
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="container section">
+  <h2>Scheduling in LTC is broken</h2>
+  <p>Manual processes create risk, inefficiency, and unnecessary cost.</p>
+
+  <div class="grid">
+    <div class="card">Manual scheduling chaos</div>
+    <div class="card">Seniority rule violations</div>
+    <div class="card">High agency dependency</div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<div class="container section alt">
+  <h2>Built for real LTC operations</h2>
+  <p>Carelink brings structure, automation, and visibility to your workforce.</p>
+
+  <div class="grid">
+    <div class="card">Seniority Rule Engine</div>
+    <div class="card">Smart Shift Assignment</div>
+    <div class="card">Agency Usage Tracking</div>
+    <div class="card">Real-Time Visibility</div>
+  </div>
+</div>
+
+<!-- OUTCOMES -->
+<div class="container section">
+  <h2>What changes after Carelink</h2>
+
+  <div class="grid">
+    <div class="card">↓ Fewer grievances</div>
+    <div class="card">↓ Lower agency costs</div>
+    <div class="card">↑ Compliance</div>
+    <div class="card">↑ Staff satisfaction</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>See Carelink in action</h2>
+  <br/>
+  <a href="#" class="btn">Book a Demo</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Carelink Healthcare
+</div>
+
+</body>
+</html>

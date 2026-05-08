@@ -6,17 +6,6 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-  <script>
-  (function() {
-    const url = window.location.href;
-    // Checks if the URL contains '.html'
-    if (url.includes('.html')) {
-      // Strips the extension without reloading the page
-      const cleanUrl = url.split('.html')[0];
-      window.history.replaceState(null, null, cleanUrl);
-    }
-  })();
-</script>
 
 <script>
 tailwind.config = {
@@ -76,9 +65,9 @@ body { font-family: Inter, sans-serif; }
 
     <div class="flex items-center gap-3">
 
-      <a href="index.html" class="w-10 h-10 rounded-xl bg-white border border-slate-100 shadow-soft flex items-center justify-center">
-  <img src="logo.png" alt="Carelink Logo" class="h-10 mr-2">
-</a>
+      <div class="w-10 h-10 rounded-xl bg-white border border-slate-100 shadow-soft flex items-center justify-center">
+        <img src="logo.png" alt="Carelink Logo" class="h-10 mr-2">
+      </div>
 
       <div class="leading-tight">
         <div class="font-black text-slate-900">Carelink OS</div>
@@ -96,12 +85,13 @@ body { font-family: Inter, sans-serif; }
   </div>
 </nav>
 
-<!-- MAIN SPLIT SYSTEM -->
+
+<!-- MAIN -->
 <section class="h-screen flex items-center justify-center px-6 pt-20">
 
   <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
 
-    <!-- LEFT SYSTEM PANEL (INSTITUTIONAL / TRUST SIDE) -->
+    <!-- LEFT PANEL (UNCHANGED) -->
     <div class="hidden md:block">
 
       <div class="mb-6">
@@ -142,26 +132,26 @@ body { font-family: Inter, sans-serif; }
 
     </div>
 
-    <!-- RIGHT AUTH PANEL -->
+    <!-- RIGHT PANEL -->
     <div class="flex justify-center">
 
       <div class="w-full max-w-md glass rounded-[28px] shadow-soft p-10">
 
         <div class="mb-8 text-center md:text-left">
 
+          <!-- SLIGHT COPY ALIGNMENT FIX -->
           <h2 class="text-2xl font-black text-slate-900">
-            Sign in
+            System Access
           </h2>
 
           <p class="text-sm text-slate-500 mt-2">
-            Use your organization credentials to continue
+            Authenticate to enter Carelink OS
           </p>
 
         </div>
 
         <form id="loginForm" class="space-y-5">
 
-          <!-- EMAIL -->
           <div>
             <label class="text-xs font-bold uppercase tracking-widest text-slate-400">
               Email
@@ -174,7 +164,6 @@ body { font-family: Inter, sans-serif; }
             />
           </div>
 
-          <!-- PASSWORD -->
           <div>
             <label class="text-xs font-bold uppercase tracking-widest text-slate-400">
               Password
@@ -187,7 +176,6 @@ body { font-family: Inter, sans-serif; }
             />
           </div>
 
-          <!-- OPTIONS -->
           <div class="flex justify-between items-center text-sm">
 
             <label class="flex items-center gap-2 text-slate-600">
@@ -201,7 +189,6 @@ body { font-family: Inter, sans-serif; }
 
           </div>
 
-          <!-- BUTTON -->
           <button
             id="loginBtn"
             class="w-full bg-ink text-white py-3.5 rounded-xl font-semibold shadow-soft hover:opacity-90 transition"
@@ -211,7 +198,6 @@ body { font-family: Inter, sans-serif; }
 
         </form>
 
-        <!-- SECURITY FOOTER -->
         <div class="mt-8 pt-6 border-t border-slate-100 text-center">
 
           <div class="text-[11px] uppercase tracking-widest text-slate-400 flex items-center justify-center gap-2">
@@ -229,14 +215,50 @@ body { font-family: Inter, sans-serif; }
 
 </section>
 
+<!-- FIXED AUTH FLOW (ONLY IMPORTANT CHANGE) -->
 <script>
-document.getElementById('loginForm').addEventListener('submit', function(e){
+document.getElementById('loginForm').addEventListener('submit', async function(e){
   e.preventDefault();
 
   const btn = document.getElementById('loginBtn');
+
+  const email = document.querySelector('input[type=email]').value;
+  const password = document.querySelector('input[type=password]').value;
+
   btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Authenticating';
   btn.disabled = true;
   btn.classList.add('opacity-80');
+
+  try {
+    const res = await fetch("https://api.thecarelink.app/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+
+    if (!data.token) throw new Error("Login failed");
+
+    // optional web storage
+    sessionStorage.setItem("token", data.token);
+
+    // return URL support (for Flutter routing)
+    const params = new URLSearchParams(window.location.search);
+    const redirectTo = params.get("redirect");
+
+    const finalUrl = redirectTo
+      ? `${redirectTo}?token=${data.token}&role=${data.role}`
+      : `https://thecarelink.app/auth/callback?token=${data.token}&role=${data.role}`;
+
+    window.location.href = finalUrl;
+
+  } catch (err) {
+    btn.innerHTML = 'Access system';
+    btn.disabled = false;
+    btn.classList.remove('opacity-80');
+    alert("Authentication failed. Please try again.");
+  }
 });
 </script>
 

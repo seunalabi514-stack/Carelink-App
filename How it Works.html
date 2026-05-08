@@ -1,0 +1,582 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+      <script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        carelink: '#F06529',
+      },
+      boxShadow: {
+        soft: "0 10px 30px rgba(0,0,0,0.06)"
+      }
+    }
+  }
+}
+</script>
+    
+     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-grid {
+            background-image:
+            linear-gradient(to right, rgba(15,23,42,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(15,23,42,0.03) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        .glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.75);
+        }
+
+        .step-number {
+            color: rgba(242,101,34,0.08);
+        }
+    </style>
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body class="bg-white text-slate-800">
+
+    <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center space-x-2">
+        <a href="index.html" class="flex items-center space-x-2">
+            <div class="text-carelink-orange text-2xl font-bold flex items-center">
+                <i class="fas fa-plus-square mr-2"></i> Carelink
+            </div>
+            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+        </a>
+    </div>
+
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+        <a href="Product.html" class="hover:text-carelink-orange">Product</a>
+        <a href="Solutions.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange">Solutions</a>
+        <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
+        <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
+        <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <a href="index.html" class="text-sm font-semibold">Log in</a>
+        <a href="javascript:void(0)"
+   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+   class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition inline-block">
+   Book a Demo
+</a>
+    </div>
+</nav>
+
+    <!-- HERO -->
+
+    <section class="relative overflow-hidden hero-grid">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-50/60 via-white to-white"></div>
+
+        <div class="relative max-w-6xl mx-auto px-6 pt-28 pb-24">
+
+            <div class="max-w-4xl mx-auto text-center">
+
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-200 bg-white shadow-sm text-[11px] uppercase tracking-[0.25em] font-bold text-carelink mb-8">
+                    Workforce Operating System
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight text-dark leading-[0.95] mb-8">
+
+                    Replace staffing chaos
+                    with a system that
+                    <span class="text-carelink">
+                        enforces rules automatically.
+                    </span>
+
+                </h1>
+
+                <p class="text-xl leading-relaxed text-slate-600 max-w-3xl mx-auto mb-10">
+
+                    Carelink was designed specifically for Ontario LTC operators who need staffing decisions to follow union rules, credential compliance, and operational fairness — without spreadsheets or manual oversight.
+
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+                    <button
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+                        class="bg-carelink hover:bg-orange-600 transition text-white px-8 py-4 rounded-2xl font-bold shadow-glow text-lg">
+
+                        Book a Demo
+
+                    </button>
+
+                    <a href="#features"
+                       class="bg-white border border-slate-200 hover:border-slate-300 transition px-8 py-4 rounded-2xl font-semibold text-lg">
+
+                        Explore Features
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURE SECTIONS -->
+
+    <section id="features" class="py-28">
+
+        <div class="max-w-6xl mx-auto px-6 space-y-32">
+
+            <!-- FEATURE 1 -->
+
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+                <div class="relative">
+
+                    <div class="absolute -top-10 left-0 text-8xl font-black step-number">
+                        01
+                    </div>
+
+                    <div class="relative">
+
+                        <div class="inline-flex items-center gap-2 text-carelink font-semibold mb-5">
+                            <i class="fas fa-scale-balanced"></i>
+                            Union Compliance Engine
+                        </div>
+
+                        <h2 class="text-4xl font-black tracking-tight text-dark mb-6">
+                            Smart seniority scheduling built for LTC.
+                        </h2>
+
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+
+                            Carelink automatically applies collective agreement logic when shifts become available — ensuring fairness, reducing grievances, and eliminating manual interpretation.
+
+                        </p>
+
+                        <div class="space-y-5">
+
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-carelink">
+                                    <i class="fas fa-check"></i>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-semibold text-dark">
+                                        Automated shift ranking
+                                    </h3>
+
+                                    <p class="text-slate-500 text-sm mt-1">
+                                        Staff are prioritized based on seniority, availability, overtime thresholds, and facility rules.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-carelink">
+                                    <i class="fas fa-check"></i>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-semibold text-dark">
+                                        Transparent audit logs
+                                    </h3>
+
+                                    <p class="text-slate-500 text-sm mt-1">
+                                        Every staffing decision is tracked and reviewable for grievance protection.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- MOCKUP -->
+
+                <div class="bg-white border border-slate-200 rounded-[32px] shadow-soft overflow-hidden">
+
+                    <div class="bg-slate-100 border-b border-slate-200 px-5 py-4 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-300"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-300"></div>
+                    </div>
+
+                    <div class="p-8 bg-gradient-to-br from-white to-slate-50">
+
+                        <div class="space-y-4">
+
+                            <div class="flex items-center justify-between bg-white rounded-2xl border border-slate-200 p-4">
+                                <div>
+                                    <div class="font-semibold">
+                                        Evening Shift — Unit A
+                                    </div>
+                                    <div class="text-sm text-slate-500">
+                                        Seniority Priority Applied
+                                    </div>
+                                </div>
+
+                                <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                                    Compliant
+                                </span>
+                            </div>
+
+                            <div class="flex items-center justify-between bg-white rounded-2xl border border-orange-200 p-4">
+                                <div>
+                                    <div class="font-semibold">
+                                        Overtime Risk Detected
+                                    </div>
+                                    <div class="text-sm text-slate-500">
+                                        Staff member exceeds threshold
+                                    </div>
+                                </div>
+
+                                <span class="bg-orange-100 text-carelink text-xs font-bold px-3 py-1 rounded-full">
+                                    Review
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FEATURE 2 -->
+
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+                <div class="order-2 lg:order-1 bg-dark rounded-[32px] p-10 shadow-2xl">
+
+                    <div class="bg-slate-800 rounded-3xl border border-slate-700 p-8">
+
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <div class="text-white font-bold text-lg">
+                                    Credential Monitoring
+                                </div>
+                                <div class="text-slate-400 text-sm">
+                                    Real-time compliance checks
+                                </div>
+                            </div>
+
+                            <div class="w-12 h-12 rounded-2xl bg-carelink flex items-center justify-center">
+                                <i class="fas fa-shield-halved text-white"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+
+                            <div class="bg-slate-900 rounded-2xl p-4 border border-slate-700 flex items-center justify-between">
+                                <span class="text-slate-300">
+                                    TB Screening
+                                </span>
+
+                                <span class="text-green-400 text-sm font-semibold">
+                                    Valid
+                                </span>
+                            </div>
+
+                            <div class="bg-slate-900 rounded-2xl p-4 border border-red-500/30 flex items-center justify-between">
+                                <span class="text-slate-300">
+                                    Police Check
+                                </span>
+
+                                <span class="text-red-400 text-sm font-semibold">
+                                    Expired
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="order-1 lg:order-2 relative">
+
+                    <div class="absolute -top-10 left-0 text-8xl font-black step-number">
+                        02
+                    </div>
+
+                    <div class="relative">
+
+                        <div class="inline-flex items-center gap-2 text-carelink font-semibold mb-5">
+                            <i class="fas fa-shield-halved"></i>
+                            Credential Protection
+                        </div>
+
+                        <h2 class="text-4xl font-black tracking-tight text-dark mb-6">
+                            Prevent non-compliant scheduling automatically.
+                        </h2>
+
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+
+                            Carelink continuously validates certifications, police checks, TB tests, and registrations before shifts are assigned — helping facilities stay inspection-ready.
+
+                        </p>
+
+                        <div class="glass border border-orange-100 rounded-3xl p-6 shadow-soft">
+
+                            <div class="flex items-start gap-4">
+
+                                <div class="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-carelink flex-shrink-0">
+                                    <i class="fas fa-circle-exclamation"></i>
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold text-dark mb-2">
+                                        Built-in risk prevention
+                                    </h3>
+
+                                    <p class="text-slate-600 leading-relaxed">
+                                        If credentials expire, employees are automatically restricted from accepting shifts until updated documentation is verified.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FEATURE 3 -->
+
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+                <div class="relative">
+
+                    <div class="absolute -top-10 left-0 text-8xl font-black step-number">
+                        03
+                    </div>
+
+                    <div class="relative">
+
+                        <div class="inline-flex items-center gap-2 text-carelink font-semibold mb-5">
+                            <i class="fas fa-chart-line"></i>
+                            Workforce Intelligence
+                        </div>
+
+                        <h2 class="text-4xl font-black tracking-tight text-dark mb-6">
+                            Predict staffing gaps before they become emergencies.
+                        </h2>
+
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+
+                            Identify staffing risk zones, chronic shortages, overtime trends, and scheduling bottlenecks from a centralized operational dashboard.
+
+                        </p>
+
+                        <button
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+                            class="bg-carelink hover:bg-orange-600 transition text-white px-8 py-4 rounded-2xl font-bold shadow-glow">
+
+                            See the Dashboard
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-[32px] p-8 shadow-soft">
+
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <div class="bg-orange-50 rounded-3xl p-6">
+                            <div class="text-carelink text-sm font-semibold mb-3">
+                                Staffing Risk
+                            </div>
+
+                            <div class="text-4xl font-black text-dark">
+                                18%
+                            </div>
+
+                            <div class="text-sm text-slate-500 mt-2">
+                                projected shortage
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-3xl p-6">
+                            <div class="text-slate-500 text-sm font-semibold mb-3">
+                                Overtime Hours
+                            </div>
+
+                            <div class="text-4xl font-black text-dark">
+                                ↓32%
+                            </div>
+
+                            <div class="text-sm text-slate-500 mt-2">
+                                over 90 days
+                            </div>
+                        </div>
+
+                        <div class="col-span-2 bg-dark rounded-3xl p-6">
+
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="text-white font-semibold">
+                                    Workforce Stability
+                                </div>
+
+                                <div class="text-carelink text-sm font-bold">
+                                    Improving
+                                </div>
+                            </div>
+
+                            <div class="h-3 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full w-3/4 bg-carelink rounded-full"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INTEGRATIONS -->
+
+    <section class="py-20 border-y border-slate-100 bg-slate-50">
+
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-10">
+                Integrates with your existing workflows
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-5">
+
+                <div class="bg-white border border-slate-200 rounded-2xl px-6 py-4 font-semibold shadow-sm">
+                    Payroll Systems
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl px-6 py-4 font-semibold shadow-sm">
+                    EMR Platforms
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl px-6 py-4 font-semibold shadow-sm">
+                    HR Software
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl px-6 py-4 font-semibold shadow-sm">
+                    Reporting Tools
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl px-6 py-4 font-semibold shadow-sm">
+                    Union Portals
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="py-28 bg-[#FFF8F4]">
+
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <div class="w-20 h-20 rounded-3xl bg-carelink text-white flex items-center justify-center mx-auto mb-8 shadow-glow">
+                <i class="fas fa-calendar-check text-2xl"></i>
+            </div>
+
+            <h2 class="text-5xl font-black tracking-tight text-dark mb-6">
+                Ready to stabilize your workforce?
+            </h2>
+
+            <p class="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
+
+                See how Carelink helps Ontario LTC operators reduce grievances, improve compliance, and automate staffing operations.
+
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+                <button
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+                    class="bg-carelink hover:bg-orange-600 transition text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-glow">
+
+                    Schedule a Guided Demo
+
+                </button>
+
+                <a href="pricing.html"
+                   class="bg-white border border-slate-200 hover:border-slate-300 transition px-10 py-5 rounded-2xl font-semibold text-lg">
+
+                    View Pricing
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-slate-100 py-10 bg-white">
+
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <div class="text-sm text-slate-400">
+                © 2026 Carelink Healthcare Inc. · Hamilton, Ontario
+            </div>
+
+            <div class="flex items-center gap-6 text-sm text-slate-500">
+
+                <a href="#" class="hover:text-carelink transition">
+                    Privacy
+                </a>
+
+                <a href="#" class="hover:text-carelink transition">
+                    Terms
+                </a>
+
+                <a href="#" class="hover:text-carelink transition">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- CALENDLY -->
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <script src="https://assets.calendly.com/assets/external/widget.js"
+            type="text/javascript"
+            async>
+    </script>
+
+</body>
+</html>

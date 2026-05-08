@@ -1,13 +1,11 @@
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources | Carelink Healthcare</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-<script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+      <script>
 tailwind.config = {
   theme: {
     extend: {
@@ -21,26 +19,33 @@ tailwind.config = {
   }
 }
 </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .bg-carelink-orange { background-color: #F26522; }
+        .text-carelink-orange { color: #F26522; }
+        .bg-soft-orange { background-color: #FFF5F0; }
+    </style>
+  
 </head>
+<body class="bg-white text-slate-800">
 
-<body class="bg-white text-slate-900 antialiased">
-
-<!-- NAV -->
-<nav class="bg-white/80 backdrop-blur border-b border-slate-100 sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-    <div class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-carelink rounded-md flex items-center justify-center">
-        <i class="fas fa-plus text-white text-xs"></i>
-      </div>
-      <span class="font-semibold">Carelink</span>
+    <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center space-x-2">
+        <a href="index.html" class="flex items-center space-x-2">
+            <div class="text-carelink-orange text-2xl font-bold flex items-center">
+                <i class="fas fa-plus-square mr-2"></i> Carelink
+            </div>
+            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+        </a>
     </div>
 
-     <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-        <a href="Product.html" class="hover:text-carelink-orange">Product</a>
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+        <a href="/Product.html" class="hover:text-carelink-orange">Product</a>
         <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
-        <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
-        <a href="Resources.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange">Resources</a>
+        <a href="Pricing.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange">Pricing</a>
+        <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
         <a href="about.html" class="hover:text-carelink-orange">About Us</a>
     </div>
 

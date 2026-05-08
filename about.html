@@ -52,7 +52,11 @@ tailwind.config = {
 
     <div class="flex items-center space-x-4">
         <a href="index.html" class="text-sm font-semibold">Log in</a>
-        <a href="#" class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600">Book a Demo</a>
+        <a href="#"
+   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+   Book a Demo
+</a>
     </div>
 </nav>
 
@@ -74,9 +78,11 @@ tailwind.config = {
     </p>
 
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#cta" class="bg-carelink text-white px-6 py-3 rounded-lg shadow-soft hover:opacity-90 transition font-medium">
-        Book a Demo
-      </a>
+     <a href="#"
+   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+   Book a Demo
+</a>
       <a href="#features" class="px-6 py-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition font-medium">
         See How It Works
       </a>

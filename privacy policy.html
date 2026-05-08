@@ -1,4 +1,4 @@
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,24 +7,18 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        carelink: '#F26522',
-                        dark: '#0F172A'
+                        carelink: '#F26522'
                     },
                     boxShadow: {
-                        soft: '0 10px 40px rgba(15,23,42,0.06)',
-                        glow: '0 10px 30px rgba(242,101,34,0.18)'
+                        soft: '0 10px 30px rgba(0,0,0,0.06)',
+                        glow: '0 20px 60px rgba(242,101,34,0.15)'
                     }
                 }
             }
@@ -32,92 +26,86 @@
     </script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
         }
 
-        .policy-content h2 {
-            font-size: 1.9rem;
-            line-height: 1.2;
+        .legal-content h2 {
+            font-size: 2rem;
+            line-height: 2.5rem;
             font-weight: 800;
+            color: #0f172a;
             margin-top: 4rem;
-            margin-bottom: 1.25rem;
-            color: #0F172A;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
         }
 
-        .policy-content h3 {
+        .legal-content h3 {
             font-size: 1.2rem;
             font-weight: 700;
+            color: #0f172a;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
-            color: #0F172A;
         }
 
-        .policy-content p {
+        .legal-content p {
             color: #475569;
-            line-height: 1.9;
-            margin-bottom: 1.4rem;
-            font-size: 1rem;
-        }
-
-        .policy-content ul {
-            margin-top: 1rem;
+            line-height: 1.95;
             margin-bottom: 1.5rem;
-            padding-left: 1.25rem;
+            font-size: 15px;
         }
 
-        .policy-content li {
-            margin-bottom: 0.8rem;
+        .legal-content ul {
+            padding-left: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 1rem;
             color: #475569;
             line-height: 1.8;
         }
 
-        .policy-content strong {
-            color: #0F172A;
-            font-weight: 700;
-        }
-
-        .policy-content table {
+        .legal-content table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
             overflow: hidden;
-            border-radius: 18px;
-            border: 1px solid #E2E8F0;
+            border-radius: 1rem;
+            margin-top: 2rem;
         }
 
-        .policy-content th {
-            background: #F8FAFC;
+        .legal-content th {
+            background: #0f172a;
+            color: white;
+            padding: 1rem;
             text-align: left;
-            padding: 16px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #64748B;
-            border-bottom: 1px solid #E2E8F0;
+            font-size: 14px;
         }
 
-        .policy-content td {
-            padding: 18px 16px;
-            border-bottom: 1px solid #F1F5F9;
+        .legal-content td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
             color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            background: white;
         }
 
-        .policy-content tr:last-child td {
-            border-bottom: none;
+        .legal-content tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 
-<body class="bg-white text-slate-800 antialiased">
+<body class="bg-white text-slate-800 overflow-x-hidden">
 
-    <!-- NAV -->
-
-   <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+    <!-- NAVBAR -->
+    <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
     <div class="flex items-center space-x-2">
         <a href="index.html" class="flex items-center space-x-2">
             <div class="text-carelink-orange text-2xl font-bold flex items-center">
@@ -145,313 +133,401 @@
     </div>
 </nav>
 
+
     <!-- HERO -->
+    <section class="relative overflow-hidden bg-[#0F172A] text-white">
 
-    <section class="relative overflow-hidden border-b border-slate-100 bg-gradient-to-b from-orange-50/60 via-white to-white">
+        <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-carelink/20 blur-3xl rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-400/10 blur-3xl rounded-full"></div>
 
-        <div class="max-w-5xl mx-auto px-6 py-24 text-center">
+        <div class="relative max-w-7xl mx-auto px-6 py-28">
 
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-200 bg-white shadow-sm text-[11px] uppercase tracking-[0.25em] font-bold text-carelink mb-8">
-                Legal & Compliance
+            <div class="max-w-4xl">
+
+                <div class="inline-flex items-center bg-white/10 border border-white/10 rounded-full px-5 py-2 mb-8 backdrop-blur">
+                    <span class="text-xs uppercase tracking-[0.3em] font-bold text-orange-200">
+                        Privacy & Compliance
+                    </span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-8">
+                    Privacy built for
+                    <span class="text-carelink">modern healthcare.</span>
+                </h1>
+
+                <p class="text-xl text-slate-300 leading-relaxed max-w-3xl">
+                    Carelink is committed to protecting personal information,
+                    healthcare records, operational data, and workforce information
+                    with enterprise-grade security and privacy standards.
+                </p>
+
+                <div class="flex flex-wrap gap-6 mt-12">
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 backdrop-blur">
+                        <div class="text-2xl font-black mb-1">PHIPA</div>
+                        <div class="text-sm text-slate-400">Ontario aligned</div>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 backdrop-blur">
+                        <div class="text-2xl font-black mb-1">HIPAA</div>
+                        <div class="text-sm text-slate-400">US healthcare standards</div>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 backdrop-blur">
+                        <div class="text-2xl font-black mb-1">SSL</div>
+                        <div class="text-sm text-slate-400">Encrypted infrastructure</div>
+                    </div>
+
+                </div>
+
             </div>
-
-            <h1 class="text-5xl md:text-6xl font-black tracking-tight text-dark leading-tight mb-6">
-                Privacy Policy
-            </h1>
-
-            <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                Learn how Carelink collects, uses, stores, and protects personal and health-related information across our healthcare staffing and workforce management platform.
-            </p>
 
         </div>
-
     </section>
 
-    <!-- CONTENT -->
+    <!-- MAIN -->
+    <section class="relative bg-[#F8FAFC] py-24">
 
-    <section class="py-24">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(242,101,34,0.05),transparent_30%)]"></div>
 
-        <div class="max-w-4xl mx-auto px-6">
+        <div class="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-[260px,1fr] gap-12">
 
-            <!-- QUICK INFO -->
+            <!-- SIDEBAR -->
+            <aside class="hidden lg:block">
 
-            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 mb-16 shadow-soft">
+                <div class="sticky top-28 bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
 
-                <div class="grid md:grid-cols-3 gap-8">
-
-                    <div>
-                        <div class="text-sm uppercase tracking-widest text-slate-400 font-bold mb-2">
-                            Company
-                        </div>
-
-                        <div class="font-semibold text-dark">
-                            Carelink Healthcare Inc.
-                        </div>
+                    <div class="text-xs uppercase tracking-[0.25em] font-bold text-carelink mb-6">
+                        On this page
                     </div>
 
-                    <div>
-                        <div class="text-sm uppercase tracking-widest text-slate-400 font-bold mb-2">
-                            Jurisdiction
-                        </div>
-
-                        <div class="font-semibold text-dark">
-                            Ontario, Canada
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="text-sm uppercase tracking-widest text-slate-400 font-bold mb-2">
-                            Last Updated
-                        </div>
-
-                        <div class="font-semibold text-dark">
-                            2026
-                        </div>
+                    <div class="space-y-4 text-sm font-medium text-slate-600">
+                        <a href="#commitment" class="block hover:text-carelink transition">Our Commitment</a>
+                        <a href="#private" class="block hover:text-carelink transition">What is Private?</a>
+                        <a href="#collection" class="block hover:text-carelink transition">Information Collection</a>
+                        <a href="#purpose" class="block hover:text-carelink transition">Purpose</a>
+                        <a href="#security" class="block hover:text-carelink transition">Security</a>
+                        <a href="#sharing" class="block hover:text-carelink transition">Information Sharing</a>
+                        <a href="#retention" class="block hover:text-carelink transition">Retention</a>
+                        <a href="#contact" class="block hover:text-carelink transition">Contact</a>
                     </div>
 
                 </div>
 
-            </div>
+            </aside>
 
-            <!-- POLICY BODY -->
+            <!-- CONTENT -->
+            <div class="bg-white border border-slate-200 rounded-[2rem] shadow-soft p-8 md:p-16 legal-content">
 
-            <div class="policy-content">
+                <div id="commitment">
+                    <div class="text-carelink font-bold uppercase tracking-[0.25em] text-xs mb-5">
+                        Privacy Policy
+                    </div>
 
-                <h2>Our Commitment to Privacy</h2>
+                    <h2 class="mt-0">
+                        Our Commitment to Privacy
+                    </h2>
 
-                <p>
-                    Privacy is highly important to us. This Privacy Policy outlines how Carelink Healthcare Inc. collects, uses, stores, protects, and discloses information through our healthcare staffing and workforce management platform, including services provided through thecarelink.ca and thecarelink.app.
-                </p>
+                    <p>
+                        Privacy is highly important to us. This Privacy Policy explains how Carelink Healthcare Inc. (“Carelink”, “we”, “our”, or “us”) collects, protects, stores, and manages information entrusted to us through our healthcare staffing and workforce management platform and related services.
+                    </p>
 
-                <p>
-                    Carelink provides cloud-based workforce management tools and staffing services for long-term care providers, healthcare organizations, and related facilities across Canada and the United States.
-                </p>
+                    <p>
+                        The Carelink platform is designed for long-term care, healthcare staffing, workforce scheduling, credential management, and operational coordination within regulated healthcare environments.
+                    </p>
 
-                <p>
-                    As privacy laws and best practices evolve, we may update this Privacy Policy from time to time. Continued use of our services constitutes acceptance of the updated policy.
-                </p>
+                    <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 mt-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center border border-orange-100">
+                                <i class="fas fa-shield-alt text-carelink"></i>
+                            </div>
 
-                <h2>Information We Collect</h2>
+                            <div>
+                                <h3 class="mt-0 mb-3">Enterprise-grade trust</h3>
 
-                <h3>Manual Submission</h3>
-
-                <p>
-                    Information may be submitted directly through forms, email communication, uploaded documents, support requests, staffing applications, registrations, onboarding workflows, or direct communication with Carelink representatives.
-                </p>
-
-                <ul>
-                    <li>Name and contact information</li>
-                    <li>Email addresses and phone numbers</li>
-                    <li>Facility or organization details</li>
-                    <li>Billing and account information</li>
-                    <li>Staffing credentials and compliance documentation</li>
-                    <li>Healthcare-related operational information</li>
-                </ul>
-
-                <h3>Automatic Submission</h3>
-
-                <p>
-                    When users interact with our websites or applications, certain technical information is automatically collected to support functionality, security, analytics, and platform performance.
-                </p>
-
-                <ul>
-                    <li>Browser type and operating system</li>
-                    <li>Device information</li>
-                    <li>IP address and general geographic region</li>
-                    <li>Session activity and visited pages</li>
-                    <li>Cookies and analytics identifiers</li>
-                    <li>Referral URLs and search terms</li>
-                </ul>
-
-                <h2>Cookies & Analytics</h2>
-
-                <p>
-                    Carelink uses cookies and related technologies to improve usability, preserve session settings, authenticate users, and analyze platform usage trends.
-                </p>
-
-                <p>
-                    We may use analytics providers such as Google Analytics to better understand website behavior and improve our products and services. These tools do not intentionally collect Protected Health Information (PHI).
-                </p>
-
-                <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 my-10">
-
-                    <div class="flex gap-4">
-
-                        <div class="w-12 h-12 rounded-2xl bg-carelink text-white flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-cookie-bite"></i>
+                                <p class="mb-0">
+                                    Carelink is designed with healthcare-grade security, encrypted infrastructure, controlled access systems, and operational safeguards aligned with modern healthcare privacy standards.
+                                </p>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div>
+                <div id="private">
+                    <h2>What Is Considered Private?</h2>
 
-                            <h3 class="mt-0 mb-3">Cookie Notice</h3>
+                    <p>
+                        Certain information may identify or distinguish an individual and is therefore considered private under applicable privacy laws.
+                    </p>
+
+                    <ul>
+                        <li>Government-issued identifiers</li>
+                        <li>Social insurance numbers</li>
+                        <li>Billing and payment information</li>
+                        <li>Email addresses and phone numbers</li>
+                        <li>Healthcare and employment records</li>
+                        <li>Credential and compliance documentation</li>
+                        <li>Insurance and benefits information</li>
+                    </ul>
+
+                    <p>
+                        Depending on jurisdiction, this information may be classified as Personal Information (PI), Personally Identifiable Information (PII), Sensitive Personal Information (SPI), or Protected Health Information (PHI).
+                    </p>
+                </div>
+
+                <div id="collection">
+                    <h2>Personal Information Collected by the Services</h2>
+
+                    <h3>Manual Submission</h3>
+
+                    <p>
+                        Information may be submitted directly through account registrations, support requests, onboarding activities, uploaded files, or communications with Carelink staff.
+                    </p>
+
+                    <h3>Automatic Submission</h3>
+
+                    <p>
+                        Certain technical information is automatically collected when interacting with the Site or Services.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mt-10">
+
+                        <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center border border-slate-200 mb-5">
+                                <i class="fas fa-cookie-bite text-carelink"></i>
+                            </div>
+
+                            <h3 class="mt-0 mb-3">Cookies & Sessions</h3>
 
                             <p class="mb-0">
-                                Disabling certain cookies may impact access to authenticated platform functionality and workforce management features.
+                                We use cookies and session technologies to preserve secure authentication, maintain preferences, and improve platform performance.
                             </p>
+                        </div>
 
+                        <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center border border-slate-200 mb-5">
+                                <i class="fas fa-chart-line text-carelink"></i>
+                            </div>
+
+                            <h3 class="mt-0 mb-3">Analytics</h3>
+
+                            <p class="mb-0">
+                                Usage analytics help us understand feature usage, reliability, performance, and operational improvements across the platform.
+                            </p>
                         </div>
 
                     </div>
-
                 </div>
 
-                <h2>How We Use Information</h2>
+                <div id="purpose">
+                    <h2>Purpose</h2>
 
-                <p>
-                    Carelink uses personal and operational information for the following purposes:
-                </p>
+                    <p>
+                        Carelink collects and processes information to provide healthcare workforce management and staffing services.
+                    </p>
 
-                <ul>
-                    <li>Providing workforce management and staffing services</li>
-                    <li>Supporting customer accounts and onboarding</li>
-                    <li>Credential validation and compliance workflows</li>
-                    <li>Scheduling, staffing, and operational automation</li>
-                    <li>Customer support and troubleshooting</li>
-                    <li>Security monitoring and fraud prevention</li>
-                    <li>Product improvement and analytics</li>
-                    <li>Service announcements and updates</li>
-                    <li>Research, benchmarking, and reporting using aggregated non-identifiable data</li>
-                </ul>
+                    <div class="grid md:grid-cols-2 gap-5 mt-10">
 
-                <h2>Protecting Health Information</h2>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fas fa-check-circle text-carelink"></i>
+                                <span class="font-semibold">Customer Accounts</span>
+                            </div>
 
-                <p>
-                    Carelink customers may include healthcare providers and long-term care organizations that are subject to privacy and health information laws including HIPAA, HITECH, PHIPA, and related provincial or state legislation.
-                </p>
-
-                <p>
-                    We implement administrative, technical, and physical safeguards designed to protect the confidentiality, integrity, and availability of Personal Information and Protected Health Information.
-                </p>
-
-                <ul>
-                    <li>Encrypted communications using SSL/TLS technology</li>
-                    <li>Secure authentication systems</li>
-                    <li>Role-based access controls</li>
-                    <li>Confidentiality agreements for employees and contractors</li>
-                    <li>Firewall and infrastructure protections</li>
-                    <li>Security monitoring and incident response procedures</li>
-                </ul>
-
-                <h2>Sharing Information</h2>
-
-                <p>
-                    Carelink does not sell Personal Information.
-                </p>
-
-                <p>
-                    Information may be shared with authorized third-party providers, integrations, or connected services where required to support platform functionality or where explicitly authorized by customers.
-                </p>
-
-                <p>
-                    We may also disclose information where legally required, including court orders, subpoenas, or regulatory obligations.
-                </p>
-
-                <h2>Data Retention</h2>
-
-                <p>
-                    Personal Information is retained only as long as necessary to provide services, fulfill contractual obligations, comply with legal requirements, resolve disputes, or enforce agreements.
-                </p>
-
-                <p>
-                    When retention is no longer necessary, information is securely deleted, destroyed, or anonymized where feasible.
-                </p>
-
-                <h2>Cross-Border Transfers</h2>
-
-                <p>
-                    Carelink primarily operates from Ontario, Canada. Certain support, backup, or infrastructure operations may involve secure cross-border access or storage in compliance with applicable legal and contractual obligations.
-                </p>
-
-                <h2>Your Rights & Choices</h2>
-
-                <p>
-                    Depending on applicable law, individuals may have rights relating to access, correction, deletion, restriction, or objection regarding their Personal Information.
-                </p>
-
-                <p>
-                    Requests regarding Personal Information or PHI may require verification and, in some cases, coordination with the applicable healthcare organization or customer account administrator.
-                </p>
-
-                <h2>Applicable Privacy Laws</h2>
-
-                <table>
-
-                    <thead>
-                        <tr>
-                            <th>Law</th>
-                            <th>Information Type</th>
-                            <th>Jurisdiction</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td>HIPAA</td>
-                            <td>Protected Health Information</td>
-                            <td>United States</td>
-                        </tr>
-
-                        <tr>
-                            <td>HITECH</td>
-                            <td>Health Information</td>
-                            <td>United States</td>
-                        </tr>
-
-                        <tr>
-                            <td>PHIPA</td>
-                            <td>Personal Health Information</td>
-                            <td>Ontario</td>
-                        </tr>
-
-                        <tr>
-                            <td>PIPEDA</td>
-                            <td>Personal Information</td>
-                            <td>Canada</td>
-                        </tr>
-
-                        <tr>
-                            <td>CASL</td>
-                            <td>Commercial Electronic Communications</td>
-                            <td>Canada</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-                <h2>Contact Us</h2>
-
-                <p>
-                    If you have questions about this Privacy Policy or concerns regarding the handling of Personal Information, please contact:
-                </p>
-
-                <div class="bg-dark rounded-3xl p-8 text-white mt-8">
-
-                    <div class="flex items-start gap-5">
-
-                        <div class="w-14 h-14 rounded-2xl bg-carelink flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-envelope"></i>
+                            <p class="mb-0">
+                                Registering and administering customer organizations and users.
+                            </p>
                         </div>
 
-                        <div>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fas fa-check-circle text-carelink"></i>
+                                <span class="font-semibold">Operational Services</span>
+                            </div>
 
-                            <h3 class="text-white mt-0 mb-4">
-                                Carelink Healthcare Inc.
-                            </h3>
-
-                            <p class="text-slate-300 mb-2">
-                                Hamilton / Burlington Region, Ontario, Canada
+                            <p class="mb-0">
+                                Supporting scheduling, staffing, credential tracking, and compliance workflows.
                             </p>
+                        </div>
 
-                            <p class="text-slate-300 mb-0">
-                                Please do not include Protected Health Information in email communications.
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fas fa-check-circle text-carelink"></i>
+                                <span class="font-semibold">System Improvements</span>
+                            </div>
+
+                            <p class="mb-0">
+                                Monitoring performance, reliability, audits, and service improvements.
                             </p>
+                        </div>
+
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fas fa-check-circle text-carelink"></i>
+                                <span class="font-semibold">Communications</span>
+                            </div>
+
+                            <p class="mb-0">
+                                Responding to support inquiries, updates, and service notifications.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="sharing">
+                    <h2>Sharing Your Personal Information</h2>
+
+                    <p>
+                        Carelink does not sell Personal Information.
+                    </p>
+
+                    <p>
+                        Information may be shared with authorized service providers, integrations, legal authorities where required by law, or during business reorganizations subject to legal safeguards and contractual protections.
+                    </p>
+                </div>
+
+                <div id="security">
+                    <h2>Security, Threats & Breach Notification</h2>
+
+                    <p>
+                        Carelink maintains administrative, technical, and physical safeguards designed to protect against unauthorized access, misuse, disclosure, or alteration of information.
+                    </p>
+
+                    <div class="bg-[#0F172A] rounded-[2rem] p-10 mt-10 text-white relative overflow-hidden">
+
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-carelink/10 blur-3xl rounded-full"></div>
+
+                        <div class="relative">
+
+                            <div class="grid md:grid-cols-3 gap-8">
+
+                                <div>
+                                    <div class="text-carelink text-3xl mb-4">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+
+                                    <h3 class="text-white mt-0">Encrypted Infrastructure</h3>
+
+                                    <p class="text-slate-400 mb-0">
+                                        SSL/TLS encrypted communications and secure hosting environments.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div class="text-carelink text-3xl mb-4">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+
+                                    <h3 class="text-white mt-0">Access Controls</h3>
+
+                                    <p class="text-slate-400 mb-0">
+                                        Role-based permissions and authentication protections.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div class="text-carelink text-3xl mb-4">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+
+                                    <h3 class="text-white mt-0">Secure Operations</h3>
+
+                                    <p class="text-slate-400 mb-0">
+                                        Monitoring, firewall protection, and operational safeguards.
+                                    </p>
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
+                </div>
 
+                <div id="retention">
+                    <h2>Retention & Deletion</h2>
+
+                    <p>
+                        Personal Information is retained only as long as necessary to provide the Services, comply with legal obligations, resolve disputes, and support healthcare operational requirements.
+                    </p>
+                </div>
+
+                <div>
+                    <h2>Applicable Privacy Laws</h2>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Applicable Law</th>
+                                    <th>Information Governed</th>
+                                    <th>Jurisdiction</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>HIPAA</td>
+                                    <td>Protected Health Information</td>
+                                    <td>United States</td>
+                                </tr>
+
+                                <tr>
+                                    <td>HITECH</td>
+                                    <td>Health Information</td>
+                                    <td>United States</td>
+                                </tr>
+
+                                <tr>
+                                    <td>PHIPA</td>
+                                    <td>Personal Health Information</td>
+                                    <td>Ontario</td>
+                                </tr>
+
+                                <tr>
+                                    <td>PIPEDA</td>
+                                    <td>Private Sector Personal Information</td>
+                                    <td>Canada</td>
+                                </tr>
+
+                                <tr>
+                                    <td>CASL</td>
+                                    <td>Commercial Electronic Messages</td>
+                                    <td>Canada</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="contact">
+                    <h2>Contact Us</h2>
+
+                    <p>
+                        If you have questions regarding this Privacy Policy or believe information has been handled inconsistently with this Policy, please contact Carelink Healthcare Inc.
+                    </p>
+
+                    <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 mt-8">
+
+                        <div class="flex items-start gap-5">
+
+                            <div class="w-14 h-14 rounded-2xl bg-white border border-orange-100 flex items-center justify-center">
+                                <i class="fas fa-envelope text-carelink"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="mt-0 mb-3">Carelink Healthcare Inc.</h3>
+
+                                <p class="mb-0">
+                                    Hamilton/Burlington Region, Ontario<br>
+                                    Canada
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
@@ -461,73 +537,46 @@
     </section>
 
     <!-- CTA -->
+    <section class="relative overflow-hidden bg-[#0F172A] py-24 text-white">
 
-    <section class="py-24 bg-[#FFF8F4] border-t border-orange-100">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,101,34,0.18),transparent_25%)]"></div>
 
-        <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
 
-            <div class="w-20 h-20 rounded-3xl bg-carelink text-white flex items-center justify-center mx-auto mb-8 shadow-glow">
-                <i class="fas fa-shield-halved text-2xl"></i>
-            </div>
-
-            <h2 class="text-4xl md:text-5xl font-black tracking-tight text-dark mb-6">
-                Built for compliance-first healthcare operations.
+            <h2 class="text-5xl font-black tracking-tight mb-6">
+                Built for healthcare-grade trust.
             </h2>
 
-            <p class="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-                Carelink helps healthcare organizations streamline staffing while maintaining privacy, credential, and workforce compliance standards.
+            <p class="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10">
+                Carelink combines workforce operations, compliance, and enterprise-grade privacy into one modern healthcare platform.
             </p>
 
-            <button
-                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-                class="bg-carelink hover:bg-orange-600 transition text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-glow">
-
+            <a href="#"
+               class="inline-flex items-center bg-carelink px-10 py-5 rounded-2xl text-lg font-bold shadow-glow hover:bg-orange-600 transition-all duration-300 hover:scale-[1.02]">
                 Book a Demo
-
-            </button>
+                <i class="fas fa-arrow-right ml-3"></i>
+            </a>
 
         </div>
 
     </section>
 
     <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-100 py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
-    <footer class="border-t border-slate-100 py-10 bg-white">
-
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-
-            <div class="text-sm text-slate-400">
+            <div class="text-sm text-slate-500">
                 © 2026 Carelink Healthcare Inc. · Hamilton, Ontario
             </div>
 
-            <div class="flex items-center gap-6 text-sm text-slate-500">
-
-                <a href="privacy.html" class="hover:text-carelink transition">
-                    Privacy
-                </a>
-
-                <a href="#" class="hover:text-carelink transition">
-                    Terms
-                </a>
-
-                <a href="about.html" class="hover:text-carelink transition">
-                    About
-                </a>
-
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-500">
+                <a href="privacy.html" class="hover:text-carelink transition">Privacy</a>
+                <a href="#" class="hover:text-carelink transition">Terms</a>
+                <a href="#" class="hover:text-carelink transition">Security</a>
             </div>
 
         </div>
-
     </footer>
-
-    <!-- CALENDLY -->
-
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-
-    <script src="https://assets.calendly.com/assets/external/widget.js"
-            type="text/javascript"
-            async>
-    </script>
 
 </body>
 </html>

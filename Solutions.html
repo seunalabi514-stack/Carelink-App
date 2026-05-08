@@ -29,7 +29,6 @@ tailwind.config = {
     </style>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    
 </head>
 <body class="bg-white text-slate-800">
 
@@ -44,7 +43,7 @@ tailwind.config = {
     </div>
 
     <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-        <a href="/Product.html" class="hover:text-carelink-orange">Product</a>
+        <a href="Product.html" class="hover:text-carelink-orange">Product</a>
         <a href="Solutions.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange">Solutions</a>
         <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
         <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
@@ -53,7 +52,11 @@ tailwind.config = {
 
     <div class="flex items-center space-x-4">
         <a href="index.html" class="text-sm font-semibold">Log in</a>
-   <a href="#" class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600">Book a Demo</a>
+        <a href="javascript:void(0)"
+   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+   class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition inline-block">
+   Book a Demo
+</a>
     </div>
 </nav>
 

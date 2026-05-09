@@ -97,7 +97,7 @@
     </div>
 
             <div class="flex items-center space-x-4">
-                <a href="/login"
+                <a href="Login.html" 
                    class="text-sm font-semibold text-slate-600 hover:text-carelink transition">
                     Log In
                 </a>
@@ -412,55 +412,76 @@
                     to critical operational issues within business hours.
                 </p>
 
-                <form class="space-y-5">
+                <form 
+    action="https://formspree.io/f/mykonblb"
+    method="POST"
+    class="space-y-5"
+>
 
-                    <div class="grid grid-cols-2 gap-5">
+    <div class="grid grid-cols-2 gap-5">
 
-                        <input
-                            type="text"
-                            placeholder="First Name"
-                            class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
-                        >
+        <input
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            required
+            class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+        >
 
-                        <input
-                            type="email"
-                            placeholder="Work Email"
-                            class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
-                        >
+        <input
+            type="email"
+            name="email"
+            placeholder="Work Email"
+            required
+            class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+        >
 
-                    </div>
+    </div>
 
-                    <input
-                        type="text"
-                        placeholder="Organization"
-                        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
-                    >
+    <input
+        type="text"
+        name="organization"
+        placeholder="Organization"
+        required
+        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+    >
 
-                    <select class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none">
+    <select
+        name="issue_category"
+        required
+        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+    >
 
-                        <option>Issue Category</option>
-                        <option>Scheduling</option>
-                        <option>Compliance</option>
-                        <option>Technical Support</option>
-                        <option>Billing</option>
-                        <option>Account Access</option>
+        <option value="">Issue Category</option>
+        <option>Scheduling</option>
+        <option>Compliance</option>
+        <option>Technical Support</option>
+        <option>Billing</option>
+        <option>Account Access</option>
 
-                    </select>
+    </select>
 
-                    <textarea
-                        rows="5"
-                        placeholder="Describe your issue or request..."
-                        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
-                    ></textarea>
+    <textarea
+        rows="5"
+        name="message"
+        placeholder="Describe your issue or request..."
+        required
+        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+    ></textarea>
 
-                    <button
-                        type="submit"
-                        class="w-full bg-dark hover:bg-slate-800 transition text-white py-5 rounded-2xl font-bold shadow-xl"
-                    >
-                        Submit Support Request
-                    </button>
+    <!-- FORMSPREE SETTINGS -->
+    <input type="hidden" name="_subject" value="New Carelink Support Request">
+    <input type="hidden" name="_captcha" value="false">
 
-                </form>
+    <button
+        type="submit"
+        class="w-full bg-dark hover:bg-slate-800 transition text-white py-5 rounded-2xl font-bold shadow-xl"
+    >
+        Submit Support Request
+    </button>
+
+</form>
+
 
             </div>
 
@@ -492,13 +513,13 @@
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
 
-                    <a href="javascript:void(0)"
+                    <a href="#"
    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
                        class="bg-carelink hover:bg-orange-600 transition px-10 py-5 rounded-2xl font-bold shadow-glow">
                         Schedule a Session
                     </a>
 
-                    <a href="/resources"
+                    <a href="Resources.html" 
                        class="border border-white/10 hover:bg-white/5 transition px-10 py-5 rounded-2xl font-bold">
                         Browse Documentation
                     </a>

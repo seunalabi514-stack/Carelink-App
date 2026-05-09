@@ -1,0 +1,531 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Center | Carelink Healthcare</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        carelink: '#F26522',
+                        dark: '#0F172A'
+                    },
+                    boxShadow: {
+                        soft: '0 10px 30px rgba(0,0,0,0.06)',
+                        glow: '0 20px 60px rgba(242,101,34,0.15)',
+                        card: '0 25px 60px rgba(15,23,42,0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background: #F8FAFC;
+        }
+
+        .hero-gradient {
+            background:
+                radial-gradient(circle at top right, rgba(242,101,34,0.14), transparent 30%),
+                linear-gradient(135deg, #0F172A 0%, #111827 100%);
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(18px);
+        }
+
+        summary {
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="text-slate-800">
+
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-11 h-11 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center shadow-sm">
+                    <img src="logo.png" alt="Carelink Logo" class="h-10">
+                </div>
+
+                <div class="leading-none">
+                    <div class="text-lg font-black tracking-tight text-slate-900">
+                        Carelink
+                    </div>
+                    <div class="text-[9px] uppercase tracking-[0.32em] text-carelink font-bold">
+                        Healthcare
+                    </div>
+                </div>
+            </a>
+
+             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+        <a href="Product.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange">Product</a>
+        <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
+        <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
+        <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
+        <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+    </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="/login"
+                   class="text-sm font-semibold text-slate-600 hover:text-carelink transition">
+                    Sign In
+                </a>
+
+                <a href="#ticket"
+                   class="bg-carelink text-white px-5 py-2.5 rounded-xl shadow-glow font-bold text-sm hover:bg-orange-600 transition">
+                    Open Ticket
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-gradient pt-28 pb-36 relative overflow-hidden text-white">
+
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-carelink/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[120px]"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6 text-center">
+
+            <div class="inline-flex items-center px-4 py-2 rounded-full glass border border-white/10 text-xs uppercase tracking-[0.28em] font-bold text-orange-200 mb-8">
+                Carelink Support Infrastructure
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-8">
+                Support built for
+                <span class="text-carelink">healthcare operations</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed mb-12">
+                Get fast assistance with workforce scheduling, compliance workflows,
+                credential management, mobile access, and enterprise onboarding.
+            </p>
+
+            <!-- SEARCH -->
+            <div class="max-w-3xl mx-auto relative">
+
+                <div class="glass border border-white/10 rounded-[2rem] p-3 shadow-2xl">
+                    <div class="relative">
+
+                        <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+
+                        <input
+                            type="text"
+                            placeholder="Search support articles, onboarding guides, or troubleshooting..."
+                            class="w-full bg-transparent text-white placeholder-slate-400 pl-14 pr-40 py-5 rounded-2xl focus:outline-none text-[15px]"
+                        >
+
+                        <button class="absolute right-2 top-2 bottom-2 bg-carelink hover:bg-orange-600 transition px-8 rounded-2xl font-bold text-sm">
+                            Search
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- QUICK STATS -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+
+                <div class="glass rounded-2xl border border-white/10 p-6">
+                    <div class="text-3xl font-black mb-2">2h</div>
+                    <div class="text-sm text-slate-400">Average response time</div>
+                </div>
+
+                <div class="glass rounded-2xl border border-white/10 p-6">
+                    <div class="text-3xl font-black mb-2">99.9%</div>
+                    <div class="text-sm text-slate-400">Platform uptime</div>
+                </div>
+
+                <div class="glass rounded-2xl border border-white/10 p-6">
+                    <div class="text-3xl font-black mb-2">24/7</div>
+                    <div class="text-sm text-slate-400">Monitoring systems</div>
+                </div>
+
+                <div class="glass rounded-2xl border border-white/10 p-6">
+                    <div class="text-3xl font-black mb-2">PHIPA</div>
+                    <div class="text-sm text-slate-400">Security aligned</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SUPPORT CATEGORIES -->
+    <section class="max-w-7xl mx-auto px-6 -mt-20 relative z-10">
+
+        <div class="grid lg:grid-cols-3 gap-8">
+
+            <!-- CARD -->
+            <div class="bg-white rounded-[2.2rem] border border-slate-100 p-9 shadow-card hover:-translate-y-2 transition duration-300 group">
+
+                <div class="w-16 h-16 rounded-3xl bg-orange-50 flex items-center justify-center mb-8 group-hover:scale-110 transition">
+                    <i class="fas fa-calendar-days text-carelink text-2xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-black tracking-tight mb-4">
+                    Workforce Scheduling
+                </h3>
+
+                <p class="text-slate-500 leading-relaxed text-[15px] mb-8">
+                    Configure union-based scheduling logic, automate overtime prevention,
+                    manage callouts, and streamline staffing workflows across LTC facilities.
+                </p>
+
+                <div class="space-y-4 text-sm">
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Shift rotations</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Seniority logic</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Emergency staffing</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-white rounded-[2.2rem] border border-slate-100 p-9 shadow-card hover:-translate-y-2 transition duration-300 group">
+
+                <div class="w-16 h-16 rounded-3xl bg-blue-50 flex items-center justify-center mb-8 group-hover:scale-110 transition">
+                    <i class="fas fa-shield-halved text-blue-500 text-2xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-black tracking-tight mb-4">
+                    Compliance & Security
+                </h3>
+
+                <p class="text-slate-500 leading-relaxed text-[15px] mb-8">
+                    Learn how Carelink protects healthcare data, manages credential expiry tracking,
+                    and supports PHIPA-aligned operational compliance.
+                </p>
+
+                <div class="space-y-4 text-sm">
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Credential audits</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Data encryption</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Export reporting</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-white rounded-[2.2rem] border border-slate-100 p-9 shadow-card hover:-translate-y-2 transition duration-300 group">
+
+                <div class="w-16 h-16 rounded-3xl bg-green-50 flex items-center justify-center mb-8 group-hover:scale-110 transition">
+                    <i class="fas fa-mobile-screen-button text-green-500 text-2xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-black tracking-tight mb-4">
+                    Mobile & Staff Access
+                </h3>
+
+                <p class="text-slate-500 leading-relaxed text-[15px] mb-8">
+                    Troubleshoot mobile login issues, push notifications, geofencing,
+                    clock-ins, and employee self-service tools.
+                </p>
+
+                <div class="space-y-4 text-sm">
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">App onboarding</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Push notifications</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-600">Time tracking</span>
+                        <i class="fas fa-arrow-right text-carelink"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ + CONTACT -->
+    <section class="max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-[1fr_480px] gap-20">
+
+        <!-- FAQ -->
+        <div>
+
+            <div class="inline-flex items-center space-x-2 text-carelink font-bold tracking-[0.25em] text-xs uppercase mb-5">
+                <span class="w-2 h-2 bg-carelink rounded-full"></span>
+                <span>Frequently Asked Questions</span>
+            </div>
+
+            <h2 class="text-4xl font-black tracking-tight mb-12">
+                Common support requests
+            </h2>
+
+            <div class="space-y-5">
+
+                <details class="bg-white border border-slate-200 rounded-[1.8rem] p-7 shadow-soft group">
+
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-bold text-lg">
+                            How do I reset an employee login?
+                        </span>
+
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                            <i class="fas fa-plus text-slate-500 group-open:rotate-45 transition"></i>
+                        </div>
+                    </summary>
+
+                    <p class="mt-6 text-slate-500 leading-relaxed">
+                        Navigate to the Personnel section within BaseCare Admin,
+                        select the employee profile, and choose “Reset Access”.
+                        A temporary authentication link can be sent by SMS or email.
+                    </p>
+
+                </details>
+
+                <details class="bg-white border border-slate-200 rounded-[1.8rem] p-7 shadow-soft group">
+
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-bold text-lg">
+                            Is Carelink PHIPA and HIPAA aligned?
+                        </span>
+
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                            <i class="fas fa-plus text-slate-500 group-open:rotate-45 transition"></i>
+                        </div>
+                    </summary>
+
+                    <p class="mt-6 text-slate-500 leading-relaxed">
+                        Yes. Carelink uses encrypted infrastructure, access controls,
+                        audit logging, secure hosting environments, and operational
+                        safeguards designed for healthcare environments.
+                    </p>
+
+                </details>
+
+                <details class="bg-white border border-slate-200 rounded-[1.8rem] p-7 shadow-soft group">
+
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-bold text-lg">
+                            Can we import existing employee records?
+                        </span>
+
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                            <i class="fas fa-plus text-slate-500 group-open:rotate-45 transition"></i>
+                        </div>
+                    </summary>
+
+                    <p class="mt-6 text-slate-500 leading-relaxed">
+                        Yes. Our onboarding team can assist with importing employee lists,
+                        credentials, seniority data, schedules, and historical staffing records.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+        <!-- TICKET -->
+        <div id="ticket">
+
+            <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200 shadow-card sticky top-28">
+
+                <div class="flex items-center justify-between mb-8">
+
+                    <div>
+                        <div class="text-sm font-bold uppercase tracking-[0.25em] text-carelink mb-3">
+                            Open Support Ticket
+                        </div>
+
+                        <h3 class="text-3xl font-black tracking-tight">
+                            Need direct assistance?
+                        </h3>
+                    </div>
+
+                    <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center">
+                        <i class="fas fa-headset text-carelink text-xl"></i>
+                    </div>
+
+                </div>
+
+                <p class="text-slate-500 leading-relaxed mb-8">
+                    Our Hamilton-based support and onboarding specialists respond
+                    to critical operational issues within business hours.
+                </p>
+
+                <form class="space-y-5">
+
+                    <div class="grid grid-cols-2 gap-5">
+
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+                        >
+
+                        <input
+                            type="email"
+                            placeholder="Work Email"
+                            class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+                        >
+
+                    </div>
+
+                    <input
+                        type="text"
+                        placeholder="Organization"
+                        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+                    >
+
+                    <select class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none">
+
+                        <option>Issue Category</option>
+                        <option>Scheduling</option>
+                        <option>Compliance</option>
+                        <option>Technical Support</option>
+                        <option>Billing</option>
+                        <option>Account Access</option>
+
+                    </select>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Describe your issue or request..."
+                        class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-carelink outline-none"
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-dark hover:bg-slate-800 transition text-white py-5 rounded-2xl font-bold shadow-xl"
+                    >
+                        Submit Support Request
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="px-6 pb-28">
+
+        <div class="max-w-7xl mx-auto rounded-[3rem] overflow-hidden bg-dark relative">
+
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,101,34,0.22),transparent_25%)]"></div>
+
+            <div class="relative px-10 md:px-20 py-20 text-center text-white">
+
+                <div class="text-carelink uppercase tracking-[0.28em] text-xs font-bold mb-6">
+                    Enterprise Support
+                </div>
+
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-8">
+                    Need onboarding or implementation guidance?
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-slate-400 text-lg leading-relaxed mb-10">
+                    Schedule a guided session with our implementation specialists
+                    to configure workforce automation for your facility.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+
+                    <a href="#"
+                       class="bg-carelink hover:bg-orange-600 transition px-10 py-5 rounded-2xl font-bold shadow-glow">
+                        Schedule a Session
+                    </a>
+
+                    <a href="/resources"
+                       class="border border-white/10 hover:bg-white/5 transition px-10 py-5 rounded-2xl font-bold">
+                        Browse Documentation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-100 py-10">
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-5">
+
+            <div class="text-sm text-slate-500">
+                © 2026 Carelink Healthcare Inc. · Hamilton/Burlington Region
+            </div>
+
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-500">
+
+                <a href="/privacy-policy" class="hover:text-carelink transition">
+                    Privacy Policy
+                </a>
+
+                <a href="#" class="hover:text-carelink transition">
+                    Terms of Service
+                </a>
+
+                <a href="mailto:support@thecarelink.ca" class="hover:text-carelink transition">
+                    support@thecarelink.ca
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

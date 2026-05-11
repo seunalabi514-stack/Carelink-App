@@ -229,6 +229,25 @@ h1,h2,h3,h4,h5{
    class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
    Book a Demo
 </a>
+ <!-- HAMBURGER -->
+            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- JS FOR MENU -->
+<script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+</script>
 
         </div>
     </nav>

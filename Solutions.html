@@ -3,21 +3,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
+
     <script>
-  (function() {
-    const url = window.location.href;
-    // Checks if the URL contains '.html'
-    if (url.includes('.html')) {
-      // Strips the extension without reloading the page
-      const cleanUrl = url.split('.html')[0];
-      window.history.replaceState(null, null, cleanUrl);
-    }
-  })();
-</script>
-      <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+    <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -47,17 +48,10 @@
       background: rgba(255,255,255,0.75);
     }
 
-    .hero-grid {
-      background-image:
-        linear-gradient(to right, rgba(15,23,42,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15,23,42,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-        /* =========================
-           MOBILE NAV DROPDOWN
-        ========================== */
-           @media (max-width: 1024px) {
+    /* =========================
+       FIXED MOBILE NAV DROPDOWN
+    ========================== */
+    @media (max-width: 1024px) {
         #navMenu.active {
             display: flex !important;
             flex-direction: column;
@@ -103,23 +97,22 @@
 <body class="bg-white text-slate-800 overflow-x-hidden">
 
 <!-- NAV -->
-<nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-    <div class="flex items-center space-x-2">
-        <a href="index.html" class="flex items-center space-x-2">
-            <div class="text-carelink-orange text-2xl font-bold flex items-center">
-                <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
-            </div>
-            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
-        </a>
- </div>
-        </a>
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="text-carelink text-2xl font-bold flex items-center">
+                    <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+                </div>
+                <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+            </a>
+        </div>
 
-        <!-- DESKTOP MENU -->
-        <div id="navMenu"
-             class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
-
+        <!-- MENU CONTAINER -->
+        <!-- Removed lg:flex to prevent Tailwind override conflicts -->
+        <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
             <a href="Product.html" class="hover:text-carelink transition">Product</a>
-            <a href="Solutions.html" class="text-carelink font-bold border-b-2 border-carelink pb-1">Solutions</a>
+            <a href="Solutions.html" class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">Solutions</a>
             <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
             <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
             <a href="about.html" class="hover:text-carelink transition">About Us</a>
@@ -127,9 +120,7 @@
 
         <!-- RIGHT SIDE -->
         <div class="flex items-center space-x-4">
-
-            <a href="Login.html"
-               class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
+            <a href="Login.html" class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
                 Log in
             </a>
 
@@ -140,12 +131,10 @@
             </a>
 
             <!-- HAMBURGER -->
-            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
+            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700 focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
-
         </div>
-
     </div>
 </nav>
 
@@ -154,11 +143,18 @@
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("navMenu");
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
         menu.classList.toggle("active");
     });
-</script>
 
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            menu.classList.remove("active");
+        }
+    });
+</script>
 <!-- HERO -->
 <header class="relative overflow-hidden bg-gradient-to-b from-orange-50/70 to-white py-28">
 

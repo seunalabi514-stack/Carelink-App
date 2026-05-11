@@ -39,6 +39,80 @@
     </script>
 
     <style>
+/* Prevent width issues */
+* {
+    box-sizing: border-box;
+}
+
+/* Make page fit screen */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexible images/videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent fixed elements from breaking layout */
+.container,
+.wrapper,
+.main,
+section,
+div {
+    max-width: 100%;
+}
+
+/* Mobile adjustments only */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    /* Stack layouts vertically */
+    .row,
+    .flex,
+    .grid {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Make text fit smaller screens */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Buttons and inputs fit screen */
+    button,
+    input,
+    textarea,
+    select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Tables scroll instead of breaking */
+    table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+}
+
+
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
         html {

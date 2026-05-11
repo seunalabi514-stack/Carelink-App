@@ -1,63 +1,206 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
     <link rel="icon" type="image/png" href="favicon.png">
-
     <script>
-      (function() {
-        const url = window.location.href;
-        if (url.includes('.html')) {
-          const cleanUrl = url.split('.html')[0];
-          window.history.replaceState(null, null, cleanUrl);
-        }
-      })();
-    </script>
+  (function() {
+    const url = window.location.href;
+    // Checks if the URL contains '.html'
+    if (url.includes('.html')) {
+      // Strips the extension without reloading the page
+      const cleanUrl = url.split('.html')[0];
+      window.history.replaceState(null, null, cleanUrl);
+    }
+  })();
+</script>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            carelink: "#F26522",
-            dark: "#0F172A",
-          },
-          boxShadow: {
-            soft: "0 10px 30px rgba(0,0,0,0.06)",
-            glow: "0 20px 60px rgba(242,101,34,0.15)",
-          },
-        },
-      },
-    };
-  </script>
+:root{
+    --carelink:#F26522;
+    --dark:#0F172A;
+}
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+html{
+    scroll-behavior:smooth;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
+body{
+    font-family:'Inter',sans-serif;
+    background:#ffffff;
+    color:#0f172a;
+    overflow-x:hidden;
+}
+
+/* Brand */
+.bg-carelink-orange{ background-color:var(--carelink); }
+.text-carelink-orange{ color:var(--carelink); }
+
+.bg-soft-orange{
+    background:linear-gradient(
+        180deg,
+        #FFF8F4 0%,
+        #FFF4ED 100%
+    );
+}
+
+/* NAV */
+nav{
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+/* HERO LIGHTING */
+.hero-glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,rgba(242,101,34,.18),transparent 65%);
+    filter:blur(60px);
+    top:-250px;
+    right:-150px;
+    pointer-events:none;
+}
+
+.hero-glow-2{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,rgba(59,130,246,.08),transparent 70%);
+    filter:blur(60px);
+    bottom:-250px;
+    left:-120px;
+    pointer-events:none;
+}
+
+/* PREMIUM BUTTONS */
+.btn-primary{
+    background:linear-gradient(
+        135deg,
+        #F26522 0%,
+        #ff7a3d 100%
+    );
+    box-shadow:
+        0 10px 30px rgba(242,101,34,.25),
+        inset 0 1px 0 rgba(255,255,255,.2);
+    transition:all .25s ease;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 20px 40px rgba(242,101,34,.28),
+        inset 0 1px 0 rgba(255,255,255,.2);
+}
+
+/* GLASS CARD */
+.glass-card{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.6);
+}
+
+/* CARD */
+.feature-card{
+    background:#fff;
+    border:1px solid #f1f5f9;
+    border-radius:24px;
+    transition:all .3s ease;
+    box-shadow:
+        0 4px 20px rgba(15,23,42,.04);
+}
+
+.feature-card:hover{
+    transform:translateY(-6px);
+    box-shadow:
+        0 25px 60px rgba(15,23,42,.08);
+}
+
+/* DASHBOARD WINDOW */
+.dashboard-window{
+    background:#fff;
+    border-radius:28px;
+    overflow:hidden;
+    border:1px solid #e2e8f0;
+    box-shadow:
+        0 30px 80px rgba(15,23,42,.12);
+}
+
+/* METRIC */
+.metric-card{
+    background:#fff;
+    border:1px solid #f1f5f9;
+    border-radius:22px;
+    box-shadow:
+        0 8px 30px rgba(15,23,42,.05);
+}
+
+/* TEXT */
+h1,h2,h3,h4,h5{
+    letter-spacing:-0.03em;
+}
+
+/* PREMIUM BADGE */
+.premium-badge{
+    background:rgba(242,101,34,.08);
+    border:1px solid rgba(242,101,34,.12);
+    color:var(--carelink);
+}
+
+/* SECTION DIVIDER */
+.section-divider{
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #e2e8f0,
+        transparent
+    );
+}
+
+/* FLOATING */
+.float{
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
+}
+
+/* DASHBOARD GRID */
+.dashboard-grid{
+    background-image:
+        linear-gradient(to right,#f8fafc 1px,transparent 1px),
+        linear-gradient(to bottom,#f8fafc 1px,transparent 1px);
+    background-size:32px 32px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    h1{
+        font-size:3rem !important;
+        line-height:1.05 !important;
     }
 
-    .glass {
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.75);
+    section{
+        overflow:hidden;
     }
 
-    .hero-grid {
-      background-image:
-        linear-gradient(to right, rgba(15,23,42,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15,23,42,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+    .feature-card{
+        border-radius:20px;
     }
 
-        /* =========================
+}
+         /* =========================
            MOBILE NAV DROPDOWN
         ========================== */
         @media (max-width: 1024px) {
@@ -81,52 +224,36 @@
                 padding: 10px 0;
             }
         }
-    </style>
-
+</style>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
+<body class="bg-white text-slate-800">
 
-<body class="bg-white text-slate-800 overflow-x-hidden">
-
-<!-- NAV -->
-<nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-    <div class="flex items-center space-x-2">
-        <a href="index.html" class="flex items-center space-x-2">
+    <nav class="sticky top-0 z-50 bg-white/80 border-b border-slate-100">
+<div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
             <div class="text-carelink-orange text-2xl font-bold flex items-center">
-                <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+                 <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
             </div>
             <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
-        </a>
- </div>
-        </a>
-
-        <!-- DESKTOP MENU -->
-        <div id="navMenu"
-             class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
-
-            <a href="Product.html" class="hover:text-carelink transition">Product</a>
-            <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
-            <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
-            <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
-            <a href="about.html" class="text-carelink font-bold border-b-2 border-carelink pb-1">About Us</a>
         </div>
-
-        <!-- RIGHT SIDE -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html" class="hover:text-carelink-orange">Product</a>
+            <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
+            <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
+            <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
+            <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+            <a href="Support.html" class="hover:text-carelink-orange">Support</a>
+        </div>
         <div class="flex items-center space-x-4">
-
-            <a href="Login.html"
-               class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
-                Log in
-            </a>
-
-            <a href="javascript:void(0)"
-               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-               class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
-                Book a Demo
-            </a>
-
-            <!-- HAMBURGER -->
+            <a href="Login.html" class="text-sm font-semibold">Log in</a>
+            <a href="#"
+   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+   Book a Demo
+</a>
+ <!-- HAMBURGER -->
             <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
                 <i class="fas fa-bars"></i>
             </button>

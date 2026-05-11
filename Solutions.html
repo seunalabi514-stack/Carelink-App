@@ -73,17 +73,29 @@ tailwind.config = {
 </nav>
 
 <!-- HERO -->
-<header class="bg-gradient-to-b from-orange-50/70 to-white py-24">
-  <div class="max-w-5xl mx-auto text-center px-6">
+<header class="relative overflow-hidden bg-gradient-to-b from-orange-50/70 to-white py-28">
 
-    <p class="text-carelink text-xs uppercase tracking-[0.25em] font-semibold mb-5">
-      Workforce Infrastructure for Ontario LTC
-    </p>
+    <!-- GLOW -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
 
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
-      Staffing stability requires more than scheduling software
-    </h1>
+        <div class="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-100 blur-3xl opacity-40 rounded-full"></div>
 
+    </div>
+
+    <div class="relative max-w-5xl mx-auto text-center px-6">
+
+        <div class="inline-flex items-center px-4 py-2 rounded-full border border-orange-100 bg-white shadow-sm text-[11px] uppercase tracking-[0.25em] font-bold text-carelink mb-8">
+             WORKFORCE INFRASTRUCTURE FOR ONTARIO LTC
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black leading-[1.02] tracking-tight text-slate-900">
+
+            Staffing stability requires
+            <span class="text-carelink">
+                more than scheduling software
+            </span>
+
+        </h1>
     <p class="mt-8 text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
       Carelink combines workforce automation with professional healthcare staffing to help long-term care operators reduce compliance risk, staffing shortages, and operational disruption.
     </p>

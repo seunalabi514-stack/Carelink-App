@@ -7,7 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="favicon.png">
-
+ <script>
+  (function() {
+    const url = window.location.href;
+    // Checks if the URL contains '.html'
+    if (url.includes('.html')) {
+      // Strips the extension without reloading the page
+      const cleanUrl = url.split('.html')[0];
+      window.history.replaceState(null, null, cleanUrl);
+    }
+  })();
+</script>
     <script>
         tailwind.config = {
             theme: {

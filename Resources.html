@@ -2,242 +2,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
+    <title>Carelink Healthcare | Resources</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="favicon.png">
+
     <script>
-  (function() {
-    const url = window.location.href;
-    // Checks if the URL contains '.html'
-    if (url.includes('.html')) {
-      // Strips the extension without reloading the page
-      const cleanUrl = url.split('.html')[0];
-      window.history.replaceState(null, null, cleanUrl);
-    }
-  })();
-</script>
-      <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        carelink: '#F06529',
-      },
-      boxShadow: {
-        soft: "0 10px 30px rgba(0,0,0,0.06)"
+      (function() {
+        const url = window.location.href;
+
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              carelink: '#F06529',
+            },
+            boxShadow: {
+              soft: "0 10px 30px rgba(0,0,0,0.06)"
+            }
+          }
+        }
       }
-    }
-  }
-}
-</script>
-    
+    </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .bg-carelink-orange { background-color: #F26522; }
-        .text-carelink-orange { color: #F26522; }
-        .bg-soft-orange { background-color: #FFF5F0; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+
+      .bg-carelink-orange {
+        background-color: #F26522;
+      }
+
+      .text-carelink-orange {
+        color: #F26522;
+      }
+
+      .bg-soft-orange {
+        background-color: #FFF5F0;
+      }
     </style>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 </head>
+
 <body class="bg-white text-slate-800">
 
-    <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+<!-- NAV -->
+<nav class="flex items-center justify-between px-8 py-5 max-w-7xl mx-auto">
+
     <div class="flex items-center space-x-2">
+
         <a href="index.html" class="flex items-center space-x-2">
+
             <div class="text-carelink-orange text-2xl font-bold flex items-center">
-                <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+                <img src="logo.png" alt="Carelink Logo" class="h-10">
+                Carelink
             </div>
-            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+
+            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">
+                Healthcare
+            </span>
+
         </a>
+
     </div>
 
     <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-        <a href="Product.html" class="hover:text-carelink-orange">Product</a>
-        <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
-        <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
-        <a href="Resources.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange">Resources</a>
-        <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+
+        <a href="Product.html" class="hover:text-carelink-orange transition">
+            Product
+        </a>
+
+        <a href="Solutions.html" class="hover:text-carelink-orange transition">
+            Solutions
+        </a>
+
+        <a href="Pricing.html" class="hover:text-carelink-orange transition">
+            Pricing
+        </a>
+
+        <a href="Resources.html" class="text-carelink-orange font-bold border-b-2 border-carelink-orange pb-1">
+            Resources
+        </a>
+
+        <a href="about.html" class="hover:text-carelink-orange transition">
+            About Us
+        </a>
+
     </div>
 
     <div class="flex items-center space-x-4">
-        <a href="Login.html" class="text-sm font-semibold">Log in</a>
+
+        <a href="Login.html" class="text-sm font-semibold">
+            Log in
+        </a>
+
         <a href="javascript:void(0)"
-   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-   class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition inline-block">
-   Book a Demo
-</a>
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+        class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition inline-block">
+
+            Book a Demo
+
+        </a>
+
     </div>
+
 </nav>
 
 <!-- HERO -->
-<header class="bg-gradient-to-b from-orange-50/60 to-white py-20">
-  <div class="max-w-4xl mx-auto text-center px-6">
+<header class="relative overflow-hidden bg-gradient-to-b from-orange-50 via-white to-white py-24">
 
-    <p class="text-carelink text-xs uppercase tracking-widest font-semibold mb-4">
-      LTC Operational Intelligence Hub
-    </p>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-3xl opacity-30"></div>
 
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
-      Insights that help LTC operators reduce risk and stabilize staffing
-    </h1>
+    <div class="relative max-w-5xl mx-auto text-center px-6">
 
-    <p class="mt-6 text-slate-600 text-lg max-w-2xl mx-auto">
-      Practical guides, compliance breakdowns, and real-world case studies from Ontario healthcare environments.
-    </p>
+        <div class="inline-flex items-center gap-2 bg-white border border-orange-100 shadow-sm rounded-full px-4 py-2 mb-8">
 
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="javascript:void(0)"
-   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-   class="bg-carelink text-white px-6 py-3 rounded-lg font-semibold shadow-soft hover:opacity-90 transition inline-block">
-   Book a Demo
-</a>
-    
-      <a href="#content" class="border border-slate-200 px-6 py-3 rounded-lg font-semibold hover:bg-slate-50">
-        Explore Resources
-      </a>
+            <span class="w-2 h-2 bg-carelink rounded-full"></span>
+
+            <span class="text-xs font-semibold tracking-widest uppercase text-slate-500">
+                LTC Operational Intelligence Hub
+            </span>
+
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight leading-tight max-w-4xl mx-auto">
+
+            Resources built for modern
+            <span class="text-carelink">LTC workforce operations</span>
+
+        </h1>
+
+        <p class="mt-6 text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+
+            Whitepapers, operational guides, staffing insights, and compliance strategies designed for Ontario healthcare environments.
+
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+
+            <a href="javascript:void(0)"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+            class="bg-carelink text-white px-7 py-3.5 rounded-xl font-semibold shadow-soft hover:scale-[1.02] transition">
+
+                Book a Demo
+
+            </a>
+
+            <a href="#content"
+            class="border border-slate-200 bg-white px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition">
+
+                Explore Resources
+
+            </a>
+
+        </div>
+
     </div>
 
-  </div>
 </header>
 
 <!-- CATEGORY STRIP -->
-<section class="border-t border-slate-100 py-6">
-  <div class="max-w-7xl mx-auto px-6 flex gap-6 overflow-x-auto text-sm font-semibold text-slate-500">
+<section class="sticky top-0 z-30 bg-white/80 backdrop-blur border-y border-slate-100">
 
-    <button class="text-carelink border-b-2 border-carelink pb-1">All</button>
-    <button class="hover:text-slate-900">Whitepapers</button>
-    <button class="hover:text-slate-900">Case Studies</button>
-    <button class="hover:text-slate-900">Webinars</button>
-    <button class="hover:text-slate-900">Compliance</button>
+    <div class="max-w-7xl mx-auto px-6 overflow-x-auto">
 
-  </div>
+        <div class="flex gap-8 py-5 min-w-max text-sm font-semibold">
+
+            <button class="text-carelink border-b-2 border-carelink pb-2">
+                All Resources
+            </button>
+
+            <button class="text-slate-500 hover:text-slate-900 transition">
+                Whitepapers
+            </button>
+
+            <button class="text-slate-500 hover:text-slate-900 transition">
+                Case Studies
+            </button>
+
+            <button class="text-slate-500 hover:text-slate-900 transition">
+                Webinars
+            </button>
+
+            <button class="text-slate-500 hover:text-slate-900 transition">
+                Compliance
+            </button>
+
+            <button class="text-slate-500 hover:text-slate-900 transition">
+                Staffing Strategy
+            </button>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- CONTENT -->
 <section id="content" class="py-20">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-10">
 
-    <!-- FEATURED (BIG CARD) -->
-    <div class="lg:col-span-2 bg-white border border-slate-100 rounded-2xl shadow-soft overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-10">
 
-      <div class="h-64 bg-slate-100 flex items-center justify-center">
-        <i class="fas fa-file-alt text-carelink text-6xl opacity-40"></i>
-      </div>
+        <!-- FEATURED RESOURCE -->
+        <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-soft hover:shadow-xl transition duration-300">
 
-      <div class="p-8">
-        <p class="text-carelink text-xs uppercase font-bold tracking-widest">Featured Whitepaper</p>
-        <h2 class="text-2xl font-bold mt-3">
-          The 2026 Ontario LTC Compliance Playbook
-        </h2>
-        <p class="text-slate-600 mt-4 leading-relaxed">
-          A breakdown of how modern LTC operators can embed union rules, credential validation, and staffing fairness directly into their workflows.
-        </p>
+            <div class="relative h-72 bg-gradient-to-br from-[#0F172A] to-slate-800 overflow-hidden">
 
-        <a href="#" class="inline-flex items-center mt-6 text-carelink font-semibold">
-          Download now
-          <i class="fas fa-arrow-right ml-2 text-xs"></i>
-        </a>
-      </div>
+                <div class="absolute inset-0 opacity-10">
+
+                    <div class="absolute top-10 left-10 w-40 h-40 border border-white rounded-full"></div>
+
+                    <div class="absolute bottom-0 right-0 w-64 h-64 border border-white rounded-full"></div>
+
+                </div>
+
+                <div class="relative p-10 h-full flex flex-col justify-between text-white">
+
+                    <div class="flex items-center justify-between">
+
+                        <div class="bg-white/10 border border-white/10 px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-bold">
+                            Featured Whitepaper
+                        </div>
+
+                        <div class="text-xs text-slate-300">
+                            Updated May 2026
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-3xl font-bold max-w-xl leading-tight">
+                            The 2026 Ontario LTC Compliance Playbook
+                        </h2>
+
+                        <p class="text-slate-300 mt-4 max-w-lg">
+                            How leading LTC operators are reducing scheduling risk and embedding compliance into workforce operations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="p-8 flex items-center justify-between flex-wrap gap-4">
+
+                <div class="flex items-center gap-6 text-sm text-slate-500">
+
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-download text-carelink"></i>
+                        2,481 downloads
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-clock text-carelink"></i>
+                        12 min read
+                    </div>
+
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center bg-carelink text-white px-5 py-3 rounded-xl font-semibold hover:opacity-90 transition">
+
+                    Download PDF
+
+                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 h-fit">
+
+            <div class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-3 py-1 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-5">
+
+                <span class="w-2 h-2 rounded-full bg-carelink"></span>
+
+                Weekly LTC Insights
+
+            </div>
+
+            <h3 class="font-bold text-2xl leading-tight">
+                Stay ahead of staffing and compliance changes
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                Receive operational guidance, workforce insights, and regulatory updates designed specifically for Ontario LTC environments.
+            </p>
+
+            <input type="email"
+            placeholder="Enter your email"
+            class="w-full mt-8 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-carelink/20">
+
+            <button class="w-full mt-4 bg-carelink text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
+                Subscribe
+            </button>
+
+            <p class="text-xs text-slate-400 mt-4">
+                No spam. Only practical operational insights.
+            </p>
+
+        </div>
 
     </div>
 
-    <!-- SIDEBAR CTA -->
-    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 h-fit">
+    <!-- RESOURCE CARDS -->
+    <div class="max-w-7xl mx-auto px-6 mt-16 grid md:grid-cols-3 gap-8">
 
-      <h3 class="font-bold text-lg">Get weekly LTC insights</h3>
-      <p class="text-sm text-slate-600 mt-2">
-        Compliance updates, staffing strategies, and operational best practices.
-      </p>
+        <!-- CARD -->
+        <div class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
 
-      <input type="email" placeholder="Email address"
-        class="w-full mt-6 px-4 py-3 rounded-lg border border-slate-200 text-sm">
+            <div class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden">
 
-      <button class="w-full mt-4 bg-carelink text-white py-3 rounded-lg font-semibold hover:opacity-90">
-        Subscribe
-      </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
 
-      <p class="text-xs text-slate-400 mt-3">
-        No spam. Only operational insights.
-      </p>
+                <i class="fas fa-video text-carelink text-5xl opacity-80 group-hover:scale-110 transition"></i>
+
+            </div>
+
+            <div class="p-6">
+
+                <div class="flex items-center justify-between mb-3">
+
+                    <p class="text-carelink text-xs font-bold uppercase tracking-widest">
+                        Webinar
+                    </p>
+
+                    <span class="text-[11px] text-slate-400">
+                        8 min
+                    </span>
+
+                </div>
+
+                <h3 class="font-bold text-lg leading-snug">
+                    Reducing Agency Spend by 35%
+                </h3>
+
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                    Real-world staffing optimization strategies for LTC operators managing labor pressure and compliance risk.
+                </p>
+
+                <a href="#"
+                class="inline-flex items-center mt-5 text-carelink font-semibold text-sm">
+
+                    Read resource
+
+                    <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
+
+            <div class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
+
+                <i class="fas fa-users text-carelink text-5xl opacity-80 group-hover:scale-110 transition"></i>
+
+            </div>
+
+            <div class="p-6">
+
+                <div class="flex items-center justify-between mb-3">
+
+                    <p class="text-carelink text-xs font-bold uppercase tracking-widest">
+                        Case Study
+                    </p>
+
+                    <span class="text-[11px] text-slate-400">
+                        6 min
+                    </span>
+
+                </div>
+
+                <h3 class="font-bold text-lg leading-snug">
+                    Rygiel Supports Transformation
+                </h3>
+
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                    How structured workforce planning improved staffing consistency and reduced operational burnout.
+                </p>
+
+                <a href="#"
+                class="inline-flex items-center mt-5 text-carelink font-semibold text-sm">
+
+                    Read resource
+
+                    <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
+
+            <div class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
+
+                <i class="fas fa-shield-alt text-carelink text-5xl opacity-80 group-hover:scale-110 transition"></i>
+
+            </div>
+
+            <div class="p-6">
+
+                <div class="flex items-center justify-between mb-3">
+
+                    <p class="text-carelink text-xs font-bold uppercase tracking-widest">
+                        Compliance
+                    </p>
+
+                    <span class="text-[11px] text-slate-400">
+                        10 min
+                    </span>
+
+                </div>
+
+                <h3 class="font-bold text-lg leading-snug">
+                    Union Rule Automation Guide
+                </h3>
+
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                    Learn how modern workforce systems automate collective agreement enforcement in LTC scheduling.
+                </p>
+
+                <a href="#"
+                class="inline-flex items-center mt-5 text-carelink font-semibold text-sm">
+
+                    Read resource
+
+                    <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
-
-  <!-- SECOND ROW -->
-  <div class="max-w-7xl mx-auto px-6 mt-16 grid md:grid-cols-3 gap-8">
-
-    <!-- CARD -->
-    <div class="border border-slate-100 rounded-2xl overflow-hidden hover:shadow-soft transition">
-      <div class="h-40 bg-slate-100 flex items-center justify-center">
-        <i class="fas fa-video text-carelink text-4xl opacity-40"></i>
-      </div>
-      <div class="p-6">
-        <p class="text-carelink text-xs font-bold uppercase">Webinar</p>
-        <h3 class="font-semibold mt-2">Reducing Agency Spend by 35%</h3>
-        <p class="text-sm text-slate-600 mt-2">
-          Real-world strategies for controlling staffing costs in LTC environments.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-slate-100 rounded-2xl overflow-hidden hover:shadow-soft transition">
-      <div class="h-40 bg-slate-100 flex items-center justify-center">
-        <i class="fas fa-users text-carelink text-4xl opacity-40"></i>
-      </div>
-      <div class="p-6">
-        <p class="text-carelink text-xs font-bold uppercase">Case Study</p>
-        <h3 class="font-semibold mt-2">Rygiel Supports Transformation</h3>
-        <p class="text-sm text-slate-600 mt-2">
-          How structured scheduling improved workforce stability and reduced burnout.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-slate-100 rounded-2xl overflow-hidden hover:shadow-soft transition">
-      <div class="h-40 bg-slate-100 flex items-center justify-center">
-        <i class="fas fa-shield-alt text-carelink text-4xl opacity-40"></i>
-      </div>
-      <div class="p-6">
-        <p class="text-carelink text-xs font-bold uppercase">Compliance</p>
-        <h3 class="font-semibold mt-2">Union Rule Automation Guide</h3>
-        <p class="text-sm text-slate-600 mt-2">
-          How to embed collective agreement rules directly into scheduling logic.
-        </p>
-      </div>
-    </div>
-
-  </div>
 
 </section>
 
 <!-- FINAL CTA -->
-<section class="py-24 bg-[#FFF9F6] border-t border-orange-50">
-  <div class="max-w-4xl mx-auto text-center px-6">
+<section class="py-28 bg-[#0F172A] relative overflow-hidden">
 
-    <h2 class="text-3xl font-bold">Want tailored guidance for your LTC facility?</h2>
-    <p class="text-slate-600 mt-4">
-      Speak with our team to see how Carelink applies to your operational environment.
-    </p>
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-carelink/10 rounded-full blur-3xl"></div>
 
-    <a href="javascript:void(0)"
-   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;" class="inline-block mt-8 bg-carelink text-white px-8 py-4 rounded-lg font-semibold shadow-soft hover:opacity-90">
-      Book a Demo
-    </a>
+    <div class="relative max-w-4xl mx-auto text-center px-6 text-white">
 
-  </div>
+        <p class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-5">
+            Workforce Transformation
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+            Want operational guidance tailored to your LTC environment?
+        </h2>
+
+        <p class="text-slate-400 mt-6 text-lg max-w-2xl mx-auto">
+            Speak with the Carelink team to explore staffing optimization, compliance automation, and workforce modernization strategies.
+        </p>
+
+        <div class="mt-10">
+
+            <a href="javascript:void(0)"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+            class="inline-flex items-center bg-carelink text-white px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-[1.02] transition">
+
+                Book a Demo
+
+                <i class="fas fa-arrow-right ml-3 text-sm"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- FOOTER -->
-<footer class="py-10 text-center border-t border-slate-100">
-  <p class="text-xs text-slate-400">
-    © 2026 Carelink Healthcare Inc. · Ontario, Canada
-  </p>
+<footer class="py-12 border-t border-slate-100 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+        <div class="flex items-center gap-3">
+
+            <img src="logo.png" alt="Carelink Logo" class="h-10">
+
+            <div>
+
+                <div class="font-bold text-slate-900">
+                    Carelink Healthcare
+                </div>
+
+                <div class="text-xs text-slate-400 uppercase tracking-widest">
+                    Ontario, Canada
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="flex items-center gap-8 text-sm text-slate-500">
+
+            <a href="privacy.html" class="hover:text-slate-900 transition">
+                Privacy
+            </a>
+
+            <a href="Terms.html" class="hover:text-slate-900 transition">
+                Terms
+            </a>
+
+            <a href="about.html" class="hover:text-slate-900 transition">
+                About
+            </a>
+
+        </div>
+
+    </div>
+
 </footer>
 
 </body>
 </html>
-

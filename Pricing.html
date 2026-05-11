@@ -13,7 +13,6 @@
     <script>
         (function () {
             const url = window.location.href;
-
             if (url.includes('.html')) {
                 const cleanUrl = url.split('.html')[0];
                 window.history.replaceState(null, null, cleanUrl);
@@ -41,13 +40,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
 
         .glass {
             backdrop-filter: blur(14px);
@@ -61,53 +56,44 @@
             background-size: 40px 40px;
         }
 
-        /* ============================= */
-        /* MOBILE TOPBAR FIX (ONLY NAV) */
-        /* ============================= */
-        @media screen and (max-width: 768px) {
+        /* =========================
+           MOBILE NAV DROPDOWN
+        ========================== */
+        @media (max-width: 1024px) {
 
-            nav .max-w-7xl {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-            }
-
-            nav .hidden.lg\:flex {
+            #navMenu.active {
                 display: flex !important;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-                text-align: center;
-            }
-
-            nav .hidden.lg\:flex a {
-                display: inline-block;
-                padding: 6px 10px;
-            }
-
-            nav .flex.items-center.space-x-4 {
                 flex-direction: column;
-                gap: 10px;
-                width: 100%;
-                align-items: center;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid #eee;
+                z-index: 999;
             }
 
+            #navMenu a {
+                text-align: center;
+                padding: 10px 0;
+            }
         }
     </style>
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-
-    <script src="https://assets.calendly.com/assets/external/widget.js"
-            type="text/javascript"
-            async></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 
 <body class="bg-white text-slate-800 overflow-x-hidden">
 
 <!-- NAV -->
-<nav class="sticky top-0 z-50 glass border-b border-slate-100">
+<nav class="sticky top-0 z-50 glass border-b border-slate-100 relative">
+
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
 
+        <!-- LOGO -->
         <a href="index.html" class="flex items-center space-x-3">
             <img src="logo.png" alt="Carelink Logo" class="h-10">
 
@@ -115,14 +101,16 @@
                 <div class="text-xl font-extrabold tracking-tight">
                     Carelink
                 </div>
-
                 <div class="text-[10px] uppercase tracking-[0.3em] text-carelink font-bold mt-1">
                     Healthcare
                 </div>
             </div>
         </a>
 
-        <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+        <!-- DESKTOP MENU -->
+        <div id="navMenu"
+             class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+
             <a href="/Product.html" class="hover:text-carelink transition">Product</a>
             <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
             <a href="Pricing.html" class="text-carelink font-bold border-b-2 border-carelink pb-1">Pricing</a>
@@ -130,7 +118,9 @@
             <a href="about.html" class="hover:text-carelink transition">About Us</a>
         </div>
 
+        <!-- RIGHT SIDE -->
         <div class="flex items-center space-x-4">
+
             <a href="Login.html"
                class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
                 Log in
@@ -141,14 +131,30 @@
                class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
                 Book a Demo
             </a>
+
+            <!-- HAMBURGER -->
+            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+
         </div>
 
     </div>
 </nav>
 
-<!-- REST OF YOUR PAGE (UNCHANGED) -->
+<!-- JS FOR MENU -->
+<script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+</script>
+
 <!-- HERO -->
 <header class="relative overflow-hidden">
+
     <div class="absolute inset-0 gradient-grid"></div>
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-carelink/10 blur-[120px] rounded-full"></div>
 
@@ -167,21 +173,6 @@
             Whether you need workforce automation, staffing infrastructure,
             or enterprise operational control — Carelink scales with your facility.
         </p>
-
-        <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-
-            <a href="javascript:void(0)"
-               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-               class="bg-carelink text-white px-8 py-4 rounded-2xl font-semibold shadow-glow hover:scale-[1.02] transition">
-                Book a Demo
-            </a>
-
-            <a href="#plans"
-               class="border border-slate-200 px-8 py-4 rounded-2xl font-semibold hover:bg-slate-50 transition">
-                View Pricing
-            </a>
-
-        </div>
 
     </div>
 </header>

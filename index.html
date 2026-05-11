@@ -10,9 +10,7 @@
     <script>
   (function() {
     const url = window.location.href;
-    // Checks if the URL contains '.html'
     if (url.includes('.html')) {
-      // Strips the extension without reloading the page
       const cleanUrl = url.split('.html')[0];
       window.history.replaceState(null, null, cleanUrl);
     }
@@ -185,45 +183,48 @@ h1,h2,h3,h4,h5{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-
     h1{
         font-size:3rem !important;
         line-height:1.05 !important;
     }
-
     section{
         overflow:hidden;
     }
-
     .feature-card{
         border-radius:20px;
     }
-
 }
-         /* =========================
-           MOBILE NAV DROPDOWN
-        ========================== */
-        @media (max-width: 1024px) {
 
-            #navMenu.active {
-                display: flex !important;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 20px;
-                gap: 15px;
-                border-bottom: 1px solid #eee;
-                z-index: 999;
-            }
+/* =========================
+   MOBILE NAV DROPDOWN
+========================== */
+#navMenu {
+    display: none; /* Hidden by default */
+}
 
-            #navMenu a {
-                text-align: center;
-                padding: 10px 0;
-            }
-        }
+@media (max-width: 1024px) {
+    #navMenu.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sits right below the nav bar */
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid #eee;
+        z-index: 999;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    #navMenu a {
+        text-align: center;
+        padding: 10px 0;
+        font-weight: 600;
+        color: #475569;
+    }
+}
 </style>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -231,56 +232,73 @@ h1,h2,h3,h4,h5{
 <body class="bg-white text-slate-800">
 
     <nav class="sticky top-0 z-50 bg-white/80 border-b border-slate-100">
-<div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-        <div class="flex items-center space-x-2">
-            <div class="text-carelink-orange text-2xl font-bold flex items-center">
-                 <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+        <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2">
+                <div class="text-carelink-orange text-2xl font-bold flex items-center">
+                     <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+                </div>
+                <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
             </div>
-            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+
+            <!-- Desktop Menu (Hidden on small/medium screens) -->
+            <div class="hidden lg:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="Product.html" class="hover:text-carelink-orange">Product</a>
+                <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
+                <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
+                <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
+                <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+                <a href="Support.html" class="hover:text-carelink-orange">Support</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="Login.html" class="hidden sm:block text-sm font-semibold">Log in</a>
+                <a href="#"
+                   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+                   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+                   Book a Demo
+                </a>
+                
+                <!-- HAMBURGER BUTTON -->
+                <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-            <a href="Product.html" class="hover:text-carelink-orange">Product</a>
-            <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
-            <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
-            <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
-            <a href="about.html" class="hover:text-carelink-orange">About Us</a>
-            <a href="Support.html" class="hover:text-carelink-orange">Support</a>
-        </div>
-        <div class="flex items-center space-x-4">
-            <a href="Login.html" class="text-sm font-semibold">Log in</a>
-            <a href="#"
-   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
-   Book a Demo
-</a>
- <!-- HAMBURGER -->
-            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
-                <i class="fas fa-bars"></i>
-            </button>
 
-        </div>
-
-    </div>
-</nav>
-
-<!-- JS FOR MENU -->
-<script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("navMenu");
-
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("active");
-    });
-</script>
-
+        <!-- MOBILE MENU CONTAINER (Added this) -->
+        <div id="navMenu" class="lg:hidden">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+            <a href="Support.html">Support</a>
+            <a href="Login.html" class="sm:hidden border-t pt-4">Log in</a>
         </div>
     </nav>
 
+    <!-- JS FOR MENU -->
+    <script>
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("navMenu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- REST OF YOUR CONTENT STARTS HERE -->
     <section class="relative max-w-7xl mx-auto px-8 pt-24 pb-24 grid md:grid-cols-2 gap-16 items-center">
-
-<div class="hero-glow"></div>
-<div class="hero-glow-2"></div>
-
+        <div class="hero-glow"></div>
+        <div class="hero-glow-2"></div>
+        <!-- ... content remains the same ... -->
         <div>
             <span class="bg-soft-orange text-carelink-orange text-xs font-bold px-3 py-1 rounded-full border border-orange-100">
                 Built for Long-Term Care & Retirement Homes
@@ -293,9 +311,9 @@ h1,h2,h3,h4,h5{
             </p>
             <div class="mt-10 flex space-x-4">
                 <button
-  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;" class="bg-carelink-orange text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:scale-105 transition">
-  Book a Demo
-</button>
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;" class="bg-carelink-orange text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:scale-105 transition">
+                Book a Demo
+                </button>
                 <a href="How.html" class="px-6 py-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition font-medium">
                     <i class="far fa-play-circle text-carelink-orange text-xl"></i>
                     <span>See How It Works</span>
@@ -315,60 +333,36 @@ h1,h2,h3,h4,h5{
                     </div>
                 </div>
                <div class="p-6 space-y-4">
-
-    <div class="flex items-center justify-between">
-        <div>
-            <div class="h-3 w-32 bg-slate-200 rounded-full mb-2"></div>
-            <div class="h-2 w-20 bg-slate-100 rounded-full"></div>
-        </div>
-
-        <div class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
-            Fully Staffed
-        </div>
-    </div>
-
-    <div class="space-y-3">
-
-        <div class="bg-slate-50 rounded-2xl p-4 flex justify-between items-center">
-            <div>
-                <div class="font-bold text-sm">RN — Night Shift</div>
-                <div class="text-xs text-slate-500 mt-1">7:00 PM - 7:00 AM</div>
-            </div>
-
-            <div class="text-green-600 text-sm font-bold">
-                Assigned
-            </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-4 flex justify-between items-center">
-            <div>
-                <div class="font-bold text-sm">PSW — Evening Shift</div>
-                <div class="text-xs text-slate-500 mt-1">3:00 PM - 11:00 PM</div>
-            </div>
-
-            <div class="text-carelink-orange text-sm font-bold">
-                Seniority Match
-            </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-4 flex justify-between items-center">
-            <div>
-                <div class="font-bold text-sm">RPN — Day Shift</div>
-                <div class="text-xs text-slate-500 mt-1">7:00 AM - 3:00 PM</div>
-            </div>
-
-            <div class="text-blue-600 text-sm font-bold">
-                Optimized
-            </div>
-        </div>
-
-    </div>
-
-</div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="h-3 w-32 bg-slate-200 rounded-full mb-2"></div>
+                            <div class="h-2 w-20 bg-slate-100 rounded-full"></div>
+                        </div>
+                        <div class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                            Fully Staffed
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 rounded-2xl p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-bold text-sm">RN — Night Shift</div>
+                                <div class="text-xs text-slate-500 mt-1">7:00 PM - 7:00 AM</div>
+                            </div>
+                            <div class="text-green-600 text-sm font-bold">Assigned</div>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-bold text-sm">PSW — Evening Shift</div>
+                                <div class="text-xs text-slate-500 mt-1">3:00 PM - 11:00 PM</div>
+                            </div>
+                            <div class="text-carelink-orange text-sm font-bold">Seniority Match</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 <section class="max-w-7xl mx-auto px-8 -mt-4 pb-16">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 

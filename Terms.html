@@ -1,0 +1,555 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service | Carelink Healthcare</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        carelink: '#F26522',
+                        dark: '#0F172A'
+                    },
+                    boxShadow: {
+                        soft: '0 10px 30px rgba(0,0,0,0.06)',
+                        glow: '0 20px 60px rgba(242,101,34,0.15)',
+                        card: '0 25px 60px rgba(15,23,42,0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background: #F8FAFC;
+        }
+
+        .hero-gradient {
+            background:
+                radial-gradient(circle at top right, rgba(242,101,34,0.16), transparent 30%),
+                linear-gradient(135deg, #0F172A 0%, #111827 100%);
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(18px);
+        }
+
+        .legal-content h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #0f172a;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .legal-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content p {
+            color: #475569;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 15px;
+        }
+
+        .legal-content ul {
+            margin-bottom: 2rem;
+        }
+
+        .legal-content li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            color: #475569;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .legal-content li::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #F26522;
+            border-radius: 999px;
+            position: absolute;
+            left: 0;
+            top: 11px;
+        }
+
+        .toc-link {
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            color: #F26522;
+            transform: translateX(4px);
+        }
+
+        .highlight-box {
+            background: linear-gradient(to right, rgba(242,101,34,0.06), rgba(242,101,34,0.02));
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 overflow-x-hidden">
+
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-11 h-11 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center shadow-sm">
+                    <img src="logo.png" alt="Carelink Logo" class="h-10">
+                </div>
+
+                <div class="leading-none">
+                    <div class="text-lg font-black tracking-tight text-slate-900">
+                        Carelink
+                    </div>
+                    <div class="text-[9px] uppercase tracking-[0.32em] text-carelink font-bold">
+                        Healthcare
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <a href="Login.html"
+                   class="hidden md:flex text-sm font-semibold text-slate-600 hover:text-carelink transition">
+                    Log In
+                </a>
+
+                <a href="product.html"
+                   class="bg-carelink text-white px-5 py-2.5 rounded-xl shadow-glow text-sm font-bold hover:bg-orange-600 transition">
+                    Back to Product
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-gradient pt-28 pb-36 relative overflow-hidden text-white">
+
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-carelink/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[120px]"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6">
+
+            <div class="inline-flex items-center px-4 py-2 rounded-full glass border border-white/10 text-[10px] uppercase tracking-[0.3em] font-bold text-orange-200 mb-8">
+                Legal Framework · Enterprise Terms
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-8">
+                Terms of
+                <span class="text-carelink">Service</span>
+            </h1>
+
+            <p class="max-w-3xl text-lg md:text-xl text-slate-300 leading-relaxed">
+                These Terms govern the use of the Carelink platform, infrastructure,
+                workforce automation systems, support services, and healthcare
+                operational tools provided by Carelink Healthcare Inc.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-12">
+
+                <div class="glass border border-white/10 rounded-2xl px-6 py-4">
+                    <div class="text-sm text-slate-400 mb-1">Effective Date</div>
+                    <div class="font-bold">May 2026</div>
+                </div>
+
+                <div class="glass border border-white/10 rounded-2xl px-6 py-4">
+                    <div class="text-sm text-slate-400 mb-1">Version</div>
+                    <div class="font-bold">Enterprise v1.4</div>
+                </div>
+
+                <div class="glass border border-white/10 rounded-2xl px-6 py-4">
+                    <div class="text-sm text-slate-400 mb-1">Jurisdiction</div>
+                    <div class="font-bold">Ontario, Canada</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <section class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-[300px,1fr] gap-14">
+
+        <!-- SIDEBAR -->
+        <aside class="hidden lg:block">
+
+            <div class="sticky top-28 bg-white border border-slate-200 rounded-[2rem] p-8 shadow-soft">
+
+                <div class="text-[10px] font-black uppercase tracking-[0.28em] text-carelink mb-7">
+                    Table of Contents
+                </div>
+
+                <nav class="flex flex-col gap-5 text-sm font-semibold text-slate-500">
+
+                    <a href="#acceptance" class="toc-link">1. Acceptance of Terms</a>
+                    <a href="#services" class="toc-link">2. Description of Services</a>
+                    <a href="#eligibility" class="toc-link">3. Eligibility & Accounts</a>
+                    <a href="#responsibilities" class="toc-link">4. User Responsibilities</a>
+                    <a href="#privacy" class="toc-link">5. Privacy & Healthcare Data</a>
+                    <a href="#security" class="toc-link">6. Security Obligations</a>
+                    <a href="#billing" class="toc-link">7. Billing & Subscription Terms</a>
+                    <a href="#availability" class="toc-link">8. Service Availability</a>
+                    <a href="#intellectual" class="toc-link">9. Intellectual Property</a>
+                    <a href="#termination" class="toc-link">10. Suspension & Termination</a>
+                    <a href="#liability" class="toc-link">11. Limitation of Liability</a>
+                    <a href="#law" class="toc-link">12. Governing Law</a>
+
+                </nav>
+
+            </div>
+
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="bg-white rounded-[2.8rem] border border-slate-200 shadow-card p-8 md:p-16 legal-content">
+
+            <div class="highlight-box border border-orange-100 rounded-[2rem] p-8 mb-12">
+                <div class="flex items-start gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0">
+                        <i class="fas fa-scale-balanced text-carelink text-xl"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="mt-0 mb-3 text-xl font-black text-slate-900">
+                            Important Legal Notice
+                        </h3>
+
+                        <p class="mb-0">
+                            By accessing, browsing, registering for, or using the Carelink platform,
+                            you acknowledge that you have read, understood, and agreed to these
+                            Terms of Service and all applicable operational policies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="acceptance">
+                <h2 class="mt-0">1. Acceptance of Terms</h2>
+
+                <p>
+                    These Terms of Service (“Terms”) constitute a legally binding agreement
+                    between Carelink Healthcare Inc. (“Carelink”, “we”, “our”, or “us”)
+                    and any organization, healthcare facility, agency, employee, contractor,
+                    or authorized user accessing the Services.
+                </p>
+
+                <p>
+                    By accessing or using the platform, you confirm that you are authorized
+                    to enter into this agreement on behalf of yourself or the organization
+                    you represent.
+                </p>
+            </div>
+
+            <div id="services">
+                <h2>2. Description of Services</h2>
+
+                <p>
+                    Carelink provides workforce management and healthcare operational software
+                    designed for long-term care homes, staffing agencies, disability support
+                    organizations, and healthcare employers.
+                </p>
+
+                <ul>
+                    <li>Automated workforce scheduling and staffing workflows.</li>
+                    <li>Credential and certification expiry monitoring.</li>
+                    <li>Operational dashboards and reporting systems.</li>
+                    <li>Healthcare employee mobile access tools.</li>
+                    <li>Compliance tracking and audit export functionality.</li>
+                    <li>Administrative communication and notification systems.</li>
+                </ul>
+            </div>
+
+            <div id="eligibility">
+                <h2>3. Eligibility & Accounts</h2>
+
+                <p>
+                    Users must provide accurate and complete information when creating or
+                    managing platform accounts. Organizations are responsible for ensuring
+                    that employee access permissions remain current and appropriate.
+                </p>
+
+                <p>
+                    Carelink reserves the right to suspend or restrict accounts that contain
+                    inaccurate information, unauthorized access activity, or violations of
+                    these Terms.
+                </p>
+            </div>
+
+            <div id="responsibilities">
+                <h2>4. User Responsibilities</h2>
+
+                <p>
+                    Users agree to use the platform responsibly, lawfully, and in accordance
+                    with all healthcare operational standards and applicable regulations.
+                </p>
+
+                <ul>
+                    <li>Maintain accurate employee and scheduling data.</li>
+                    <li>Protect login credentials and account access.</li>
+                    <li>Use the platform only for authorized healthcare operations.</li>
+                    <li>Avoid attempting unauthorized access to platform infrastructure.</li>
+                    <li>Comply with applicable privacy and healthcare regulations.</li>
+                </ul>
+            </div>
+
+            <div id="privacy">
+                <h2>5. Privacy & Healthcare Data</h2>
+
+                <p>
+                    Carelink may process operational, staffing, scheduling, and healthcare-related
+                    information necessary to provide platform functionality and support services.
+                </p>
+
+                <p>
+                    Data handling practices are governed by our Privacy Policy and are designed
+                    to support healthcare privacy expectations, including PHIPA-aligned operational
+                    safeguards where applicable.
+                </p>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-[1.8rem] p-7 mt-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0">
+                            <i class="fas fa-lock text-carelink"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="mt-0 mb-2">Protected Information</h3>
+
+                            <p class="mb-0">
+                                Organizations remain responsible for ensuring they have appropriate
+                                authority and consent to upload or manage employee and operational data
+                                within the platform.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="security">
+                <h2>6. Security Obligations</h2>
+
+                <p>
+                    Carelink maintains commercially reasonable safeguards intended to protect
+                    platform systems and operational data from unauthorized access, misuse,
+                    or disclosure.
+                </p>
+
+                <ul>
+                    <li>Encrypted infrastructure and secured environments.</li>
+                    <li>Role-based access controls and authentication systems.</li>
+                    <li>Monitoring and logging of access activity.</li>
+                    <li>Internal incident response and security review procedures.</li>
+                </ul>
+
+                <p>
+                    Users are responsible for protecting account credentials and reporting
+                    suspected unauthorized activity immediately.
+                </p>
+            </div>
+
+            <div id="billing">
+                <h2>7. Billing & Subscription Terms</h2>
+
+                <p>
+                    Certain Services may require paid subscriptions, implementation fees,
+                    onboarding charges, or enterprise licensing agreements.
+                </p>
+
+                <p>
+                    Organizations agree to pay all applicable fees associated with their
+                    selected service plans. Failure to maintain payment obligations may
+                    result in service restrictions or suspension.
+                </p>
+            </div>
+
+            <div id="availability">
+                <h2>8. Service Availability</h2>
+
+                <p>
+                    While Carelink aims to maintain high platform availability and operational
+                    reliability, uninterrupted access cannot be guaranteed at all times.
+                </p>
+
+                <p>
+                    Scheduled maintenance, infrastructure upgrades, security events, or
+                    third-party service interruptions may temporarily affect platform access.
+                </p>
+            </div>
+
+            <div id="intellectual">
+                <h2>9. Intellectual Property</h2>
+
+                <p>
+                    All software, infrastructure, branding, platform interfaces, documentation,
+                    workflows, and related materials remain the exclusive property of
+                    Carelink Healthcare Inc.
+                </p>
+
+                <p>
+                    Users may not reproduce, reverse engineer, distribute, or exploit any
+                    portion of the platform without prior written authorization.
+                </p>
+            </div>
+
+            <div id="termination">
+                <h2>10. Suspension & Termination</h2>
+
+                <p>
+                    Carelink reserves the right to suspend or terminate access to the Services
+                    in cases involving security risks, unlawful activity, misuse of the platform,
+                    non-payment, or violations of these Terms.
+                </p>
+
+                <p>
+                    Organizations may discontinue use of the Services in accordance with
+                    applicable subscription agreements and contractual obligations.
+                </p>
+            </div>
+
+            <div id="liability">
+                <h2>11. Limitation of Liability</h2>
+
+                <p>
+                    To the maximum extent permitted by law, Carelink Healthcare Inc. shall not
+                    be liable for indirect, incidental, special, consequential, or punitive damages,
+                    including operational disruptions, data loss, revenue loss, or business interruption.
+                </p>
+
+                <p>
+                    Services are provided on an “as available” basis without warranties of
+                    uninterrupted availability or error-free operation.
+                </p>
+            </div>
+
+            <div id="law">
+                <h2>12. Governing Law</h2>
+
+                <p>
+                    These Terms shall be governed by and interpreted in accordance with the
+                    laws of the Province of Ontario and the applicable laws of Canada.
+                </p>
+
+                <p>
+                    Any disputes arising from these Terms or the use of the Services shall
+                    be subject to the exclusive jurisdiction of the courts located in Ontario, Canada.
+                </p>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-slate-100 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+                <div>
+                    <div class="text-sm font-bold text-slate-900 mb-1">
+                        Carelink Healthcare Inc.
+                    </div>
+
+                    <div class="text-sm text-slate-500">
+                        Enterprise Workforce Infrastructure for Healthcare Operations
+                    </div>
+                </div>
+
+                <div class="text-sm text-slate-400">
+                    Last Updated: May 2026 · Enterprise Terms v1.4
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="px-6 pb-28">
+
+        <div class="max-w-7xl mx-auto rounded-[3rem] overflow-hidden bg-dark relative">
+
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,101,34,0.22),transparent_25%)]"></div>
+
+            <div class="relative px-10 md:px-20 py-20 text-center text-white">
+
+                <div class="text-carelink uppercase tracking-[0.28em] text-xs font-bold mb-6">
+                    Questions About These Terms?
+                </div>
+
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-8">
+                    Contact our support & compliance team
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-slate-400 text-lg leading-relaxed mb-10">
+                    If you require clarification regarding platform access, enterprise licensing,
+                    operational compliance, or data handling procedures, our team can assist.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+
+                    <a href="Support.html"
+                       class="bg-carelink hover:bg-orange-600 transition px-10 py-5 rounded-2xl font-bold shadow-glow">
+                        Visit Support Center
+                    </a>
+
+                    <a href="mailto:legal@thecarelink.ca"
+                       class="border border-white/10 hover:bg-white/5 transition px-10 py-5 rounded-2xl font-bold">
+                        Contact Legal Team
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-100 py-12">
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <div class="text-sm text-slate-500">
+                © 2026 Carelink Healthcare Inc. · Hamilton/Burlington Region
+            </div>
+
+            <div class="flex items-center gap-8 text-sm font-semibold text-slate-500">
+
+                <a href="privacy.html" class="hover:text-carelink transition">
+                    Privacy Policy
+                </a>
+
+                <a href="Login.html="hover:text-carelink transition">
+                    Log In
+                </a>
+
+                <a href="mailto:support@thecarelink.ca" class="hover:text-carelink transition">
+                    support@thecarelink.ca
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

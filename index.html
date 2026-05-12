@@ -231,66 +231,162 @@ h1,h2,h3,h4,h5{
 </head>
 <body class="bg-white text-slate-800">
 
-    <nav class="sticky top-0 z-50 bg-white/80 border-b border-slate-100">
-        <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center space-x-2">
-                <div class="text-carelink-orange text-2xl font-bold flex items-center">
-                     <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+   <nav class="sticky top-0 z-50 bg-white/80 border-b border-slate-100 backdrop-blur-xl">
+
+    <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 max-w-7xl mx-auto relative">
+
+        <!-- LOGO -->
+        <div class="flex items-center flex-shrink-0">
+            <a href="index.html" class="flex items-center space-x-2">
+
+                <div class="text-carelink-orange text-xl sm:text-2xl font-bold flex items-center">
+                    <img src="logo.png" alt="Carelink Logo" class="h-9 sm:h-10">
+                    <span class="ml-1">Carelink</span>
                 </div>
 
-            <!-- Desktop Menu (Hidden on small/medium screens) -->
-            <div class="hidden lg:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="Product.html" class="hover:text-carelink-orange">Product</a>
-                <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
-                <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
-                <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
-                <a href="about.html" class="hover:text-carelink-orange">About Us</a>
-                <a href="Support.html" class="hover:text-carelink-orange">Support</a>
-            </div>
-
-            <div class="flex items-center space-x-4">
-                <a href="Login.html" class="hidden sm:block text-sm font-semibold">Log in</a>
-                <a href="#"
-                   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-                   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
-                   Book a Demo
-                </a>
-                
-                <!-- HAMBURGER BUTTON -->
-                <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+            </a>
         </div>
 
-        <!-- MOBILE MENU CONTAINER (Added this) -->
-        <div id="navMenu" class="lg:hidden">
-            <a href="Product.html">Product</a>
-            <a href="Solutions.html">Solutions</a>
-            <a href="Pricing.html">Pricing</a>
-            <a href="Resources.html">Resources</a>
-            <a href="about.html">About Us</a>
-            <a href="Support.html">Support</a>
-            <a href="Login.html" class="sm:hidden border-t pt-4">Log in</a>
+        <!-- DESKTOP NAV -->
+        <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+
+            <a href="Product.html"
+               class="hover:text-carelink-orange transition">
+               Product
+            </a>
+
+            <a href="Solutions.html"
+               class="hover:text-carelink-orange transition">
+               Solutions
+            </a>
+
+            <a href="Pricing.html"
+               class="hover:text-carelink-orange transition">
+               Pricing
+            </a>
+
+            <a href="Resources.html"
+               class="hover:text-carelink-orange transition">
+               Resources
+            </a>
+
+            <a href="about.html"
+               class="hover:text-carelink-orange transition">
+               About Us
+            </a>
+
+            <a href="Support.html"
+               class="hover:text-carelink-orange transition">
+               Support
+            </a>
+
         </div>
-    </nav>
 
-    <!-- JS FOR MENU -->
-    <script>
-        const btn = document.getElementById("menuBtn");
-        const menu = document.getElementById("navMenu");
+        <!-- RIGHT SIDE -->
+        <div class="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
 
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("active");
+            <!-- LOGIN -->
+            <a href="Login.html"
+               class="hidden sm:block text-sm font-semibold hover:text-carelink-orange transition whitespace-nowrap">
+               Log in
+            </a>
+
+            <!-- DESKTOP DEMO BUTTON -->
+            <a href="#"
+               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="hidden sm:inline-flex bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition whitespace-nowrap">
+
+               Book a Demo
+
+            </a>
+
+            <!-- MOBILE DEMO BUTTON -->
+            <a href="#"
+               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="sm:hidden bg-carelink-orange text-white px-4 py-2 rounded-lg text-xs font-bold shadow-lg whitespace-nowrap">
+
+               Demo
+
+            </a>
+
+            <!-- HAMBURGER -->
+            <button id="menuBtn"
+                    class="lg:hidden text-2xl text-slate-700 ml-1">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="navMenu"
+         class="hidden lg:hidden border-t border-slate-100 bg-white shadow-lg">
+
+        <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-semibold text-slate-700">
+
+            <a href="Product.html"
+               class="hover:text-carelink-orange transition">
+               Product
+            </a>
+
+            <a href="Solutions.html"
+               class="hover:text-carelink-orange transition">
+               Solutions
+            </a>
+
+            <a href="Pricing.html"
+               class="hover:text-carelink-orange transition">
+               Pricing
+            </a>
+
+            <a href="Resources.html"
+               class="hover:text-carelink-orange transition">
+               Resources
+            </a>
+
+            <a href="about.html"
+               class="hover:text-carelink-orange transition">
+               About Us
+            </a>
+
+            <a href="Support.html"
+               class="hover:text-carelink-orange transition">
+               Support
+            </a>
+
+            <a href="Login.html"
+               class="pt-4 border-t border-slate-100 hover:text-carelink-orange transition sm:hidden">
+
+               Log in
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add("hidden");
         });
+    });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.remove('active');
-            });
-        });
-    </script>
+</script>
 
     <!-- REST OF YOUR CONTENT STARTS HERE -->
     <section class="relative max-w-7xl mx-auto px-8 pt-24 pb-24 grid md:grid-cols-2 gap-16 items-center">

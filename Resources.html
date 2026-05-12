@@ -136,25 +136,49 @@
             </button>
         </div>
     </div>
+<!-- MOBILE MENU -->
+<div id="navMenu" class="mobile-menu md:hidden">
+    <a href="Product.html">Product</a>
+    <a href="Solutions.html">Solutions</a>
+    <a href="Pricing.html">Pricing</a>
+    <a href="Resources.html">Resources</a>
+    <a href="about.html">About Us</a>
+    <a href="Support.html">Support</a>
+</div>
+
 </nav>
 
-<!-- JS FOR MENU -->
+<!-- MOBILE MENU + ANIMATION FIX -->
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
 <script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("navMenu");
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
 
-    btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        menu.classList.toggle("active");
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            menu.classList.remove("active");
-        }
-    });
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
 </script>
+
 
 
 <!-- HERO -->

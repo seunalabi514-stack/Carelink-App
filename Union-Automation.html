@@ -1,0 +1,254 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Union Rule Automation Guide | Carelink Compliance</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       carelink: '#F06529',
+                       dark: '#0F172A',
+                       blueprint: '#334155'
+                   },
+               },
+           },
+       };
+   </script>
+
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap');
+       body { font-family: 'Inter', sans-serif; }
+       .code-font { font-family: 'JetBrains Mono', monospace; }
+       .mobile-menu { display: none; flex-direction: column; padding: 1rem 2rem; background: white; border-top: 1px solid #e2e8f0; }
+       .mobile-menu.active { display: flex; }
+   </style>
+
+   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+                <img src="logo.png" class="h-10" alt="Logo">
+                Carelink
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Compliance.html" class="text-carelink font-bold">Compliance</a>
+            <a href="Resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+               Book a Demo
+            </a>
+            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <div id="navMenu" class="mobile-menu md:hidden">
+        <a href="Product.html">Product</a>
+        <a href="Solutions.html">Solutions</a>
+        <a href="Compliance.html">Compliance</a>
+        <a href="Resources.html">Resources</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+<!-- MOBILE MENU + ANIMATION FIX -->
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+<header class="bg-dark py-20 text-white overflow-hidden relative">
+    <div class="absolute inset-0 opacity-10">
+        <div class="grid grid-cols-12 gap-4 h-full w-full">
+            <div class="border-l border-white/20 h-full"></div>
+            <div class="border-l border-white/20 h-full"></div>
+            <div class="border-l border-white/20 h-full"></div>
+            <div class="border-l border-white/20 h-full"></div>
+        </div>
+    </div>
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <span class="text-carelink font-bold text-xs uppercase tracking-widest mb-4 block">Technical Guide // Implementation</span>
+        <h1 class="text-4xl md:text-5xl font-black mb-6">Union Rule Automation</h1>
+        <p class="text-slate-400 text-lg leading-relaxed">
+            A framework for digitizing Collective Bargaining Agreements (CBA) to eliminate manual seniority calculations and grievance risks.
+        </p>
+    </div>
+</header>
+
+<section class="py-20">
+    <div class="max-w-5xl mx-auto px-6">
+        
+        <div class="grid md:grid-cols-2 gap-12 items-start mb-24">
+            <div>
+                <h2 class="text-2xl font-bold text-dark mb-6">The Challenge of Manual Seniority</h2>
+                <p class="text-slate-600 mb-6">
+                    In most Ontario LTC facilities, the "Staffing Clerk" is the gatekeeper of union rules. When a shift opens, they must manually cross-reference seniority dates, accrued hours, and status (Full-Time vs. Part-Time) to determine who gets the first call.
+                </p>
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 text-red-800 text-sm italic">
+                    "Manual call-outs are the #1 source of labor grievances in healthcare operations."
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-soft border border-slate-100">
+                <h3 class="font-bold mb-4 text-slate-400 uppercase text-[10px] tracking-widest">Logic Visualization</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                        <div class="w-8 h-8 rounded bg-carelink/20 text-carelink flex items-center justify-center font-bold text-xs">IF</div>
+                        <span class="text-xs font-semibold">Shift Vacancy Reported</span>
+                    </div>
+                    <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl ml-4">
+                        <div class="w-8 h-8 rounded bg-blueprint/20 text-blueprint flex items-center justify-center font-bold text-xs">AND</div>
+                        <span class="text-xs font-semibold">Staff Status == "Part-Time"</span>
+                    </div>
+                    <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl ml-8">
+                        <div class="w-8 h-8 rounded bg-emerald-500/20 text-emerald-600 flex items-center justify-center font-bold text-xs">DO</div>
+                        <span class="text-xs font-semibold">Sort by [Seniority_Date] ASC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-12">
+            <h2 class="text-3xl font-black text-dark text-center mb-16">The Carelink Automation Stack</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="w-14 h-14 bg-carelink rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg mb-6">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Master Seniority Lists</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Carelink syncs directly with your payroll system (ADP, Ceridian, etc.) to maintain a live-updating seniority list based on hours worked or hire date. No more manual Excel updates every quarter.
+                    </p>
+                </div>
+                <div class="md:w-1/2 w-full bg-blueprint p-6 rounded-2xl text-xs text-slate-300 code-font shadow-inner">
+                    <span class="text-carelink">// Seniority Sort Logic</span><br>
+                    SELECT staff_id FROM roster<br>
+                    WHERE status = 'PT' AND credentials = 'Valid'<br>
+                    ORDER BY accrued_hours DESC, seniority_date ASC;
+                </div>
+            </div>
+
+            <hr class="border-slate-200">
+
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="w-14 h-14 bg-dark rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg mb-6">
+                        <i class="fas fa-hourglass-start"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Equitable Call-Out Windows</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Configure "Offer Windows." For example, give the most senior staff 15 minutes to accept via the app before the system automatically alerts the next person in line.
+                    </p>
+                </div>
+                <div class="md:w-1/2 w-full flex justify-center">
+                    <div class="relative bg-white border border-slate-200 p-6 rounded-2xl shadow-xl w-64">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Offer Active</span>
+                            <span class="text-xs font-black text-carelink">08:42 Left</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 rounded-full mb-6">
+                            <div class="h-full bg-carelink rounded-full" style="width: 65%"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="h-3 w-full bg-slate-50 rounded"></div>
+                            <div class="h-3 w-2/3 bg-slate-50 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-white border-y border-slate-100">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-black mb-8">Implementation Ready?</h2>
+        <p class="text-slate-600 mb-10 text-lg leading-relaxed">Our automation specialists can help you translate your specific CBA clauses into digital logic in less than 48 hours.</p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#" class="bg-dark text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition flex items-center justify-center gap-2">
+                <i class="fas fa-file-pdf"></i> Download PDF Guide
+            </a>
+            <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});"
+               class="bg-carelink text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition">
+               Book Configuration Call
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-sm text-slate-400">© 2026 Carelink Healthcare Inc. · Specialized for ONA/SEIU/CUPE Compliance</p>
+        <div class="flex gap-8 text-sm font-bold text-slate-400">
+            <a href="Compliance.html" class="hover:text-carelink transition">Compliance Hub</a>
+            <a href="support.html" class="hover:text-carelink transition">Support</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>

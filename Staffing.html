@@ -1,0 +1,284 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Staffing Strategy | Carelink Healthcare</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       carelink: '#F06529',
+                       dark: '#0F172A',
+                       accent: '#7C3AED'
+                   },
+                   boxShadow: {
+                       soft: '0 10px 30px rgba(0,0,0,0.06)',
+                       card: '0 20px 50px rgba(0,0,0,0.05)'
+                   },
+               },
+           },
+       };
+   </script>
+
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+       body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+       .hero-pattern {
+           background-color: #ffffff;
+           background-image: radial-gradient(#f065290a 1px, transparent 1px);
+           background-size: 20px 20px;
+       }
+       .mobile-menu {
+           display: none;
+           flex-direction: column;
+           padding: 1rem 2rem;
+           background: white;
+           border-top: 1px solid #e2e8f0;
+       }
+       .mobile-menu.active { display: flex; }
+   </style>
+
+   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-white text-slate-800">
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 relative">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+                <img src="logo.png" class="h-10" alt="Logo">
+                Carelink
+            </a>
+        </div>
+
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <a href="Login.html" class="text-sm font-semibold text-slate-700">Log in</a>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+               Book a Demo
+            </a>
+            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <div id="navMenu" class="mobile-menu md:hidden">
+        <a href="Product.html">Product</a>
+        <a href="Solutions.html">Solutions</a>
+        <a href="Pricing.html">Pricing</a>
+        <a href="Resources.html">Resources</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+<!-- MOBILE MENU + ANIMATION FIX -->
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+<header class="hero-pattern py-20 md:py-32 border-b border-slate-50">
+    <div class="max-w-5xl mx-auto text-center px-6">
+        <div class="inline-flex items-center space-x-2 text-carelink font-bold tracking-widest text-[10px] uppercase mb-6 bg-orange-50 px-4 py-2 rounded-full">
+            <i class="fas fa-chess"></i>
+            <span>Workforce Modernization</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-dark leading-[1.1] mb-8">
+            Move from Reactive to <span class="text-carelink">Strategic Staffing</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Eliminate agency dependency and scheduling chaos with our autonomous workforce framework designed specifically for the Ontario LTC sector.
+        </p>
+    </div>
+</header>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-3 gap-12">
+            
+            <div class="relative group">
+                <div class="mb-8">
+                    <span class="text-carelink font-black text-5xl opacity-20">01</span>
+                    <h3 class="text-2xl font-bold text-dark mt-[-20px]">Internal Stabilization</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed mb-6">Maximize your current workforce. Use seniority-aware automation to ensure your full-time and part-time staff are offered shifts first, reducing the gap where agencies usually step in.</p>
+                <div class="h-1 w-20 bg-carelink rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="relative group">
+                <div class="mb-8">
+                    <span class="text-carelink font-black text-5xl opacity-20">02</span>
+                    <h3 class="text-2xl font-bold text-dark mt-[-20px]">Credential Continuity</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed mb-6">Build a "Floor-Ready" culture. Carelink automates the vetting of every staff member in real-time, ensuring that strategy isn't derailed by compliance lapses during MOH inspections.</p>
+                <div class="h-1 w-20 bg-carelink rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="relative group">
+                <div class="mb-8">
+                    <span class="text-carelink font-black text-5xl opacity-20">03</span>
+                    <h3 class="text-2xl font-bold text-dark mt-[-20px]">Autonomous Fulfillment</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed mb-6">Take the "human" out of the call-out process. Our engine follows your CBA rules to fill vacancies 24/7, allowing your admin team to focus on resident care instead of phone calls.</p>
+                <div class="h-1 w-20 bg-carelink rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">The Carelink Advantage</h2>
+            <p class="text-slate-500">How modern strategy outperforms traditional staffing methods.</p>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] shadow-soft overflow-hidden border border-slate-200">
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="bg-dark text-white">
+                        <th class="p-6 text-sm font-bold uppercase tracking-widest">Feature</th>
+                        <th class="p-6 text-sm font-bold uppercase tracking-widest">Legacy Staffing</th>
+                        <th class="p-6 text-sm font-bold uppercase tracking-widest text-carelink">Carelink Strategy</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="p-6 font-bold text-dark">Shift Fulfillment</td>
+                        <td class="p-6 text-sm text-slate-500">Manual phone trees & texts</td>
+                        <td class="p-6 text-sm text-dark font-medium bg-orange-50/50">Automated Seniority Bidding</td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 font-bold text-dark">Compliance</td>
+                        <td class="p-6 text-sm text-slate-500">Excel spreadsheets</td>
+                        <td class="p-6 text-sm text-dark font-medium bg-orange-50/50">Real-time Credential Blocking</td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 font-bold text-dark">Union Rules</td>
+                        <td class="p-6 text-sm text-slate-500">Dependent on Clerk memory</td>
+                        <td class="p-6 text-sm text-dark font-medium bg-orange-50/50">CBA Logic Hardcoded</td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 font-bold text-dark">Agency Spend</td>
+                        <td class="p-6 text-sm text-slate-500">High (Emergency focus)</td>
+                        <td class="p-6 text-sm text-dark font-medium bg-orange-50/50">Optimized (Internal First)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-dark rounded-[3rem] p-10 md:p-20 relative flex flex-col lg:flex-row items-center gap-16">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-carelink/10 blur-[100px] rounded-full"></div>
+            
+            <div class="lg:w-1/2 relative z-10 text-white">
+                <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">Ready to re-engineer your facility?</h2>
+                <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+                    Strategy isn't just about software—it's about results. Our implementation team helps you transition your data, train your staff, and achieve operational stability in 90 days.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});"
+                       class="bg-carelink text-white px-10 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition text-center">
+                       Request Strategy Session
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 grid grid-cols-2 gap-4 relative z-10">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                    <div class="text-carelink text-3xl font-black mb-2">-22%</div>
+                    <div class="text-xs text-slate-400 uppercase font-bold tracking-widest">Overtime Cost</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                    <div class="text-carelink text-3xl font-black">+14h</div>
+                    <div class="text-xs text-slate-400 uppercase font-bold tracking-widest">Admin Time Saved/Wk</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                    <div class="text-carelink text-3xl font-black">90%</div>
+                    <div class="text-xs text-slate-400 uppercase font-bold tracking-widest">Grievance Drop</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                    <div class="text-carelink text-3xl font-black">4.5★</div>
+                    <div class="text-xs text-slate-400 uppercase font-bold tracking-widest">Staff Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 border-t border-slate-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center">
+        <p class="text-sm text-slate-400">© 2026 Carelink Healthcare Inc. · Hamilton, Ontario</p>
+        <div class="flex gap-8 text-sm font-bold text-slate-400">
+            <a href="privacy.html" class="hover:text-carelink transition">Privacy</a>
+            <a href="terms.html" class="hover:text-carelink transition">Terms</a>
+            <a href="support.html" class="hover:text-carelink transition">Support</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>

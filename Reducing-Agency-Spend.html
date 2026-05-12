@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Reducing Agency Spend by 35% | Carelink Insights</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       carelink: '#F06529',
+                       dark: '#0F172A'
+                   },
+                   boxShadow: {
+                       soft: '0 10px 30px rgba(0,0,0,0.06)',
+                   },
+               },
+           },
+       };
+   </script>
+
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
+       body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+       .article-text { font-family: 'Inter', sans-serif; line-height: 1.8; color: #334155; }
+       .mobile-menu {
+           display: none;
+           flex-direction: column;
+           padding: 1rem 2rem;
+           background: white;
+           border-top: 1px solid #e2e8f0;
+       }
+       .mobile-menu.active { display: flex; }
+       .progress-bar {
+           height: 4px;
+           background: #F06529;
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 60;
+           transition: width 0.1s ease;
+       }
+   </style>
+
+   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-white text-slate-800">
+
+<div id="progress" class="progress-bar" style="width: 0%"></div>
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+                <img src="logo.png" class="h-10" alt="Logo">
+                Carelink
+            </a>
+        </div>
+
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Resources.html" class="text-carelink font-bold">Resources</a>
+            <a href="about.html">About Us</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <a href="Login.html" class="text-sm font-semibold text-slate-700">Log in</a>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+               Book a Demo
+            </a>
+            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <div id="navMenu" class="mobile-menu md:hidden">
+        <a href="Product.html">Product</a>
+        <a href="Solutions.html">Solutions</a>
+        <a href="Pricing.html">Pricing</a>
+        <a href="Resources.html">Resources</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+<!-- MOBILE MENU + ANIMATION FIX -->
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+<header class="py-16 md:py-24 bg-slate-50 border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-orange-100 text-carelink text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-[0.2em]">Strategy Guide</span>
+            <span class="text-slate-400 text-xs font-bold uppercase tracking-widest"><i class="far fa-clock mr-1"></i> 8 Min Read</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold text-dark tracking-tight leading-[1.1] mb-8">
+            Reducing Agency Spend by 35%
+        </h1>
+        
+        <p class="text-xl text-slate-600 leading-relaxed italic border-l-4 border-carelink pl-6">
+            Real-world staffing optimization strategies for LTC operators managing labor pressure and compliance risk.
+        </p>
+    </div>
+</header>
+
+<div class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-[1fr,320px] gap-16">
+    
+    <article class="article-text max-w-2xl">
+        <h2 class="text-2xl font-bold text-dark mb-6">The Crisis of Reactive Staffing</h2>
+        <p class="mb-8">
+            In the current Ontario healthcare landscape, LTC operators are often forced into a cycle of "Reactive Staffing." A shift goes unfilled for two hours, the phone tree fails, and the facility is forced to call an agency at a 2.5x premium just to maintain minimum safe ratios.
+        </p>
+
+        <div class="bg-slate-50 p-8 rounded-3xl mb-8 border border-slate-100">
+            <h3 class="text-lg font-bold text-dark mb-4">Key Strategic Goal</h3>
+            <p class="text-sm">To reduce agency spend, you must solve the <strong>Internal Fulfillment Gap</strong>—the time between a shift becoming vacant and the moment it is offered to every eligible internal staff member according to CBA rules.</p>
+        </div>
+
+        <h2 class="text-2xl font-bold text-dark mb-6">1. Automating the Call-Out Logic</h2>
+        <p class="mb-8">
+            Traditional staffing clerks spend up to 4 hours a day on the phone. By the time they reach the 15th person on a seniority list, the first 5 have already made plans. Carelink’s autonomous bidding engine sends simultaneous, seniority-weighted alerts. 
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mb-6">2. Predictive Compliance</h2>
+        <p class="mb-8">
+            The second largest driver of agency spend isn't a lack of staff—it's staff who are ineligible due to expired credentials. By automating credential tracking, facilities ensure their full internal roster is "floor-ready" 100% of the time, eliminating last-minute surprises that trigger agency calls.
+        </p>
+
+        <blockquote class="border-l-4 border-carelink bg-orange-50 p-8 my-10 rounded-r-2xl">
+            <p class="text-lg font-bold text-dark mb-2">"We reclaimed $400k in our first year just by closing the 15-minute gap between a sick call and an internal broadcast."</p>
+            <cite class="text-sm text-slate-500 font-bold uppercase tracking-widest">— Director of Care, Region of Waterloo</cite>
+        </blockquote>
+
+        <h2 class="text-2xl font-bold text-dark mb-6">Next Steps for Operators</h2>
+        <p class="mb-12">
+            Reducing spend by 35% is a logistical challenge, not a personnel one. It requires a shift toward autonomous systems that prioritize internal union staff with zero friction.
+        </p>
+    </article>
+
+    <aside class="space-y-8">
+        <div class="sticky top-28 space-y-8">
+            
+            <div class="bg-dark rounded-[2rem] p-8 text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-carelink/20 rounded-full blur-2xl"></div>
+                <h4 class="text-lg font-bold mb-4 relative z-10">Get the Full Playbook</h4>
+                <p class="text-slate-400 text-xs mb-8 leading-relaxed relative z-10">
+                    Download the 24-page strategy manual including agency cost calculators and union bidding templates.
+                </p>
+                <a href="Resources.html" class="block w-full bg-carelink text-white text-center py-4 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg relative z-10">
+                    Read resource
+                </a>
+            </div>
+
+            <div class="bg-slate-50 rounded-[2rem] p-8 border border-slate-200">
+                <h4 class="text-sm font-bold text-dark mb-4">Subscribe to Insights</h4>
+                <input type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs mb-4 focus:outline-none focus:ring-2 focus:ring-carelink/20">
+                <button class="w-full text-xs font-bold text-carelink hover:underline">Join 500+ LTC Leaders</button>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<footer class="py-12 border-t border-slate-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-sm text-slate-400">© 2026 Carelink Healthcare Inc. · Hamilton, Ontario</p>
+        <div class="flex gap-8 text-sm font-bold text-slate-400">
+            <a href="privacy.html" class="hover:text-carelink transition">Privacy</a>
+            <a href="terms.html" class="hover:text-carelink transition">Terms</a>
+            <a href="Support.html" class="hover:text-carelink transition">Support</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Navigation Toggle
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    // Reading Progress Script
+    window.onscroll = function() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.getElementById("progress").style.width = scrolled + "%";
+    };
+</script>
+
+</body>
+</html>

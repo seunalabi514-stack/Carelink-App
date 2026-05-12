@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>2026 Ontario LTC Compliance Playbook | Carelink Healthcare</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+
+ <script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        carelink: '#F06529',
+        dark: '#0F172A',
+        mto: '#003366'
+      }
+    }
+  }
+}
+</script>
+
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+       body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+       .sticky-toc { position: sticky; top: 100px; }
+       .section-card { transition: all 0.3s ease; }
+       .section-card:hover { border-color: #F06529; }
+   </style>
+
+   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+<nav class="sticky top-0 z-50 bg-white border-b border-slate-200">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+            <img src="logo.png" class="h-8" alt="Logo"> Carelink
+        </a>
+        <div class="hidden md:flex space-x-6 text-sm font-bold">
+            <a href="Compliance.html" class="text-slate-500 hover:text-carelink">Compliance Hub</a>
+            <a href="staffing.html" class="text-slate-500 hover:text-carelink">Staffing Standards</a>
+            <a href="Resources.html" class="text-slate-500 hover:text-carelink">Resources</a>
+        </div>
+        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});"
+                class="bg-dark text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-slate-800 transition">
+            Audit Readiness Check
+        </button>
+    </div>
+</nav>
+
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+<header class="bg-white border-b border-slate-100 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="inline-block bg-mto/10 text-mto text-[10px] font-black px-3 py-1 rounded mb-4 uppercase tracking-widest">
+            Regulatory Briefing 2026
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">The 2026 Ontario LTC <br><span class="text-carelink">Compliance Playbook</span></h1>
+        <p class="text-lg text-slate-500 max-w-3xl leading-relaxed">
+            As of January 1, 2026, the Ontario Ministry of Long-Term Care has intensified enforcement of the <em>Fixing Long-Term Care Act (FLTCA)</em>. This guide centralizes the critical deadlines, staffing ratios, and new "As of Right" labor mobility requirements.
+        </p>
+    </div>
+</header>
+
+<div class="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-[280px,1fr] gap-12">
+
+    <aside class="hidden lg:block">
+        <div class="sticky-toc">
+            <h4 class="text-xs font-black uppercase text-slate-400 mb-6 tracking-widest">On this page</h4>
+            <nav class="space-y-4 text-sm font-bold">
+                <a href="#staffing" class="block text-carelink">1. Staffing & Care Targets</a>
+                <a href="#mobility" class="block text-slate-500 hover:text-carelink">2. Labor Mobility (As of Right)</a>
+                <a href="#safety" class="block text-slate-500 hover:text-carelink">3. Occupational Health & Safety</a>
+                <a href="#reporting" class="block text-slate-500 hover:text-carelink">4. Mandatory Reporting</a>
+            </nav>
+            <div class="mt-12 p-6 bg-orange-50 rounded-2xl border border-orange-100">
+                <p class="text-xs font-semibold text-carelink mb-4 italic">"Inspectors are now empowered to issue instant Administrative Monetary Penalties (AMPs) for ratio non-compliance."</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="space-y-16">
+
+        <section id="staffing">
+            <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-carelink text-white rounded-lg flex items-center justify-center text-sm">01</span>
+                Direct Care Staffing Targets
+            </h2>
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm section-card">
+                <div class="p-8 border-b border-slate-100 bg-slate-50/50">
+                    <p class="text-sm leading-relaxed text-slate-600">The 2026 fiscal year marks the final push toward the 4-hour care standard. Licensees must demonstrate specific average care hours per resident, per day.</p>
+                </div>
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 border-r border-slate-100">
+                        <div class="text-xs font-black text-slate-400 uppercase mb-2">Nursing & PSW Target</div>
+                        <div class="text-3xl font-black text-dark mb-2">4.0 Hours</div>
+                        <p class="text-xs text-slate-500 italic">Daily average per resident (Targeted by Mar 31, 2026)</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs font-black text-slate-400 uppercase mb-2">Allied Health Target</div>
+                        <div class="text-3xl font-black text-dark mb-2">36 Minutes</div>
+                        <p class="text-xs text-slate-500 italic">Physio, OT, and meaningful activity support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mobility">
+            <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-carelink text-white rounded-lg flex items-center justify-center text-sm">02</span>
+                "As of Right" Labor Mobility
+            </h2>
+            <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm section-card">
+                <h3 class="font-bold text-lg mb-4">Effective January 1, 2026</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Out-of-province physicians and nurses are now registered under the <strong>Automatic Recognition Framework</strong>. Employers must ensure due diligence—validating out-of-province competency and site-specific hazard training within the first 30 days of hire.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-sm font-semibold">
+                        <i class="fas fa-check-circle text-emerald-500"></i> No requirement for "Canadian Experience" in job postings.
+                    </li>
+                    <li class="flex items-center gap-3 text-sm font-semibold">
+                        <i class="fas fa-check-circle text-emerald-500"></i> AI in applicant screening must be explicitly disclosed.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="safety">
+            <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-carelink text-white rounded-lg flex items-center justify-center text-sm">03</span>
+                Health & Safety Enforcement
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                    <div class="text-carelink mb-4"><i class="fas fa-fire-extinguisher text-2xl"></i></div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Fire Code Deadline</h4>
+                    <p class="text-xs text-slate-500">Full sprinkler compliance or verified closure agreements must be finalized by <strong>July 1, 2026</strong>.</p>
+                </div>
+                <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                    <div class="text-carelink mb-4"><i class="fas fa-shield-virus text-2xl"></i></div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">JHSC Certification</h4>
+                    <p class="text-xs text-slate-500">New hybrid learning standards for Joint Health & Safety Committees take effect <strong>July 1, 2026</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reporting" class="pb-24">
+    <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
+        Key Reporting Dates
+    </h2>
+
+    <div class="bg-[#0F172A] text-white rounded-3xl overflow-hidden shadow-xl">
+        <table class="w-full text-left text-sm text-white">
+            <thead class="bg-white/10 text-xs font-black uppercase tracking-widest">
+                <tr>
+                    <th class="p-6">Deadline</th>
+                    <th class="p-6">Report Type</th>
+                    <th class="p-6">Legislative Act</th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-white/5">
+                <tr>
+                    <td class="p-6 font-mono text-carelink">Mar 31, 2026</td>
+                    <td class="p-6">EHT Annual Return</td>
+                    <td class="p-6 opacity-60 italic">Employer Health Tax Act</td>
+                </tr>
+
+                <tr>
+                    <td class="p-6 font-mono text-carelink">Monthly</td>
+                    <td class="p-6">Occupational Health Inspections</td>
+                    <td class="p-6 opacity-60 italic">OHSA Section 9</td>
+                </tr>
+
+                <tr>
+                    <td class="p-6 font-mono text-carelink">July 1, 2026</td>
+                    <td class="p-6">Washroom Cleaning Records</td>
+                    <td class="p-6 opacity-60 italic">OHSA New Rule 2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    </main>
+</div>
+
+<footer class="py-12 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-4">Provided by Carelink Compliance Office</p>
+        <p class="text-xs text-slate-400">Information accurate as of May 2026. This playbook is for operational guidance and does not constitute legal advice.</p>
+    </div>
+</footer>
+
+<script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
+    // Ensure you add the menuBtn and navMenu IDs to your nav for this to work
+</script>
+
+</body>
+</html>

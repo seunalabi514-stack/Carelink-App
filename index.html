@@ -78,12 +78,12 @@
         </a>
 
         <!-- HAMBURGER -->
-        <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+        <button id="menuBtn" class="md:hidden text-2xl text-slate-700 z-50">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 
-    <!-- MOBILE MENU (FIXED) -->
+    <!-- MOBILE MENU -->
     <div id="navMenu"
          class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg z-40">
 
@@ -98,6 +98,7 @@
     </div>
 
 </nav>
+
 <script>
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("navMenu");

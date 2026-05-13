@@ -19,34 +19,86 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .bg-carelink-orange { background-color: #F26522; }
-        .text-carelink-orange { color: #F26522; }
-        .bg-soft-orange { background-color: #FFF5F0; }
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.75);
+    }
+
+    /* =========================
+       FIXED MOBILE NAV DROPDOWN
+    ========================== */
+    @media (max-width: 1024px) {
+        #navMenu.active {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center; /* This centers the items horizontally */
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 20px;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            z-index: 999;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        #navMenu a {
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            border-bottom: 1px solid transparent;
+        }
+        
+        /* Remove the border/underline for About Us on mobile if you want it uniform */
+        #navMenu a.text-carelink {
+            border-bottom: none !important;
+            padding-bottom: 10px !important;
+        }
+    }
+
+    /* Desktop alignment */
+    @media (min-width: 1025px) {
+        #navMenu {
+            display: flex !important;
+        }
+    }
     </style>
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
-<body class="bg-white text-slate-800">
 
-   <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto relative">
+<body class="bg-white text-slate-800 overflow-x-hidden">
 
-    <!-- LOGO -->
-    <div class="flex items-center space-x-2">
-        <div class="text-carelink-orange text-2xl font-bold flex items-center">
-            <img src="logo.png" alt="Carelink Logo" class="h-10">
-            <span class="ml-2">Carelink</span>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="text-carelink text-2xl font-bold flex items-center">
+                    <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
+                </div>
+            
+            </a>
         </div>
-    </div>
 
-    <!-- DESKTOP MENU -->
-    <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-        <a href="Product.html" class="hover:text-carelink-orange">Product</a>
-        <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
-        <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
-        <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
-        <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+        <!-- MENU CONTAINER -->
+        <!-- Removed lg:flex to prevent Tailwind override conflicts -->
+        <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html" class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">Product</a>
+            <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
+            <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
+            <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
+            <a href="about.html" class="hover:text-carelink transition">About Us</a>
         <a href="Support.html" class="hover:text-carelink-orange">Support</a>
     </div>
 

@@ -30,31 +30,64 @@
 </head>
 <body class="bg-white text-slate-800">
 
-    <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-        <div class="flex items-center space-x-2">
-            <div class="text-carelink-orange text-2xl font-bold flex items-center">
-                 <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
-            </div>
-          
-        </div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-            <a href="Product.html" class="hover:text-carelink-orange">Product</a>
-            <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
-            <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
-            <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
-            <a href="about.html" class="hover:text-carelink-orange">About Us</a>
-	     <a href="Support.html" class="hover:text-carelink-orange">Support</a>
-        </div>
-        <div class="flex items-center space-x-4">
-            <a href="Login.html" class="text-sm font-semibold">Log in</a>
-            <a href="javascript:void(0)"
-   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-   class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
-   Book a Demo
-</a>
+   <nav class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto relative">
 
+    <!-- LOGO -->
+    <div class="flex items-center space-x-2">
+        <div class="text-carelink-orange text-2xl font-bold flex items-center">
+            <img src="logo.png" alt="Carelink Logo" class="h-10">
+            <span class="ml-2">Carelink</span>
         </div>
-    </nav>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+        <a href="Product.html" class="hover:text-carelink-orange">Product</a>
+        <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
+        <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
+        <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
+        <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+        <a href="Support.html" class="hover:text-carelink-orange">Support</a>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="flex items-center space-x-4">
+        <a href="Login.html" class="text-sm font-semibold">Log in</a>
+
+        <a href="javascript:void(0)"
+           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+           class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+            Book a Demo
+        </a>
+
+        <!-- HAMBURGER -->
+        <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="navMenu"
+         class="absolute top-full left-0 w-full bg-white border-t border-slate-100 hidden flex-col md:hidden shadow-lg">
+
+        <a href="Product.html" class="px-6 py-3 hover:bg-slate-50">Product</a>
+        <a href="Solutions.html" class="px-6 py-3 hover:bg-slate-50">Solutions</a>
+        <a href="Pricing.html" class="px-6 py-3 hover:bg-slate-50">Pricing</a>
+        <a href="Resources.html" class="px-6 py-3 hover:bg-slate-50">Resources</a>
+        <a href="about.html" class="px-6 py-3 hover:bg-slate-50">About Us</a>
+        <a href="Support.html" class="px-6 py-3 hover:bg-slate-50">Support</a>
+    </div>
+
+</nav>
+
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+});
+</script>
 
     <section class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-2 gap-12 items-center">
         <div>

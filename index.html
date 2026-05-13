@@ -6,6 +6,18 @@
     <title>Carelink Healthcare | Workforce Scheduling for LTC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+        (function () {
+            const url = window.location.href;
+            if (url.includes('.html')) {
+                const cleanUrl = url.split('.html')[0];
+                window.history.replaceState(null, null, cleanUrl);
+            }
+        })();
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -23,18 +35,19 @@
             <div class="text-carelink-orange text-2xl font-bold flex items-center">
                  <img src="logo.png" alt="Carelink Logo" class="h-10"> Carelink
             </div>
-            <span class="text-xs uppercase tracking-widest font-semibold text-slate-400 pt-1">Healthcare</span>
+          
         </div>
         <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-            <a href="Product/index.html" class="hover:text-carelink-orange">Product</a>
-            <a href="Solutions/index.html" class="hover:text-carelink-orange">Solutions</a>
-            <a href="Pricing/index.html" class="hover:text-carelink-orange">Pricing</a>
-            <a href="Resources/index.html" class="hover:text-carelink-orange">Resources</a>
-            <a href="about/index.html" class="hover:text-carelink-orange">About Us</a>
+            <a href="Product.html" class="hover:text-carelink-orange">Product</a>
+            <a href="Solutions.html" class="hover:text-carelink-orange">Solutions</a>
+            <a href="Pricing.html" class="hover:text-carelink-orange">Pricing</a>
+            <a href="Resources.html" class="hover:text-carelink-orange">Resources</a>
+            <a href="about.html" class="hover:text-carelink-orange">About Us</a>
+	     <a href="Support.html" class="hover:text-carelink-orange">Support</a>
         </div>
         <div class="flex items-center space-x-4">
-            <a href="#" class="text-sm font-semibold">Log in</a>
-            <a href="#"
+            <a href="Login.html" class="text-sm font-semibold">Log in</a>
+            <a href="javascript:void(0)"
    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
    class="bg-carelink-orange text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
    Book a Demo

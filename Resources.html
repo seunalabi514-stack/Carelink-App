@@ -249,262 +249,123 @@
 </section>
 
 <!-- CONTENT -->
-<section id="content" class="py-20">
-
+<section id="content" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-10">
 
-        <!-- FEATURED RESOURCE -->
-        <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-soft hover:shadow-xl transition duration-300">
-
-            <div class="relative h-72 bg-gradient-to-br from-[#0F172A] to-slate-800 overflow-hidden">
-
-                <div class="absolute inset-0 opacity-10">
-
-                    <div class="absolute top-10 left-10 w-40 h-40 border border-white rounded-full"></div>
-
-                    <div class="absolute bottom-0 right-0 w-64 h-64 border border-white rounded-full"></div>
-
-                </div>
-
-                <div class="relative p-10 h-full flex flex-col justify-between text-white">
-
-                    <div class="flex items-center justify-between">
-
-                        <div class="bg-white/10 border border-white/10 px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-bold">
-                            Featured Whitepaper
-                        </div>
-
-                        <div class="text-xs text-slate-300">
-                            Updated May 2026
-                        </div>
-
-                    </div>
-
-                    <div>
-
-                        <h2 class="text-3xl font-bold max-w-xl leading-tight">
-                            The 2026 Ontario LTC Compliance Playbook
-                        </h2>
-
-                        <p class="text-slate-300 mt-4 max-w-lg">
-                            How leading LTC operators are reducing scheduling risk and embedding compliance into workforce operations.
-                        </p>
-
-                    </div>
-
-                </div>
-
+        <!-- PREMIUM FEATURED RESOURCE -->
+        <div class="lg:col-span-2 group relative bg-dark rounded-[2rem] overflow-hidden shadow-glow transition-all duration-500 hover:-translate-y-1">
+            <!-- Abstract Stripe-style Background -->
+            <div class="absolute inset-0">
+                <div class="absolute top-[-20%] right-[-10%] w-96 h-96 bg-carelink/20 blur-[120px] rounded-full"></div>
+                <div class="absolute bottom-[-20%] left-[-10%] w-96 h-96 bg-orange-500/10 blur-[100px] rounded-full"></div>
+                <!-- Geometric Grid Overlay -->
+                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
             </div>
 
-            <div class="p-8 flex items-center justify-between flex-wrap gap-4">
-
-                <div class="flex items-center gap-6 text-sm text-slate-500">
-
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-download text-carelink"></i>
-                        2,481 downloads
+            <div class="relative flex flex-col md:flex-row h-full">
+                <!-- Visual Side -->
+                <div class="w-full md:w-1/2 p-12 flex items-center justify-center">
+                    <div class="relative">
+                        <!-- Glassmorphic UI Elements -->
+                        <div class="w-48 h-64 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl transform -rotate-6 transition-transform group-hover:-rotate-12 duration-500"></div>
+                        <div class="absolute inset-0 w-48 h-64 bg-gradient-to-br from-carelink to-orange-600 rounded-2xl shadow-xl transform rotate-3 flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-6 duration-500">
+                            <i class="fas fa-shield-halved text-white text-6xl opacity-20 absolute -right-4 -bottom-4"></i>
+                            <i class="fas fa-file-invoice text-white text-5xl"></i>
+                        </div>
                     </div>
-
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-clock text-carelink"></i>
-                        12 min read
-                    </div>
-
                 </div>
 
-                <a href="LTC-Playbook-2026.html"
-                class="inline-flex items-center bg-carelink text-white px-5 py-3 rounded-xl font-semibold hover:opacity-90 transition">
-
-                    Download PDF
-
-                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
-
-                </a>
-
+                <!-- Text Side -->
+                <div class="w-full md:w-1/2 p-10 flex flex-col justify-center text-white">
+                    <div class="inline-flex items-center self-start px-3 py-1 rounded-full bg-carelink/20 border border-carelink/30 text-[10px] uppercase tracking-[0.2em] font-bold text-carelink mb-6">
+                        Whitepaper 2026
+                    </div>
+                    <h2 class="text-3xl font-extrabold leading-tight tracking-tight">
+                        The Ontario LTC <br/>Compliance Playbook
+                    </h2>
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed">
+                        Redefining workforce operational intelligence for the modern healthcare era.
+                    </p>
+                    <div class="mt-8">
+                        <a href="#" class="inline-flex items-center text-carelink font-bold text-sm hover:translate-x-2 transition-transform">
+                            Access the full guide <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-
         </div>
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR (Unchanged) -->
         <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 h-fit">
-
             <div class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-3 py-1 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-5">
-
-                <span class="w-2 h-2 rounded-full bg-carelink"></span>
-
-                Weekly LTC Insights
-
+                <span class="w-2 h-2 rounded-full bg-carelink"></span> Weekly LTC Insights
             </div>
-
-            <h3 class="font-bold text-2xl leading-tight">
-                Stay ahead of staffing and compliance changes
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Receive operational guidance, workforce insights, and regulatory updates designed specifically for Ontario LTC environments.
-            </p>
-
-            <input type="email"
-            placeholder="Enter your email"
-            class="w-full mt-8 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-carelink/20">
-
-            <button class="w-full mt-4 bg-carelink text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
-                Subscribe
-            </button>
-
-            <p class="text-xs text-slate-400 mt-4">
-                No spam. Only practical operational insights.
-            </p>
-
+            <h3 class="font-bold text-2xl leading-tight">Stay ahead of staffing and compliance changes</h3>
+            <p class="text-sm text-slate-600 mt-4 leading-relaxed">Receive operational guidance, workforce insights, and regulatory updates designed specifically for Ontario LTC environments.</p>
+            <input type="email" placeholder="Enter your email" class="w-full mt-8 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-carelink/20">
+            <button class="w-full mt-4 bg-carelink text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">Subscribe</button>
         </div>
-
     </div>
 
     <!-- RESOURCE CARDS -->
     <div class="max-w-7xl mx-auto px-6 mt-16 grid md:grid-cols-3 gap-8">
-
-        <!-- CARD -->
+        
+        <!-- CARD 1 -->
         <div class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
-
-            <div class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
-
-                <i class="fas fa-video text-carelink text-5xl opacity-80 group-hover:scale-110 transition"></i>
-
-            </div>
-
-            <div class="p-6">
-
-                <div class="flex items-center justify-between mb-3">
-
-                    <p class="text-carelink text-xs font-bold uppercase tracking-widest">
-                        Webinar
-                    </p>
-
-                    <span class="text-[11px] text-slate-400">
-                        8 min
-                    </span>
-
+            <!-- Icon Placeholder Style from image.png -->
+            <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
+                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
                 </div>
-
-                <h3 class="font-bold text-lg leading-snug">
-                    Reducing Agency Spend by 35%
-                </h3>
-
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                    Real-world staffing optimization strategies for LTC operators managing labor pressure and compliance risk.
-                </p>
-
-                <a href="Reducing-Agency-Spend.html"
-                class="inline-flex items-center mt-5 text-carelink font-semibold text-sm">
-
-                    Read resource
-
-                    <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
-
-                </a>
-
+                <div class="relative w-16 h-16 bg-carelink/10 rounded-2xl flex items-center justify-center border border-carelink/20">
+                    <i class="fas fa-video text-carelink text-3xl group-hover:scale-110 transition"></i>
+                </div>
             </div>
-
+            <div class="p-6">
+                <p class="text-carelink text-xs font-bold uppercase tracking-widest mb-2">Webinar</p>
+                <h3 class="font-bold text-lg leading-snug">Reducing Agency Spend by 35%</h3>
+                <p class="text-sm text-slate-600 mt-3">Real-world staffing optimization strategies for LTC operators managing labor pressure.</p>
+            </div>
         </div>
 
-        <!-- CARD -->
+        <!-- CARD 2 -->
         <div class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
-
-            <div class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
-
-                <i class="fas fa-users text-carelink text-5xl opacity-80 group-hover:scale-110 transition"></i>
-
-            </div>
-
-            <div class="p-6">
-
-                <div class="flex items-center justify-between mb-3">
-
-                    <p class="text-carelink text-xs font-bold uppercase tracking-widest">
-                        Case Study
-                    </p>
-
-                    <span class="text-[11px] text-slate-400">
-                        6 min
-                    </span>
-
+            <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
+                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
                 </div>
-
-                <h3 class="font-bold text-lg leading-snug">
-                    Seun Supports Transformation
-                </h3>
-
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                    How structured workforce planning improved staffing consistency and reduced operational burnout.
-                </p>
-
-                <a href="#"
-                class="inline-flex items-center mt-5 text-carelink font-semibold text-sm">
-
-                    Read resource
-
-                    <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
-
-                </a>
-
+                <div class="relative w-16 h-16 bg-carelink/10 rounded-2xl flex items-center justify-center border border-carelink/20">
+                    <i class="fas fa-users text-carelink text-3xl group-hover:scale-110 transition"></i>
+                </div>
             </div>
-
+            <div class="p-6">
+                <p class="text-carelink text-xs font-bold uppercase tracking-widest mb-2">Case Study</p>
+                <h3 class="font-bold text-lg leading-snug">Seun Supports Transformation</h3>
+                <p class="text-sm text-slate-600 mt-3">How structured workforce planning improved staffing consistency and reduced burnout.</p>
+            </div>
         </div>
 
-        <!-- CARD -->
+        <!-- CARD 3 -->
         <div class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
-
-            <div class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
-
-                <i class="fas fa-shield-alt text-carelink text-5xl opacity-80 group-hover:scale-110 transition"></i>
-
-            </div>
-
-            <div class="p-6">
-
-                <div class="flex items-center justify-between mb-3">
-
-                    <p class="text-carelink text-xs font-bold uppercase tracking-widest">
-                        Compliance
-                    </p>
-
-                    <span class="text-[11px] text-slate-400">
-                        10 min
-                    </span>
-
+            <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
+                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
                 </div>
-
-                <h3 class="font-bold text-lg leading-snug">
-                    Union Rule Automation Guide
-                </h3>
-
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                    Learn how modern workforce systems automate collective agreement enforcement in LTC scheduling.
-                </p>
-
-                <a href="Union-Automation.html"
-                class="inline-flex items-center mt-5 text-carelink font-semibold text-sm">
-
-                    Read resource
-
-                    <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
-
-                </a>
-
+                <div class="relative w-16 h-16 bg-carelink/10 rounded-2xl flex items-center justify-center border border-carelink/20">
+                    <i class="fas fa-shield-alt text-carelink text-3xl group-hover:scale-110 transition"></i>
+                </div>
             </div>
-
+            <div class="p-6">
+                <p class="text-carelink text-xs font-bold uppercase tracking-widest mb-2">Compliance</p>
+                <h3 class="font-bold text-lg leading-snug">Union Rule Automation Guide</h3>
+                <p class="text-sm text-slate-600 mt-3">Learn how modern workforce systems automate collective agreement enforcement.</p>
+            </div>
         </div>
-
     </div>
-
 </section>
-
 <!-- FINAL CTA -->
 <section class="py-28 bg-[#0F172A] relative overflow-hidden">
 

@@ -2,10 +2,21 @@
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Whitepapers | Carelink Healthcare</title>
+   <title>Webinars | Carelink Healthcare</title>
 
    <script src="https://cdn.tailwindcss.com"></script>
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
 
    <script>
        tailwind.config = {
@@ -32,6 +43,14 @@
            background-image: radial-gradient(#f065290a 1px, transparent 1px);
            background-size: 20px 20px;
        }
+       .mobile-menu {
+           display: none;
+           flex-direction: column;
+           padding: 1rem 2rem;
+           background: white;
+           border-top: 1px solid #e2e8f0;
+       }
+       .mobile-menu.active { display: flex; }
    </style>
 
    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -40,20 +59,37 @@
 
 <body class="bg-white text-slate-800">
 
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 relative">
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+                <img src="logo.png" class="h-10" alt="Logo">
+                Carelink
+            </a>
+        </div>
 
-<div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+            <a href="Support.html">Support</a>
+        </div>
 
-    <!-- LOGO -->
-    <div class="flex items-center space-x-2">
-        <div class="text-carelink text-2xl font-bold flex items-center gap-2">
-            <img src="logo.png" class="h-10">
-            Carelink
+        <div class="flex items-center space-x-4">
+            <a href="Login.html" class="text-sm font-semibold text-slate-700">Log in</a>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+               Book a Demo
+            </a>
+            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </div>
 
-    <!-- DESKTOP NAV -->
-    <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+    <div id="navMenu" class="mobile-menu md:hidden">
         <a href="Product.html">Product</a>
         <a href="Solutions.html">Solutions</a>
         <a href="Pricing.html">Pricing</a>
@@ -61,38 +97,8 @@
         <a href="about.html">About Us</a>
         <a href="Support.html">Support</a>
     </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="flex items-center space-x-4">
-        <a href="Login.html" class="text-sm font-semibold text-slate-700">Log in</a>
-
-        <a href="#"
-           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
-           class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
-           Book a Demo
-        </a>
-
-        <!-- HAMBURGER -->
-        <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-</div>
-
-<!-- MOBILE MENU -->
-<div id="navMenu" class="mobile-menu md:hidden">
-    <a href="Product.html">Product</a>
-    <a href="Solutions.html">Solutions</a>
-    <a href="Pricing.html">Pricing</a>
-    <a href="Resources.html">Resources</a>
-    <a href="about.html">About Us</a>
-    <a href="Support.html">Support</a>
-</div>
-
 </nav>
 
-<!-- MOBILE MENU + ANIMATION FIX -->
 <style>
 .mobile-menu {
     display: none;
@@ -122,7 +128,6 @@ btn.addEventListener("click", () => {
     menu.classList.toggle("active");
 });
 </script>
-
 
    <header class="hero-pattern py-20 md:py-32 border-b border-slate-50">
        <div class="max-w-5xl mx-auto text-center px-6">

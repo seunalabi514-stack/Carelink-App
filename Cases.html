@@ -6,6 +6,18 @@
 
    <script src="https://cdn.tailwindcss.com"></script>
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
 
    <script>
        tailwind.config = {
@@ -205,7 +217,7 @@ btn.addEventListener("click", () => {
                 <h3 class="text-xl font-bold mb-4 leading-tight">Automating Union Seniority in Group Homes</h3>
                 <p class="text-sm text-slate-500 leading-relaxed mb-8 flex-grow">How a non-profit reduced grievance filings by 90% by automating assigning shifts based on complex union rules.</p>
                 <div class="pt-6 border-t border-slate-100">
-                    <a href="#" class="flex items-center text-sm font-bold text-dark hover:text-carelink transition">
+                    <a href="Case-Study.html" class="flex items-center text-sm font-bold text-dark hover:text-carelink transition">
                         Read Full Story <i class="fas fa-arrow-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -218,7 +230,7 @@ btn.addEventListener("click", () => {
                 <h3 class="text-xl font-bold mb-4 leading-tight">Digital Credential Management for 500+ Staff</h3>
                 <p class="text-sm text-slate-500 leading-relaxed mb-8 flex-grow">Eliminating manual tracking and ensuring 100% RN/RPN compliance through automated digital alerts.</p>
                 <div class="pt-6 border-t border-slate-100">
-                    <a href="#" class="flex items-center text-sm font-bold text-dark hover:text-carelink transition">
+                    <a href="Digital-Credential.html" class="flex items-center text-sm font-bold text-dark hover:text-carelink transition">
                         Read Full Story <i class="fas fa-arrow-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -231,7 +243,7 @@ btn.addEventListener("click", () => {
                 <h3 class="text-xl font-bold mb-4 leading-tight">Scaling Mobile Visits Without Admin Bloat</h3>
                 <p class="text-sm text-slate-500 leading-relaxed mb-8 flex-grow">A Home Care agency doubled their patient load without hiring new administrative staff using Carelink mobile GPS clock-ins.</p>
                 <div class="pt-6 border-t border-slate-100">
-                    <a href="#" class="flex items-center text-sm font-bold text-dark hover:text-carelink transition">
+                    <a href="Scaling-Mobile.html" class="flex items-center text-sm font-bold text-dark hover:text-carelink transition">
                         Read Full Story <i class="fas fa-arrow-right ml-2 text-xs"></i>
                     </a>
                 </div>

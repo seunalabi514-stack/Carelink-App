@@ -10,74 +10,110 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        carelink: '#F06529',
-        dark: '#0F172A'
-      },
-      boxShadow: {
-        soft: '0 10px 30px rgba(0,0,0,0.06)',
-        card: '0 20px 50px rgba(0,0,0,0.05)',
-        glow: '0 0 60px rgba(240,101,41,0.25)'
-      }
-    }
-  }
-}
-</script>
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-body{
-  font-family:'Inter',sans-serif;
-  overflow-x:hidden;
-}
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       carelink: '#F06529',
+                       dark: '#0F172A',
+                       blueprint: '#334155'
+                   },
+               },
+           },
+       };
+   </script>
 
-.hero-pattern{
-  background-color:#ffffff;
-  background-image:radial-gradient(#f065290a 1px, transparent 1px);
-  background-size:20px 20px;
-}
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap');
+       body { font-family: 'Inter', sans-serif; }
+       .code-font { font-family: 'JetBrains Mono', monospace; }
+       .mobile-menu { display: none; flex-direction: column; padding: 1rem 2rem; background: white; border-top: 1px solid #e2e8f0; }
+       .mobile-menu.active { display: flex; }
+   </style>
 
-.gradient-border{
-  position:relative;
-}
-
-.gradient-border::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:2rem;
-  padding:1px;
-  background:linear-gradient(to bottom right, rgba(240,101,41,.35), rgba(15,23,42,.05));
-  -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-          mask-composite:exclude;
-}
-
-.page-break{
-  page-break-before:always;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-</style>
+   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 
-<body class="bg-white text-slate-800">
+<body class="bg-slate-50 text-slate-800">
 
-<div id="pdfContent">
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+                <img src="logo.png" class="h-10" alt="Logo">
+                Carelink
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Compliance.html" class="text-carelink font-bold">Compliance</a>
+            <a href="Resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+               Book a Demo
+            </a>
+            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <div id="navMenu" class="mobile-menu md:hidden">
+        <a href="Product.html">Product</a>
+        <a href="Solutions.html">Solutions</a>
+        <a href="Compliance.html">Compliance</a>
+        <a href="Resources.html">Resources</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+<!-- MOBILE MENU + ANIMATION FIX -->
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
 
-<!-- ========================================= -->
-<!-- HERO -->
-<!-- ========================================= -->
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
 
 <header class="hero-pattern relative overflow-hidden border-b border-slate-100">
 

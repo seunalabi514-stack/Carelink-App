@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Labor Relations | Union-Aware Logic Models | Carelink</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        carelink: '#F06529',
+        dark: '#0F172A'
+      },
+      boxShadow: {
+        soft: '0 10px 30px rgba(0,0,0,0.06)',
+        card: '0 20px 50px rgba(0,0,0,0.05)',
+        glow: '0 0 60px rgba(240,101,41,0.25)'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body{
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+.hero-pattern{
+  background-color:#ffffff;
+  background-image:radial-gradient(#f065290a 1px, transparent 1px);
+  background-size:20px 20px;
+}
+
+.gradient-border{
+  position:relative;
+}
+
+.gradient-border::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:2rem;
+  padding:1px;
+  background:linear-gradient(to bottom right, rgba(240,101,41,.35), rgba(15,23,42,.05));
+  -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+}
+
+.page-break{
+  page-break-before:always;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+</style>
+</head>
+
+<body class="bg-white text-slate-800">
+
+<div id="pdfContent">
+
+<!-- ========================================= -->
+<!-- HERO -->
+<!-- ========================================= -->
+
+<header class="hero-pattern relative overflow-hidden border-b border-slate-100">
+
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-3xl opacity-30"></div>
+
+<div class="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
+
+<div class="max-w-4xl">
+
+<div class="inline-flex items-center gap-3 bg-orange-50 border border-orange-100 text-carelink px-5 py-3 rounded-full text-[11px] font-black tracking-[0.2em] uppercase mb-10">
+
+<div class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-carelink"></span>
+</div>
+
+<span>Labor Relations Intelligence</span>
+
+</div>
+
+<h1 class="text-5xl md:text-7xl font-black tracking-tight text-dark leading-[0.95] mb-8">
+Union-Aware <br>
+Logic Models
+</h1>
+
+<p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mb-12">
+Implementing seniority-based bidding and assignment rules through deterministic scheduling infrastructure instead of manual interpretation.
+</p>
+
+<div class="flex flex-col sm:flex-row gap-4">
+
+<button id="downloadBtn"
+class="bg-carelink text-white px-8 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition-all duration-300">
+<i class="fas fa-download mr-2"></i>
+Download Whitepaper
+</button>
+
+<a href="#framework"
+class="border border-slate-200 bg-white px-8 py-5 rounded-2xl font-bold hover:border-carelink hover:text-carelink transition">
+Explore Framework
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ========================================= -->
+<!-- EXECUTIVE METRICS -->
+<!-- ========================================= -->
+
+<section class="py-20 bg-white border-b border-slate-100">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="gradient-border bg-[#F8FAFC] rounded-[2rem] p-10 relative overflow-hidden">
+
+<div class="text-5xl font-black text-dark mb-4">
+87%
+</div>
+
+<p class="text-slate-500 leading-relaxed text-lg">
+Reduction in manual union rule interpretation during scheduling workflows.
+</p>
+
+</div>
+
+<div class="gradient-border bg-[#F8FAFC] rounded-[2rem] p-10 relative overflow-hidden">
+
+<div class="text-5xl font-black text-dark mb-4">
+100%
+</div>
+
+<p class="text-slate-500 leading-relaxed text-lg">
+Traceable assignment visibility across scheduling operations.
+</p>
+
+</div>
+
+<div class="gradient-border bg-[#F8FAFC] rounded-[2rem] p-10 relative overflow-hidden">
+
+<div class="text-5xl font-black text-dark mb-4">
+24/7
+</div>
+
+<p class="text-slate-500 leading-relaxed text-lg">
+Continuous rule-based labor agreement enforcement infrastructure.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- EXECUTIVE OVERVIEW -->
+<!-- ========================================= -->
+
+<section class="py-28 bg-white page-break">
+
+<div class="max-w-5xl mx-auto px-6">
+
+<div class="max-w-3xl mb-20">
+
+<span class="text-carelink text-xs font-black uppercase tracking-[0.25em]">
+Executive Summary
+</span>
+
+<h2 class="text-4xl md:text-5xl font-black text-dark leading-tight mt-5 mb-8">
+Healthcare labor compliance cannot scale through manual interpretation.
+</h2>
+
+<p class="text-xl text-slate-600 leading-relaxed">
+Unionized healthcare environments require consistent application of seniority, qualification, overtime, and assignment rules across complex staffing structures. Traditional scheduling methods rely heavily on human interpretation, increasing operational inconsistency and grievance exposure.
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100">
+
+<div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-8">
+<i class="fas fa-triangle-exclamation text-carelink text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-bold text-dark mb-4">
+The Operational Risk
+</h3>
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Schedulers manually evaluate eligibility, seniority ranking, qualifications, and assignment sequencing across multiple staffing pools and collective agreement structures.
+</p>
+
+</div>
+
+<div class="bg-dark rounded-[2rem] p-10 text-white relative overflow-hidden">
+
+<div class="absolute top-0 right-0 w-56 h-56 bg-carelink rounded-full blur-3xl opacity-10"></div>
+
+<div class="relative">
+
+<div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm">
+<i class="fas fa-microchip text-carelink text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+The Infrastructure Shift
+</h3>
+
+<p class="text-slate-300 leading-relaxed text-lg">
+Union logic becomes encoded into deterministic workforce governance infrastructure capable of real-time assignment enforcement and audit traceability.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- GOVERNANCE ARCHITECTURE -->
+<!-- ========================================= -->
+
+<section id="framework" class="py-28 bg-[#F8FAFC] page-break">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center max-w-3xl mx-auto mb-20">
+
+<span class="text-carelink text-xs font-black tracking-[0.25em] uppercase">
+Governance Architecture
+</span>
+
+<h2 class="text-4xl md:text-5xl font-black text-dark mt-5 mb-8">
+How Union-Aware Enforcement Works
+</h2>
+
+<p class="text-xl text-slate-500 leading-relaxed">
+Operational compliance is achieved through layered scheduling intelligence rather than manual policy interpretation.
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<div class="bg-white rounded-[2rem] p-8 shadow-soft border border-slate-100 hover:shadow-card transition-all duration-500">
+
+<div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-8">
+<i class="fas fa-users text-carelink text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Staff Pool Inputs
+</h3>
+
+<p class="text-slate-500 leading-relaxed">
+Availability, union classification, credentials, overtime status, and seniority records enter the scheduling engine.
+</p>
+
+</div>
+
+<div class="bg-white rounded-[2rem] p-8 shadow-soft border border-slate-100 hover:shadow-card transition-all duration-500">
+
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8">
+<i class="fas fa-scale-balanced text-blue-500 text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Rule Evaluation
+</h3>
+
+<p class="text-slate-500 leading-relaxed">
+Collective agreement logic is automatically evaluated using deterministic eligibility sequencing.
+</p>
+
+</div>
+
+<div class="bg-white rounded-[2rem] p-8 shadow-soft border border-slate-100 hover:shadow-card transition-all duration-500">
+
+<div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-8">
+<i class="fas fa-bolt text-green-500 text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Assignment Engine
+</h3>
+
+<p class="text-slate-500 leading-relaxed">
+Shift assignments occur automatically according to encoded labor governance policies.
+</p>
+
+</div>
+
+<div class="bg-white rounded-[2rem] p-8 shadow-soft border border-slate-100 hover:shadow-card transition-all duration-500">
+
+<div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-8">
+<i class="fas fa-file-shield text-purple-500 text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Audit Logging
+</h3>
+
+<p class="text-slate-500 leading-relaxed">
+Every assignment decision is stored with timestamped compliance traceability.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- CORE FRAMEWORK -->
+<!-- ========================================= -->
+
+<section class="py-28 bg-white page-break">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<div class="max-w-3xl mb-20">
+
+<span class="text-carelink text-xs font-black tracking-[0.25em] uppercase">
+Solution Framework
+</span>
+
+<h2 class="text-4xl md:text-5xl font-black text-dark mt-5 mb-8">
+Core Enforcement Layers
+</h2>
+
+</div>
+
+<div class="space-y-8">
+
+<div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 flex flex-col md:flex-row md:items-start gap-8">
+
+<div class="text-6xl font-black text-carelink opacity-20">
+01
+</div>
+
+<div>
+
+<h3 class="text-3xl font-black text-dark mb-5">
+Seniority Index Automation
+</h3>
+
+<p class="text-xl text-slate-600 leading-relaxed">
+Union seniority structures are converted into structured digital ranking systems capable of real-time workforce evaluation.
+</p>
+
+</div>
+
+</div>
+
+<div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 flex flex-col md:flex-row md:items-start gap-8">
+
+<div class="text-6xl font-black text-carelink opacity-20">
+02
+</div>
+
+<div>
+
+<h3 class="text-3xl font-black text-dark mb-5">
+Rule-Based Eligibility Logic
+</h3>
+
+<p class="text-xl text-slate-600 leading-relaxed">
+Assignment constraints, overtime rules, qualification requirements, and labor sequencing policies are continuously enforced.
+</p>
+
+</div>
+
+</div>
+
+<div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 flex flex-col md:flex-row md:items-start gap-8">
+
+<div class="text-6xl font-black text-carelink opacity-20">
+03
+</div>
+
+<div>
+
+<h3 class="text-3xl font-black text-dark mb-5">
+Deterministic Assignment Processing
+</h3>
+
+<p class="text-xl text-slate-600 leading-relaxed">
+Scheduling decisions occur through consistent system-driven governance logic rather than subjective interpretation.
+</p>
+
+</div>
+
+</div>
+
+<div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 flex flex-col md:flex-row md:items-start gap-8">
+
+<div class="text-6xl font-black text-carelink opacity-20">
+04
+</div>
+
+<div>
+
+<h3 class="text-3xl font-black text-dark mb-5">
+Compliance Traceability
+</h3>
+
+<p class="text-xl text-slate-600 leading-relaxed">
+Assignment decisions remain fully reviewable for grievance investigation, labor transparency, and operational audits.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- QUOTE BLOCK -->
+<!-- ========================================= -->
+
+<section class="py-28 bg-dark text-white relative overflow-hidden page-break">
+
+<div class="absolute top-0 left-0 w-[500px] h-[500px] bg-carelink rounded-full blur-3xl opacity-10"></div>
+
+<div class="relative max-w-5xl mx-auto px-6 text-center">
+
+<i class="fas fa-quote-left text-carelink text-5xl mb-10"></i>
+
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-10">
+“Union compliance should function as enforceable infrastructure — not institutional memory.”
+</h2>
+
+<p class="text-slate-400 text-xl">
+Carelink Healthcare Research Division
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- OPERATIONAL IMPACT -->
+<!-- ========================================= -->
+
+<section class="py-28 bg-white page-break">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+
+<div>
+
+<span class="text-carelink text-xs font-black tracking-[0.25em] uppercase">
+Operational Outcomes
+</span>
+
+<h2 class="text-4xl md:text-5xl font-black text-dark mt-5 mb-8 leading-tight">
+From scheduling administration to workforce governance.
+</h2>
+
+<p class="text-xl text-slate-600 leading-relaxed mb-10">
+By automating union rule enforcement, healthcare operators reduce assignment disputes, accelerate workforce allocation, and improve labor transparency across scheduling operations.
+</p>
+
+<div class="space-y-6">
+
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-check text-carelink"></i>
+</div>
+
+<div>
+<h3 class="font-bold text-lg mb-1">Reduced grievance exposure</h3>
+<p class="text-slate-500">Consistent rule enforcement lowers assignment inconsistency.</p>
+</div>
+</div>
+
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-check text-carelink"></i>
+</div>
+
+<div>
+<h3 class="font-bold text-lg mb-1">Faster scheduling operations</h3>
+<p class="text-slate-500">Automated logic reduces manual allocation overhead.</p>
+</div>
+</div>
+
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-check text-carelink"></i>
+</div>
+
+<div>
+<h3 class="font-bold text-lg mb-1">Continuous compliance visibility</h3>
+<p class="text-slate-500">Managers gain real-time governance transparency.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="bg-dark rounded-[2.5rem] p-12 text-white relative overflow-hidden">
+
+<div class="absolute bottom-0 right-0 w-72 h-72 bg-carelink rounded-full blur-3xl opacity-10"></div>
+
+<div class="relative">
+
+<div class="text-sm uppercase tracking-[0.2em] text-carelink font-bold mb-6">
+Workforce Governance Shift
+</div>
+
+<div class="space-y-8">
+
+<div class="flex items-center justify-between border-b border-white/10 pb-5">
+<span class="text-slate-300">Manual Interpretation</span>
+<span class="font-black text-red-400">High Risk</span>
+</div>
+
+<div class="flex items-center justify-between border-b border-white/10 pb-5">
+<span class="text-slate-300">Spreadsheet Scheduling</span>
+<span class="font-black text-orange-400">Unstable</span>
+</div>
+
+<div class="flex items-center justify-between border-b border-white/10 pb-5">
+<span class="text-slate-300">Deterministic Enforcement</span>
+<span class="font-black text-green-400">Operationally Stable</span>
+</div>
+
+<div class="flex items-center justify-between">
+<span class="text-slate-300">Continuous Audit Visibility</span>
+<span class="font-black text-carelink">Enabled</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- CTA -->
+<!-- ========================================= -->
+
+<section class="py-32 bg-dark text-white relative overflow-hidden page-break">
+
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-96 h-96 bg-carelink rounded-full blur-3xl"></div>
+</div>
+
+<div class="relative max-w-4xl mx-auto text-center px-6">
+
+<span class="text-carelink text-xs font-black tracking-[0.25em] uppercase">
+Workforce Governance
+</span>
+
+<h2 class="text-5xl md:text-6xl font-black leading-tight mt-6 mb-8">
+Move from manual interpretation to automated labor compliance
+</h2>
+
+<p class="text-slate-400 mb-12 text-xl leading-relaxed">
+Carelink transforms collective agreement logic into enforceable operational infrastructure for modern healthcare organizations.
+</p>
+
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+<a href="#"
+class="bg-carelink text-white px-8 py-5 rounded-2xl font-bold hover:bg-orange-600 transition">
+Schedule Executive Demo
+</a>
+
+<a href="#"
+class="bg-white/10 backdrop-blur-sm border border-white/10 px-8 py-5 rounded-2xl font-bold hover:bg-white/20 transition">
+Explore Platform
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- ========================================= -->
+<!-- PDF EXPORT -->
+<!-- ========================================= -->
+
+<script>
+document.getElementById("downloadBtn").addEventListener("click", function () {
+
+const element = document.getElementById("pdfContent");
+
+const opt = {
+margin: 0,
+filename: 'union-aware-logic-models-carelink.pdf',
+image: { type: 'jpeg', quality: 0.98 },
+html2canvas: {
+scale: 2,
+useCORS: true
+},
+jsPDF: {
+unit: 'in',
+format: 'letter',
+orientation: 'portrait'
+},
+pagebreak: {
+mode: ['css', 'legacy']
+}
+};
+
+html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
+
+const totalPages = pdf.internal.getNumberOfPages();
+
+for (let i = 1; i <= totalPages; i++) {
+
+pdf.setPage(i);
+
+pdf.setFontSize(10);
+pdf.setTextColor(140);
+
+pdf.text(
+'Carelink Healthcare • Union-Aware Logic Models',
+pdf.internal.pageSize.getWidth() / 2,
+pdf.internal.pageSize.getHeight() - 0.4,
+{ align: 'center' }
+);
+
+pdf.text(
+`Page ${i} of ${totalPages}`,
+pdf.internal.pageSize.getWidth() / 2,
+pdf.internal.pageSize.getHeight() - 0.22,
+{ align: 'center' }
+);
+
+}
+
+}).save();
+
+});
+</script>
+
+</body>
+</html>

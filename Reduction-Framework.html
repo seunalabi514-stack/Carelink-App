@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>The Agency Reduction Framework | Carelink</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+ <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       carelink: '#F06529',
+                       dark: '#0F172A'
+                   },
+                   boxShadow: {
+                       soft: '0 10px 30px rgba(0,0,0,0.06)',
+                       card: '0 20px 50px rgba(0,0,0,0.05)'
+                   },
+               },
+           },
+       };
+   </script>
+
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+       body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+       .hero-pattern {
+           background-color: #ffffff;
+           background-image: radial-gradient(#f065290a 1px, transparent 1px);
+           background-size: 20px 20px;
+       }
+       .mobile-menu {
+           display: none;
+           flex-direction: column;
+           padding: 1rem 2rem;
+           background: white;
+           border-top: 1px solid #e2e8f0;
+       }
+       .mobile-menu.active { display: flex; }
+   </style>
+
+   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-white text-slate-800">
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
+                <img src="logo.png" class="h-10" alt="Logo">
+                Carelink
+            </a>
+        </div>
+
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html">Product</a>
+            <a href="Solutions.html">Solutions</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+            <a href="Support.html">Support</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <a href="Login.html" class="text-sm font-semibold text-slate-700">Log in</a>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
+               Book a Demo
+            </a>
+            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="navMenu" class="mobile-menu md:hidden">
+        <a href="Product.html">Product</a>
+        <a href="Solutions.html">Solutions</a>
+        <a href="Pricing.html">Pricing</a>
+        <a href="Resources.html">Resources</a>
+        <a href="about.html">About Us</a>
+        <a href="Support.html">Support</a>
+    </div>
+</nav>
+
+<style>
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    font-weight: 500;
+    color: #475569;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+</style>
+
+<!-- MENU SCRIPT -->
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+
+<!-- HERO -->
+<section class="hero-pattern relative overflow-hidden py-28 border-b border-slate-100">
+
+    <!-- ORANGE GLOW -->
+    <div class="hero-glow"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase mb-8">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+            Workforce Cost Optimization
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black text-dark tracking-tight leading-[1.02] mb-8">
+            The Agency Reduction Framework
+        </h1>
+
+        <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-12">
+            A modern operating framework for reducing agency dependency through internal workforce optimization, predictive scheduling visibility, and automated staffing governance.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button id="downloadBtn"
+                   class="bg-carelink text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-orange-600 transition">
+                    <i class="fas fa-download mr-2"></i> Download Whitepaper
+                </button>
+
+            <a href="Resources.html"
+               class="border border-slate-200 bg-white/70 backdrop-blur-sm px-8 py-4 rounded-2xl font-bold hover:border-carelink hover:text-carelink transition">
+                Explore Framework
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- OPERATIONAL OUTCOMES -->
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="max-w-3xl mb-14">
+            <span class="text-carelink text-xs font-black tracking-widest uppercase">
+                Operational Outcomes
+            </span>
+
+            <h2 class="text-4xl font-black text-dark mt-4 mb-6 leading-tight">
+                Replacing reactive staffing with operational control
+            </h2>
+
+            <p class="text-lg text-slate-600 leading-relaxed">
+                High agency utilization is often a symptom of fragmented scheduling visibility, delayed vacancy response, and limited internal workforce coordination. Modern staffing operations require continuous visibility and automated escalation pathways.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-8">
+                    <i class="fas fa-clock text-carelink text-2xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-black text-dark mb-4">
+                    Faster Internal Coverage
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed">
+                    Open shifts are surfaced to qualified internal staff before agency escalation occurs, improving fill efficiency and continuity of care.
+                </p>
+            </div>
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-8">
+                    <i class="fas fa-chart-line text-blue-500 text-2xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-black text-dark mb-4">
+                    Predictive Workforce Visibility
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed">
+                    Staffing pressure, vacancy trends, absenteeism patterns, and overtime exposure are identified before shortages become operational emergencies.
+                </p>
+            </div>
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center mb-8">
+                    <i class="fas fa-building-shield text-green-500 text-2xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-black text-dark mb-4">
+                    Reduced Reactive Escalation
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed">
+                    External agency staffing becomes a controlled exception rather than the default response to operational instability.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- COMMON FAILURE POINTS -->
+<section class="py-24 bg-[#F8FAFC]">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="max-w-3xl mb-16">
+            <span class="text-blue-500 text-xs font-black tracking-widest uppercase">
+                Operational Challenges
+            </span>
+
+            <h2 class="text-4xl font-black text-dark mt-4 mb-6">
+                Common staffing failure points in LTC operations
+            </h2>
+
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Many long-term care facilities experience recurring staffing instability due to fragmented workflows, limited workforce visibility, and reactive scheduling processes.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="glass-card border border-white/60 rounded-[2rem] p-8 shadow-soft">
+                <div class="flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-user-clock text-red-500"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-3">Last-Minute Sick Calls</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Unexpected callouts force schedulers into reactive agency escalation and overtime balancing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card border border-white/60 rounded-[2rem] p-8 shadow-soft">
+                <div class="flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-scale-balanced text-carelink"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-3">Manual Union Calculations</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Seniority rules and collective agreement requirements are often managed manually under time pressure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card border border-white/60 rounded-[2rem] p-8 shadow-soft">
+                <div class="flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-layer-group text-blue-500"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-3">Fragmented Scheduling Visibility</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Staffing data across units or homes is disconnected, limiting operational coordination.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card border border-white/60 rounded-[2rem] p-8 shadow-soft">
+                <div class="flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-triangle-exclamation text-green-500"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-3">Reactive Vacancy Management</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Staffing shortages are often identified only after scheduling gaps already impact operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="max-w-3xl mb-20">
+            <span class="text-carelink text-xs font-black tracking-widest uppercase">
+                Strategic Framework
+            </span>
+
+            <h2 class="text-4xl font-black text-dark mt-4 mb-6">
+                The four-layer agency reduction architecture
+            </h2>
+
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Sustainable agency reduction requires operational visibility, workforce flexibility, automated scheduling governance, and proactive staffing coordination working together.
+            </p>
+        </div>
+
+        <div class="space-y-8">
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 shadow-soft flex gap-8">
+                <div class="text-5xl font-black text-carelink">01</div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Internal Float Optimization</h3>
+
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Open shifts are automatically surfaced to available qualified staff before external staffing escalation pathways are triggered.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 shadow-soft flex gap-8">
+                <div class="text-5xl font-black text-carelink">02</div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Predictive Scheduling Visibility</h3>
+
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Scheduling trends, absenteeism patterns, and vacancy pressure are continuously monitored to identify staffing instability earlier.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 shadow-soft flex gap-8">
+                <div class="text-5xl font-black text-carelink">03</div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Union-Aware Assignment Logic</h3>
+
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Seniority rules, qualifications, and collective agreement requirements are enforced automatically during assignment workflows.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#F8FAFC] rounded-[2rem] p-10 border border-slate-100 shadow-soft flex gap-8">
+                <div class="text-5xl font-black text-carelink">04</div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Agency Escalation Governance</h3>
+
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        External agency utilization becomes structured, measurable, and operationally governed rather than reactive.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 bg-dark text-white relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(240,101,41,0.16),transparent_55%)]"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+
+        <span class="text-carelink text-xs font-black tracking-widest uppercase">
+            Workforce Assessment
+        </span>
+
+        <h2 class="text-5xl font-black leading-tight mt-6 mb-8">
+            Understand where agency dependency is entering your operation
+        </h2>
+
+        <p class="text-slate-400 text-lg leading-relaxed mb-10">
+            Book a strategic workforce review tailored to your staffing model, scheduling workflows, and operational structure.
+        </p>
+
+        <a href="#"
+           class="bg-carelink text-white px-10 py-5 rounded-2xl font-bold inline-block hover:bg-orange-600 transition shadow-2xl">
+            Request Agency Dependency Analysis
+        </a>
+
+    </div>
+</section>
+
+<script>
+document.getElementById("downloadBtn").addEventListener("click", function () {
+
+    const element = document.body; // exports whole page
+
+    const options = {
+        margin:       0.5,
+        filename:     'carelink-whitepaper.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(element).save();
+});
+</script>
+</body>
+</html>

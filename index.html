@@ -753,6 +753,824 @@ document.addEventListener("click", (e) => {
     }
 });
 </script>
+<!-- ========================================= -->
+<!-- CARELINK INTELLIGENT SUPPORT ASSISTANT -->
+<!-- REPLACE YOUR CURRENT CHATBOT WITH THIS -->
+<!-- ========================================= -->
 
+<!-- SUPPORT CHAT BUTTON -->
+<div id="supportLauncher"
+class="fixed bottom-6 right-6 z-[9999]">
+
+<button id="chatToggle"
+class="group relative bg-carelink text-white w-16 h-16 rounded-2xl shadow-glow flex items-center justify-center hover:scale-105 transition-all duration-300">
+
+<div class="absolute inset-0 rounded-2xl bg-carelink opacity-30 blur-xl group-hover:opacity-50 transition"></div>
+
+<i class="fas fa-comments text-2xl relative z-10"></i>
+
+</button>
+
+</div>
+
+<!-- CHAT WINDOW -->
+<div id="chatWindow"
+class="fixed bottom-28 right-6 w-[400px] max-w-[calc(100vw-32px)] h-[720px] bg-white rounded-[32px] shadow-2xl border border-slate-200 overflow-hidden z-[9999] hidden flex-col">
+
+<!-- HEADER -->
+<div class="relative bg-dark text-white px-6 py-5 border-b border-white/10 overflow-hidden">
+
+<div class="absolute top-[-100px] right-[-100px] w-56 h-56 bg-carelink opacity-20 blur-3xl rounded-full"></div>
+
+<div class="relative flex items-center justify-between">
+
+<div class="flex items-center gap-4">
+
+<div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur flex items-center justify-center">
+<i class="fas fa-headset text-carelink text-xl"></i>
+</div>
+
+<div>
+<h3 class="font-black text-lg">
+Carelink Assistant
+</h3>
+
+<p class="text-xs text-slate-300 uppercase tracking-widest">
+Healthcare Operations Support
+</p>
+</div>
+
+</div>
+
+<button id="closeChat"
+class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 transition flex items-center justify-center">
+
+<i class="fas fa-xmark"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- BODY -->
+<div id="chatBody"
+class="flex-1 overflow-y-auto px-5 py-5 bg-[#FCFCFD] space-y-4">
+
+<!-- INITIAL BOT MESSAGE -->
+<div class="flex items-start gap-3">
+
+<div class="w-10 h-10 rounded-xl bg-carelink text-white flex items-center justify-center shrink-0">
+<i class="fas fa-robot text-sm"></i>
+</div>
+
+<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-5 py-4 shadow-sm max-w-[85%]">
+
+<p class="text-sm text-slate-700 leading-relaxed">
+Welcome to Carelink. What would you like help with today?
+</p>
+
+</div>
+
+</div>
+
+<!-- INITIAL OPTIONS -->
+<div id="optionsContainer" class="space-y-3 pl-13">
+
+<button onclick="selectOption('agency')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Reduce agency spending
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Lower overtime & external staffing costs
+</div>
+
+</button>
+
+<button onclick="selectOption('scheduling')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Scheduling automation
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Union-aware workforce coordination
+</div>
+
+</button>
+
+<button onclick="selectOption('compliance')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Compliance & credentialing
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Credential governance & audit readiness
+</div>
+
+</button>
+
+<button onclick="selectOption('operations')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Operational visibility
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Reporting, analytics & workforce intelligence
+</div>
+
+</button>
+
+<button onclick="selectOption('implementation')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Implementation & onboarding
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Deployment timelines & integrations
+</div>
+
+</button>
+
+<button onclick="selectOption('pricing')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Pricing & demos
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Platform evaluation & consultations
+</div>
+
+</button>
+
+<button onclick="selectOption('support')"
+class="w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4">
+
+<div class="font-bold text-sm text-dark">
+Technical support
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Access, troubleshooting & assistance
+</div>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="border-t border-slate-100 px-5 py-4 bg-white">
+
+<div class="flex items-center justify-between">
+
+<div class="flex items-center gap-2 text-[11px] uppercase tracking-widest text-slate-400">
+
+<i class="fas fa-shield-alt text-carelink"></i>
+
+Secure Support Environment
+
+</div>
+
+<button onclick="restartChat()"
+class="text-xs font-bold text-carelink hover:underline">
+
+Restart
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHATBOT SCRIPT -->
+<script>
+
+const chatToggle = document.getElementById("chatToggle");
+const chatWindow = document.getElementById("chatWindow");
+const closeChat = document.getElementById("closeChat");
+const chatBody = document.getElementById("chatBody");
+
+chatToggle.addEventListener("click", () => {
+  chatWindow.classList.toggle("hidden");
+  chatWindow.classList.toggle("flex");
+});
+
+closeChat.addEventListener("click", () => {
+  chatWindow.classList.add("hidden");
+  chatWindow.classList.remove("flex");
+});
+
+function appendUserMessage(text) {
+
+  const wrapper = document.createElement("div");
+
+  wrapper.className = "flex justify-end";
+
+  wrapper.innerHTML = `
+    <div class="bg-carelink text-white rounded-2xl rounded-tr-sm px-5 py-4 max-w-[85%] shadow-sm">
+      <p class="text-sm leading-relaxed">${text}</p>
+    </div>
+  `;
+
+  chatBody.appendChild(wrapper);
+
+  scrollChat();
+}
+
+function appendBotMessage(text) {
+
+  const wrapper = document.createElement("div");
+
+  wrapper.className = "flex items-start gap-3";
+
+  wrapper.innerHTML = `
+    <div class="w-10 h-10 rounded-xl bg-carelink text-white flex items-center justify-center shrink-0">
+      <i class="fas fa-robot text-sm"></i>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-5 py-4 shadow-sm max-w-[85%]">
+      <p class="text-sm text-slate-700 leading-relaxed">${text}</p>
+    </div>
+  `;
+
+  chatBody.appendChild(wrapper);
+
+  scrollChat();
+}
+
+function appendButtons(buttons) {
+
+  const container = document.createElement("div");
+
+  container.className = "space-y-3 pl-13";
+
+  buttons.forEach(btn => {
+
+    const button = document.createElement("button");
+
+    button.className =
+      "w-full text-left bg-white border border-slate-200 hover:border-carelink hover:bg-orange-50 transition rounded-2xl px-5 py-4";
+
+    button.innerHTML = `
+      <div class="font-bold text-sm text-dark">
+        ${btn.label}
+      </div>
+
+      <div class="text-xs text-slate-500 mt-1">
+        ${btn.description}
+      </div>
+    `;
+
+    button.onclick = btn.action;
+
+    container.appendChild(button);
+
+  });
+
+  chatBody.appendChild(container);
+
+  scrollChat();
+}
+
+function appendEndOptions() {
+
+  appendButtons([
+
+    {
+      label: "Book a meeting",
+      description: "Schedule an operational consultation",
+      action: () => {
+        window.open(
+          "https://calendly.com/thecarelink/30min",
+          "_blank"
+        );
+      }
+    },
+
+    {
+      label: "End chat",
+      description: "Close the support assistant",
+      action: () => {
+        appendUserMessage("End chat");
+
+        appendBotMessage(
+          "Thank you for visiting Carelink. If you need further assistance, our team is always available."
+        );
+
+        setTimeout(() => {
+          chatWindow.classList.add("hidden");
+          chatWindow.classList.remove("flex");
+        }, 1200);
+      }
+    }
+
+  ]);
+
+}
+
+function scrollChat() {
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function selectOption(type) {
+
+  document.getElementById("optionsContainer").innerHTML = "";
+
+  if(type === "agency") {
+
+    appendUserMessage("Reduce agency spending");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Carelink helps healthcare organizations reduce external staffing dependency through internal workforce optimization, intelligent shift workflows, overtime visibility, and staffing analytics."
+      );
+
+      appendButtons([
+
+        {
+          label: "Reduce overtime",
+          description: "Monitor fatigue & overtime exposure",
+          action: () => {
+
+            appendUserMessage("Reduce overtime");
+
+            appendBotMessage(
+              "Carelink identifies overtime patterns, fatigue risk, and scheduling pressure points before escalation occurs."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Improve internal coverage",
+          description: "Maximize internal staffing utilization",
+          action: () => {
+
+            appendUserMessage("Improve internal coverage");
+
+            appendBotMessage(
+              "Automatically prioritize qualified internal staff before escalating to external agencies."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Open shift fulfillment",
+          description: "Accelerate shift acceptance workflows",
+          action: () => {
+
+            appendUserMessage("Open shift fulfillment");
+
+            appendBotMessage(
+              "Digitize open shift distribution with union-aware logic and automated targeting workflows."
+            );
+
+            appendEndOptions();
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+  else if(type === "scheduling") {
+
+    appendUserMessage("Scheduling automation");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Carelink transforms manual scheduling into operational automation using labor logic, credential rules, and workforce governance."
+      );
+
+      appendButtons([
+
+        {
+          label: "Union seniority logic",
+          description: "Automate labor agreement enforcement",
+          action: () => {
+
+            appendUserMessage("Union seniority logic");
+
+            appendBotMessage(
+              "Digitize seniority rules, assignment restrictions, and bidding logic into transparent automation."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Shift bidding workflows",
+          description: "Structured shift distribution",
+          action: () => {
+
+            appendUserMessage("Shift bidding workflows");
+
+            appendBotMessage(
+              "Allow eligible staff to bid on shifts using configurable labor and qualification rules."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Float pool management",
+          description: "Coordinate mobile workforce coverage",
+          action: () => {
+
+            appendUserMessage("Float pool management");
+
+            appendBotMessage(
+              "Manage cross-unit staffing pools with visibility into availability, qualifications, and assignment history."
+            );
+
+            appendEndOptions();
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+  else if(type === "compliance") {
+
+    appendUserMessage("Compliance & credentialing");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Carelink automates credential governance, compliance monitoring, and workforce audit workflows."
+      );
+
+      appendButtons([
+
+        {
+          label: "Credential enforcement",
+          description: "Prevent non-compliant assignments",
+          action: () => {
+
+            appendUserMessage("Credential enforcement");
+
+            appendBotMessage(
+              "Automatically block staff from accepting shifts if required certifications or licenses are expired."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Inspection readiness",
+          description: "Improve audit visibility",
+          action: () => {
+
+            appendUserMessage("Inspection readiness");
+
+            appendBotMessage(
+              "Maintain centralized audit trails and workforce compliance reporting for operational inspections."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Certification tracking",
+          description: "Monitor renewals & expirations",
+          action: () => {
+
+            appendUserMessage("Certification tracking");
+
+            appendBotMessage(
+              "Track CPR, vulnerable sector checks, licenses, onboarding documents, and mandatory certifications."
+            );
+
+            appendEndOptions();
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+  else if(type === "operations") {
+
+    appendUserMessage("Operational visibility");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Carelink provides workforce intelligence, staffing analytics, and operational visibility across healthcare environments."
+      );
+
+      appendButtons([
+
+        {
+          label: "Executive dashboards",
+          description: "Leadership reporting & analytics",
+          action: () => {
+
+            appendUserMessage("Executive dashboards");
+
+            appendBotMessage(
+              "Monitor staffing trends, compliance exposure, overtime, vacancies, and workforce performance from a centralized dashboard."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Workforce analytics",
+          description: "Identify operational trends",
+          action: () => {
+
+            appendUserMessage("Workforce analytics");
+
+            appendBotMessage(
+              "Analyze staffing pressure points, vacancy patterns, attendance trends, and agency utilization."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Operational forecasting",
+          description: "Predict workforce shortages",
+          action: () => {
+
+            appendUserMessage("Operational forecasting");
+
+            appendBotMessage(
+              "Forecast staffing shortages and coverage risks before they impact operations."
+            );
+
+            appendEndOptions();
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+  else if(type === "implementation") {
+
+    appendUserMessage("Implementation & onboarding");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Carelink onboarding includes workflow analysis, platform configuration, workforce mapping, and operational deployment planning."
+      );
+
+      appendButtons([
+
+        {
+          label: "Deployment timelines",
+          description: "Implementation planning",
+          action: () => {
+
+            appendUserMessage("Deployment timelines");
+
+            appendBotMessage(
+              "Deployment timelines vary based on facility size, scheduling complexity, and integration requirements."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "System integrations",
+          description: "Existing infrastructure compatibility",
+          action: () => {
+
+            appendUserMessage("System integrations");
+
+            appendBotMessage(
+              "Carelink can integrate with scheduling systems, HR platforms, payroll workflows, and credential databases."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Staff onboarding",
+          description: "Training & rollout strategy",
+          action: () => {
+
+            appendUserMessage("Staff onboarding");
+
+            appendBotMessage(
+              "We support phased onboarding strategies, leadership training, and workforce adoption planning."
+            );
+
+            appendEndOptions();
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+  else if(type === "pricing") {
+
+    appendUserMessage("Pricing & demos");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Carelink provides tailored operational evaluations based on workforce complexity, facility structure, and implementation scope."
+      );
+
+      appendButtons([
+
+        {
+          label: "Book executive demo",
+          description: "Schedule a consultation",
+          action: () => {
+
+            appendUserMessage("Book executive demo");
+
+            appendBotMessage(
+              "Our team will review your staffing workflows, operational challenges, and workforce objectives."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Enterprise pricing",
+          description: "Platform licensing overview",
+          action: () => {
+
+            appendUserMessage("Enterprise pricing");
+
+            appendBotMessage(
+              "Pricing is customized based on organization size, staffing volume, and deployment requirements."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Operational assessment",
+          description: "Review workforce gaps",
+          action: () => {
+
+            appendUserMessage("Operational assessment");
+
+            appendBotMessage(
+              "Carelink can evaluate workforce inefficiencies, scheduling friction, and compliance exposure."
+            );
+
+            appendEndOptions();
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+  else if(type === "support") {
+
+    appendUserMessage("Technical support");
+
+    setTimeout(() => {
+
+      appendBotMessage(
+        "Please select the issue you need assistance with."
+      );
+
+      appendButtons([
+
+        {
+          label: "Login & access issues",
+          description: "Authentication assistance",
+          action: () => {
+
+            appendUserMessage("Login & access issues");
+
+            appendBotMessage(
+              "Please verify your organization account is active and ensure your credentials are correct."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Credential upload problems",
+          description: "Document verification support",
+          action: () => {
+
+            appendUserMessage("Credential upload problems");
+
+            appendBotMessage(
+              "Supported document formats include PDF, PNG, and JPG. Ensure files are under your upload limit."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Mobile app support",
+          description: "App troubleshooting assistance",
+          action: () => {
+
+            appendUserMessage("Mobile app support");
+
+            appendBotMessage(
+              "Ensure you are using the latest app version and verify push notifications are enabled."
+            );
+
+            appendEndOptions();
+
+          }
+        },
+
+        {
+          label: "Escalate to support team",
+          description: "Contact Carelink directly",
+          action: () => {
+
+            window.location.href =
+              "mailto:wecare@thecarelink.ca";
+
+          }
+        }
+
+      ]);
+
+    }, 400);
+
+  }
+
+}
+
+function restartChat() {
+  location.reload();
+}
+
+</script>
 </body>
 </html>

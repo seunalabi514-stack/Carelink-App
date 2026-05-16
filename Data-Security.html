@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Data Security Overview | Carelink Healthcare</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          carelink: '#F26522',
+          dark: '#0F172A'
+        },
+        boxShadow: {
+          soft: '0 10px 30px rgba(0,0,0,0.06)',
+          glow: '0 20px 60px rgba(242,101,34,0.15)'
+        }
+      }
+    }
+  }
+</script>
+<script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.hero-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(#f265220a 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+</style>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-[#FCFCFD] text-slate-800">
+
+<div id="pdfContent">
+
+<section class="hero-pattern border-b border-slate-100 py-24 md:py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+
+    <div>
+      <div class="inline-flex items-center gap-2 bg-orange-50 text-carelink px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+        <span class="w-2 h-2 rounded-full bg-carelink"></span>
+        Enterprise Security Documentation
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-slate-900">
+        Data Security
+        <span class="text-carelink block">Overview</span>
+      </h1>
+
+      <p class="mt-8 text-xl leading-relaxed text-slate-500 max-w-2xl">
+        A comprehensive overview of Carelink's infrastructure security, access controls, audit logging, encryption standards, and healthcare-grade workforce data protection practices.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+
+        <div class="bg-white border border-slate-200 rounded-2xl px-6 py-5 shadow-soft">
+          <div class="text-3xl font-extrabold text-slate-900">256-bit</div>
+          <div class="text-xs uppercase tracking-widest text-slate-400 mt-1">Encrypted Data</div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl px-6 py-5 shadow-soft">
+          <div class="text-3xl font-extrabold text-slate-900">24/7</div>
+          <div class="text-xs uppercase tracking-widest text-slate-400 mt-1">Monitoring</div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl px-6 py-5 shadow-soft">
+          <div class="text-3xl font-extrabold text-slate-900">2.4 MB</div>
+          <div class="text-xs uppercase tracking-widest text-slate-400 mt-1">PDF Document</div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-5">
+        <button onclick="downloadPDF()" class="bg-carelink hover:bg-orange-600 transition text-white px-8 py-4 rounded-2xl font-bold shadow-glow">
+          <i class="fas fa-download mr-2"></i>
+          Download PDF
+        </button>
+
+        <a href="javascript:void(0)"
+           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+           class="border border-slate-200 hover:border-carelink hover:text-carelink transition px-8 py-4 rounded-2xl font-bold bg-white">
+          Speak With Security Team
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+
+      <div class="absolute inset-0 bg-carelink/10 blur-3xl rounded-[40px]"></div>
+
+      <div class="relative bg-white rounded-[36px] border border-slate-100 shadow-[0_30px_100px_rgba(15,23,42,0.08)] overflow-hidden">
+
+        <div class="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-red-300"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
+            <div class="w-3 h-3 rounded-full bg-green-300"></div>
+          </div>
+
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">
+            Security Architecture
+          </span>
+        </div>
+
+        <div class="p-8 bg-gradient-to-br from-slate-900 to-slate-800 min-h-[500px] relative overflow-hidden">
+
+          <div class="bg-white/10 border border-white/10 rounded-3xl p-6 backdrop-blur-md">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <p class="text-white font-bold">Infrastructure Protection</p>
+                <p class="text-slate-400 text-xs mt-1">Enterprise-grade safeguards</p>
+              </div>
+
+              <div class="bg-green-500/20 text-green-300 text-xs px-3 py-1 rounded-full font-bold">
+                ACTIVE
+              </div>
+            </div>
+
+            <div class="space-y-4">
+
+              <div class="bg-white/5 rounded-2xl border border-white/10 p-5 flex items-center justify-between">
+                <div>
+                  <p class="text-white font-semibold text-sm">Encrypted Workforce Data</p>
+                  <p class="text-slate-400 text-xs mt-1">At-rest and in-transit encryption</p>
+                </div>
+
+                <i class="fas fa-lock text-carelink"></i>
+              </div>
+
+              <div class="bg-white/5 rounded-2xl border border-white/10 p-5 flex items-center justify-between">
+                <div>
+                  <p class="text-white font-semibold text-sm">Role-Based Access Controls</p>
+                  <p class="text-slate-400 text-xs mt-1">Granular permissions management</p>
+                </div>
+
+                <i class="fas fa-user-shield text-carelink"></i>
+              </div>
+
+              <div class="bg-white/5 rounded-2xl border border-white/10 p-5 flex items-center justify-between">
+                <div>
+                  <p class="text-white font-semibold text-sm">Audit Logging</p>
+                  <p class="text-slate-400 text-xs mt-1">Full operational traceability</p>
+                </div>
+
+                <i class="fas fa-file-shield text-carelink"></i>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="absolute bottom-10 left-8 right-8 grid grid-cols-2 gap-4">
+
+            <div class="bg-white rounded-3xl p-6 shadow-xl">
+              <p class="text-xs uppercase tracking-widest text-slate-400 mb-2">Audit Readiness</p>
+              <div class="text-4xl font-extrabold text-slate-900">100%</div>
+            </div>
+
+            <div class="bg-carelink rounded-3xl p-6 shadow-xl text-white">
+              <p class="text-xs uppercase tracking-widest text-orange-100 mb-2">Threat Monitoring</p>
+              <div class="text-4xl font-extrabold">24/7</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+
+    <div class="max-w-3xl mb-16">
+      <span class="text-carelink text-sm font-bold uppercase tracking-[0.2em]">Security Principles</span>
+      <h2 class="text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+        Designed for regulated healthcare environments.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-lock text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Encryption</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Workforce and scheduling data is encrypted at rest and during transmission.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-user-lock text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Access Control</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Role-based permissions ensure staff only access authorized operational data.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-server text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Infrastructure</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Cloud-hosted infrastructure designed for resilience, uptime, and operational continuity.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-clipboard-check text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Auditability</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Every operational action is logged for transparency and compliance reviews.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-[#F8FAFC] border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-8">
+
+    <div class="max-w-3xl mb-16">
+      <span class="text-carelink text-sm font-bold uppercase tracking-[0.2em]">
+        Enterprise Controls
+      </span>
+
+      <h2 class="text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+        Security architecture built for operational trust.
+      </h2>
+
+      <p class="mt-6 text-lg text-slate-500 leading-relaxed">
+        Carelink is designed to support healthcare organizations operating in regulated,
+        unionized, and multi-site environments where workforce data integrity, auditability,
+        and operational continuity are critical.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10">
+
+      <!-- LEFT -->
+      <div class="bg-white rounded-[32px] border border-slate-100 p-10 shadow-soft">
+
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center">
+            <i class="fas fa-shield text-carelink text-2xl"></i>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-extrabold text-slate-900">
+              Administrative Safeguards
+            </h3>
+
+            <p class="text-slate-500 text-sm mt-1">
+              Governance and operational protection controls
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Role-Based Workforce Permissions
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Access to scheduling, employee records, credential data,
+                and reporting functions is restricted based on operational role hierarchy.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Audit Trail Logging
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Administrative actions, schedule changes, approvals,
+                and workforce assignments are fully traceable through centralized logs.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Credential Validation Controls
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Automated verification workflows help prevent expired or incomplete
+                credentials from affecting workforce compliance.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bg-slate-950 rounded-[32px] overflow-hidden relative border border-slate-800">
+
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(242,101,34,0.18),transparent_45%)]"></div>
+
+        <div class="relative p-10">
+
+          <div class="flex items-center justify-between mb-10">
+            <div>
+              <span class="text-carelink text-xs uppercase tracking-[0.2em] font-bold">
+                Infrastructure Health
+              </span>
+
+              <h3 class="text-3xl font-extrabold text-white mt-3">
+                Continuous operational protection
+              </h3>
+            </div>
+
+            <div class="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              Secure
+            </div>
+          </div>
+
+          <div class="space-y-5">
+
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold">
+                  Encrypted Workforce Records
+                </p>
+
+                <p class="text-slate-400 text-sm mt-1">
+                  AES-256 encryption standards
+                </p>
+              </div>
+
+              <i class="fas fa-lock text-carelink text-xl"></i>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold">
+                  Centralized Monitoring
+                </p>
+
+                <p class="text-slate-400 text-sm mt-1">
+                  Infrastructure and access visibility
+                </p>
+              </div>
+
+              <i class="fas fa-eye text-carelink text-xl"></i>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold">
+                  Backup & Recovery Controls
+                </p>
+
+                <p class="text-slate-400 text-sm mt-1">
+                  Operational continuity safeguards
+                </p>
+              </div>
+
+              <i class="fas fa-database text-carelink text-xl"></i>
+            </div>
+
+          </div>
+
+          <div class="grid grid-cols-2 gap-5 mt-10">
+
+            <div class="bg-white rounded-3xl p-6">
+              <p class="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                Access Logging
+              </p>
+
+              <div class="text-4xl font-extrabold text-slate-900">
+                100%
+              </div>
+            </div>
+
+            <div class="bg-carelink rounded-3xl p-6 text-white">
+              <p class="text-xs uppercase tracking-widest text-orange-100 mb-2">
+                Monitoring Coverage
+              </p>
+
+              <div class="text-4xl font-extrabold">
+                24/7
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-8 text-center">
+
+    <span class="text-carelink text-sm font-bold uppercase tracking-[0.2em]">
+      Security & Compliance Documentation
+    </span>
+
+    <h2 class="text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+      Built for healthcare workforce operations.
+    </h2>
+
+    <p class="mt-8 text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto">
+      Carelink helps healthcare organizations centralize scheduling operations,
+      workforce coordination, credential management, and compliance workflows
+      while maintaining strong security and operational governance standards.
+    </p>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[28px] p-8">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-lock text-carelink text-2xl"></i>
+        </div>
+
+        <h3 class="font-bold text-xl text-slate-900 mb-3">
+          Secure Infrastructure
+        </h3>
+
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Enterprise-grade safeguards designed for healthcare workforce environments.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[28px] p-8">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-file-lines text-carelink text-2xl"></i>
+        </div>
+
+        <h3 class="font-bold text-xl text-slate-900 mb-3">
+          Audit Visibility
+        </h3>
+
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Centralized logging and operational traceability across workforce actions.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[28px] p-8">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-user-shield text-carelink text-2xl"></i>
+        </div>
+
+        <h3 class="font-bold text-xl text-slate-900 mb-3">
+          Workforce Compliance
+        </h3>
+
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Automated controls supporting credential validation and operational accountability.
+        </p>
+      </div>
+
+    </div>
+
+    
+  </div>
+</section>
+<section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-dark tracking-tight mb-8 leading-tight">Automate Your Security</h2>
+        <p class="text-lg text-slate-500 mb-10">Most partners see full compliance improvement within 6 months. Let us protect you from grievances.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url:'https://calendly.com/thecarelink/30min'});"
+               class="bg-carelink text-white px-10 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition inline-block">
+                See How We Can Help
+            </a>
+            <a href="Resources.html" class="border border-slate-200 px-10 py-5 rounded-2xl font-bold text-slate-700 hover:bg-slate-50 transition inline-block">
+                Back to Resources
+            </a>
+        </div>
+    </div>
+</section>
+<script>
+function downloadPDF() {
+  const element = document.getElementById('pdfContent');
+
+  const opt = {
+    margin: 0,
+    filename: 'carelink-data-security-overview.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>
+
+
+
+

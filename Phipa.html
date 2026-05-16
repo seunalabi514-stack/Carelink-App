@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHIPA Compliance Guide | Carelink Healthcare</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          carelink: '#F26522',
+          dark: '#0F172A'
+        }
+      }
+    }
+  }
+</script>
+<script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.hero-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(#f265220a 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+</style>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+
+<body class="bg-[#FCFCFD] text-slate-800">
+
+<div id="pdfContent">
+
+<section class="hero-pattern border-b border-slate-100 py-24 md:py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+
+    <div>
+      <div class="inline-flex items-center gap-2 bg-orange-50 text-carelink px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+        <span class="w-2 h-2 rounded-full bg-carelink"></span>
+        Ontario Healthcare Compliance
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-slate-900">
+        PHIPA
+        <span class="text-carelink block">Compliance Guide</span>
+      </h1>
+
+      <p class="mt-8 text-xl leading-relaxed text-slate-500 max-w-2xl">
+        Understand how Carelink supports operational compliance with Ontario's Personal Health Information Protection Act through secure workforce coordination and controlled healthcare data practices.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+
+        <div class="bg-white border border-slate-200 rounded-2xl px-6 py-5 shadow-soft">
+          <div class="text-3xl font-extrabold text-slate-900">PHIPA</div>
+          <div class="text-xs uppercase tracking-widest text-slate-400 mt-1">Aligned Workflows</div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl px-6 py-5 shadow-soft">
+          <div class="text-3xl font-extrabold text-slate-900">100%</div>
+          <div class="text-xs uppercase tracking-widest text-slate-400 mt-1">Audit Visibility</div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl px-6 py-5 shadow-soft">
+          <div class="text-3xl font-extrabold text-slate-900">1.8 MB</div>
+          <div class="text-xs uppercase tracking-widest text-slate-400 mt-1">PDF Guide</div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-5">
+        <button onclick="downloadPDF()" class="bg-carelink hover:bg-orange-600 transition text-white px-8 py-4 rounded-2xl font-bold shadow-lg">
+          <i class="fas fa-download mr-2"></i>
+          Download Guide
+        </button>
+
+        <a href="javascript:void(0)"
+           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});return false;"
+           class="border border-slate-200 hover:border-carelink hover:text-carelink transition px-8 py-4 rounded-2xl font-bold bg-white">
+          Book Compliance Review
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+
+      <div class="absolute inset-0 bg-carelink/10 blur-3xl rounded-[40px]"></div>
+
+      <div class="relative bg-white rounded-[36px] border border-slate-100 shadow-[0_30px_100px_rgba(15,23,42,0.08)] overflow-hidden">
+
+        <div class="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-red-300"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
+            <div class="w-3 h-3 rounded-full bg-green-300"></div>
+          </div>
+
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">
+            PHIPA Controls
+          </span>
+        </div>
+
+        <div class="p-8 bg-gradient-to-br from-slate-900 to-slate-800 min-h-[500px] relative overflow-hidden">
+
+          <div class="space-y-5">
+
+            <div class="bg-white/10 border border-white/10 rounded-3xl p-6 backdrop-blur-md">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-white font-bold">Controlled Workforce Access</p>
+                  <p class="text-slate-400 text-xs mt-1">Role-specific operational permissions</p>
+                </div>
+
+                <i class="fas fa-user-shield text-carelink text-xl"></i>
+              </div>
+            </div>
+
+            <div class="bg-white/10 border border-white/10 rounded-3xl p-6 backdrop-blur-md">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-white font-bold">Audit Logging</p>
+                  <p class="text-slate-400 text-xs mt-1">Traceable operational actions</p>
+                </div>
+
+                <i class="fas fa-file-contract text-carelink text-xl"></i>
+              </div>
+            </div>
+
+            <div class="bg-white/10 border border-white/10 rounded-3xl p-6 backdrop-blur-md">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-white font-bold">Credential Enforcement</p>
+                  <p class="text-slate-400 text-xs mt-1">Automated workforce compliance workflows</p>
+                </div>
+
+                <i class="fas fa-badge-check text-carelink text-xl"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="absolute bottom-10 left-8 right-8 bg-carelink rounded-3xl p-8 text-white shadow-xl">
+            <p class="text-xs uppercase tracking-widest text-orange-100 mb-3">Compliance Visibility</p>
+            <div class="text-5xl font-extrabold">100%</div>
+            <p class="mt-2 text-orange-100 text-sm">Operational traceability across workforce actions</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+
+    <div class="max-w-3xl mb-16">
+      <span class="text-carelink text-sm font-bold uppercase tracking-[0.2em]">Compliance Infrastructure</span>
+      <h2 class="text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+        Operational controls aligned with healthcare governance.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-user-check text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Access Governance</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Workforce permissions and operational access controls are centrally managed.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-clock-rotate-left text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Audit Trails</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Scheduling and staffing activities are fully traceable for compliance review.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-triangle-exclamation text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Risk Prevention</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Automated credential and compliance workflows reduce operational exposure.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[30px] p-8">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+          <i class="fas fa-heart text-carelink text-xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-4">Healthcare Readiness</h3>
+        <p class="text-slate-500 leading-relaxed text-sm">
+          Infrastructure built for regulated healthcare staffing environments.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-[#F8FAFC] border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-8">
+
+    <div class="max-w-3xl mb-16">
+      <span class="text-carelink text-sm font-bold uppercase tracking-[0.2em]">
+        PHIPA Governance Model
+      </span>
+
+      <h2 class="text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+        Structured operational safeguards for healthcare organizations.
+      </h2>
+
+      <p class="mt-6 text-lg text-slate-500 leading-relaxed">
+        Carelink helps healthcare operators strengthen workforce governance through
+        centralized permissions, audit-ready operational controls, credential enforcement,
+        and secure workforce coordination workflows aligned with regulated environments.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10">
+
+      <!-- LEFT PANEL -->
+      <div class="bg-white rounded-[32px] border border-slate-100 p-10 shadow-soft">
+
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center">
+            <i class="fas fa-lock text-carelink text-2xl"></i>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-extrabold text-slate-900">
+              Compliance Operations
+            </h3>
+
+            <p class="text-slate-500 text-sm mt-1">
+              Workforce coordination and governance safeguards
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-7">
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Controlled Access Hierarchies
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Administrative, managerial, and workforce permissions are structured
+                to restrict operational access to authorized users only.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Workforce Audit Visibility
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Scheduling actions, assignment changes, approvals,
+                and compliance workflows are centrally logged for traceability.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Credential & Compliance Enforcement
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Automated controls help ensure workforce credentials,
+                certifications, and operational requirements remain current.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1">
+              <i class="fas fa-check-circle text-carelink"></i>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900">
+                Centralized Operational Oversight
+              </h4>
+
+              <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                Leadership teams gain visibility into staffing workflows,
+                workforce risks, and operational activity across locations.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="bg-slate-950 rounded-[32px] overflow-hidden relative border border-slate-800">
+
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(242,101,34,0.18),transparent_45%)]"></div>
+
+        <div class="relative p-10">
+
+          <div class="flex items-center justify-between mb-10">
+            <div>
+              <span class="text-carelink text-xs uppercase tracking-[0.2em] font-bold">
+                Operational Governance
+              </span>
+
+              <h3 class="text-3xl font-extrabold text-white mt-3">
+                Compliance visibility across workforce operations.
+              </h3>
+            </div>
+
+            <div class="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              Active
+            </div>
+          </div>
+
+          <div class="space-y-5">
+
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold">
+                  Role-Based Access Policies
+                </p>
+
+                <p class="text-slate-400 text-sm mt-1">
+                  Structured operational permissions
+                </p>
+              </div>
+
+              <i class="fas fa-users-gear text-carelink text-xl"></i>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold">
+                  Audit-Ready Workforce Logs
+                </p>
+
+                <p class="text-slate-400 text-sm mt-1">
+                  Transparent staffing activity history
+                </p>
+              </div>
+
+              <i class="fas fa-clock-rotate-left text-carelink text-xl"></i>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold">
+                  Credential Verification Controls
+                </p>
+
+                <p class="text-slate-400 text-sm mt-1">
+                  Automated compliance monitoring
+                </p>
+              </div>
+
+              <i class="fas fa-badge-check text-carelink text-xl"></i>
+            </div>
+
+          </div>
+
+          <div class="grid grid-cols-2 gap-5 mt-10">
+
+            <div class="bg-white rounded-3xl p-6">
+              <p class="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                Operational Traceability
+              </p>
+
+              <div class="text-4xl font-extrabold text-slate-900">
+                100%
+              </div>
+            </div>
+
+            <div class="bg-carelink rounded-3xl p-6 text-white">
+              <p class="text-xs uppercase tracking-widest text-orange-100 mb-2">
+                Compliance Oversight
+              </p>
+
+              <div class="text-4xl font-extrabold">
+                24/7
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-8 text-center">
+
+    <span class="text-carelink text-sm font-bold uppercase tracking-[0.2em]">
+      Ontario Healthcare Compliance
+    </span>
+
+    <h2 class="text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+      Supporting compliant healthcare workforce operations.
+    </h2>
+
+    <p class="mt-8 text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto">
+      Carelink provides healthcare operators with centralized workforce oversight,
+      operational auditability, secure scheduling workflows, and compliance-focused
+      infrastructure designed for regulated care environments across Ontario.
+    </p>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[28px] p-8">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-user-shield text-carelink text-2xl"></i>
+        </div>
+
+        <h3 class="font-bold text-xl text-slate-900 mb-3">
+          Controlled Access
+        </h3>
+
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Structured workforce permissions help reduce operational risk exposure.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[28px] p-8">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-file-contract text-carelink text-2xl"></i>
+        </div>
+
+        <h3 class="font-bold text-xl text-slate-900 mb-3">
+          Audit Readiness
+        </h3>
+
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Workforce actions and scheduling workflows remain fully traceable.
+        </p>
+      </div>
+
+      <div class="bg-[#F8FAFC] border border-slate-100 rounded-[28px] p-8">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-heart text-carelink text-2xl"></i>
+        </div>
+
+        <h3 class="font-bold text-xl text-slate-900 mb-3">
+          Healthcare Governance
+        </h3>
+
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Infrastructure aligned with modern healthcare operational standards.
+        </p>
+      </div>
+
+    </div>
+
+  
+
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-dark tracking-tight mb-8 leading-tight">Automate Your Security</h2>
+        <p class="text-lg text-slate-500 mb-10">Most partners see full compliance improvement within 6 months. Let us protect you from grievances.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url:'https://calendly.com/thecarelink/30min'});"
+               class="bg-carelink text-white px-10 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition inline-block">
+                See How We Can Help
+            </a>
+            <a href="Resources.html" class="border border-slate-200 px-10 py-5 rounded-2xl font-bold text-slate-700 hover:bg-slate-50 transition inline-block">
+                Back to Resources
+            </a>
+        </div>
+    </div>
+</section>
+<script>
+function downloadPDF() {
+  const element = document.getElementById('pdfContent');
+
+  const opt = {
+    margin: 0,
+    filename: 'carelink-phipa-compliance-guide.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>
+

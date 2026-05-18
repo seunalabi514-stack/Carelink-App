@@ -7,42 +7,42 @@
   </url>
 
   <url>
-    <loc>https://thecarelink.app/product</loc>
+    <loc>https://thecarelink.app/Product.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/solutions</loc>
+    <loc>https://thecarelink.app/Solutions.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/pricing</loc>
+    <loc>https://thecarelink.app/Pricing.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/resources</loc>
+    <loc>https://thecarelink.app/Resources.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/about</loc>
+    <loc>https://thecarelink.app/about.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/contact</loc>
+    <loc>https://thecarelink.app/contact-us.html</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/privacy</loc>
+    <loc>https://thecarelink.app/privacy.html</loc>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://thecarelink.app/terms</loc>
+    <loc>https://thecarelink.app/Terms.html</loc>
     <priority>0.4</priority>
   </url>
 

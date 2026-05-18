@@ -2,7 +2,7 @@
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>2026 Ontario LTC Compliance Playbook | Carelink Healthcare</title>
+   <title>2026 Ontario LTC Compliance Playbook | BaseCare</title>
 
    <script src="https://cdn.tailwindcss.com"></script>
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        carelink: '#F06529',
+        BaseCare: '#F06529',
         dark: '#0F172A',
         mto: '#003366'
       }
@@ -51,15 +51,15 @@ tailwind.config = {
 
 <nav class="sticky top-0 z-50 bg-white border-b border-slate-200">
     <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-        <a href="index.html" class="text-carelink text-2xl font-bold flex items-center gap-2">
-            <img src="logo.png" class="h-8" alt="Logo"> Carelink
+        <a href="index.html" class="text-BaseCare text-2xl font-bold flex items-center gap-2">
+            <img src="logo.png" class="h-8" alt="Logo"> BaseCare
         </a>
         <div class="hidden md:flex space-x-6 text-sm font-bold">
-            <a href="Compliance.html" class="text-slate-500 hover:text-carelink">Compliance Hub</a>
-            <a href="staffing.html" class="text-slate-500 hover:text-carelink">Staffing Standards</a>
-            <a href="Resources.html" class="text-slate-500 hover:text-carelink">Resources</a>
+            <a href="Compliance.html" class="text-slate-500 hover:text-BaseCare">Compliance Hub</a>
+            <a href="staffing.html" class="text-slate-500 hover:text-BaseCare">Staffing Standards</a>
+            <a href="Resources.html" class="text-slate-500 hover:text-BaseCare">Resources</a>
         </div>
-        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thecarelink/30min'});"
+        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/theBaseCare/30min'});"
                 class="bg-dark text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-slate-800 transition">
             Audit Readiness Check
         </button>
@@ -101,7 +101,7 @@ btn.addEventListener("click", () => {
         <div class="inline-block bg-mto/10 text-mto text-[10px] font-black px-3 py-1 rounded mb-4 uppercase tracking-widest">
             Regulatory Briefing 2026
         </div>
-        <h1 class="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">The 2026 Ontario LTC <br><span class="text-carelink">Compliance Playbook</span></h1>
+        <h1 class="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">The 2026 Ontario LTC <br><span class="text-BaseCare">Compliance Playbook</span></h1>
         <p class="text-lg text-slate-500 max-w-3xl leading-relaxed">
             As of January 1, 2026, the Ontario Ministry of Long-Term Care has intensified enforcement of the <em>Fixing Long-Term Care Act (FLTCA)</em>. This guide centralizes the critical deadlines, staffing ratios, and new "As of Right" labor mobility requirements.
         </p>
@@ -114,13 +114,13 @@ btn.addEventListener("click", () => {
         <div class="sticky-toc">
             <h4 class="text-xs font-black uppercase text-slate-400 mb-6 tracking-widest">On this page</h4>
             <nav class="space-y-4 text-sm font-bold">
-                <a href="#staffing" class="block text-carelink">1. Staffing & Care Targets</a>
-                <a href="#mobility" class="block text-slate-500 hover:text-carelink">2. Labor Mobility (As of Right)</a>
-                <a href="#safety" class="block text-slate-500 hover:text-carelink">3. Occupational Health & Safety</a>
-                <a href="#reporting" class="block text-slate-500 hover:text-carelink">4. Mandatory Reporting</a>
+                <a href="#staffing" class="block text-BaseCare">1. Staffing & Care Targets</a>
+                <a href="#mobility" class="block text-slate-500 hover:text-BaseCare">2. Labor Mobility (As of Right)</a>
+                <a href="#safety" class="block text-slate-500 hover:text-BaseCare">3. Occupational Health & Safety</a>
+                <a href="#reporting" class="block text-slate-500 hover:text-BaseCare">4. Mandatory Reporting</a>
             </nav>
             <div class="mt-12 p-6 bg-orange-50 rounded-2xl border border-orange-100">
-                <p class="text-xs font-semibold text-carelink mb-4 italic">"Inspectors are now empowered to issue instant Administrative Monetary Penalties (AMPs) for ratio non-compliance."</p>
+                <p class="text-xs font-semibold text-BaseCare mb-4 italic">"Inspectors are now empowered to issue instant Administrative Monetary Penalties (AMPs) for ratio non-compliance."</p>
             </div>
         </div>
     </aside>
@@ -129,7 +129,7 @@ btn.addEventListener("click", () => {
 
         <section id="staffing">
             <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
-                <span class="w-8 h-8 bg-carelink text-white rounded-lg flex items-center justify-center text-sm">01</span>
+                <span class="w-8 h-8 bg-BaseCare text-white rounded-lg flex items-center justify-center text-sm">01</span>
                 Direct Care Staffing Targets
             </h2>
             <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm section-card">
@@ -153,7 +153,7 @@ btn.addEventListener("click", () => {
 
         <section id="mobility">
             <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
-                <span class="w-8 h-8 bg-carelink text-white rounded-lg flex items-center justify-center text-sm">02</span>
+                <span class="w-8 h-8 bg-BaseCare text-white rounded-lg flex items-center justify-center text-sm">02</span>
                 "As of Right" Labor Mobility
             </h2>
             <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm section-card">
@@ -174,17 +174,17 @@ btn.addEventListener("click", () => {
 
         <section id="safety">
             <h2 class="text-2xl font-extrabold text-dark mb-8 flex items-center gap-3">
-                <span class="w-8 h-8 bg-carelink text-white rounded-lg flex items-center justify-center text-sm">03</span>
+                <span class="w-8 h-8 bg-BaseCare text-white rounded-lg flex items-center justify-center text-sm">03</span>
                 Health & Safety Enforcement
             </h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <div class="text-carelink mb-4"><i class="fas fa-fire-extinguisher text-2xl"></i></div>
+                    <div class="text-BaseCare mb-4"><i class="fas fa-fire-extinguisher text-2xl"></i></div>
                     <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Fire Code Deadline</h4>
                     <p class="text-xs text-slate-500">Full sprinkler compliance or verified closure agreements must be finalized by <strong>July 1, 2026</strong>.</p>
                 </div>
                 <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <div class="text-carelink mb-4"><i class="fas fa-shield-virus text-2xl"></i></div>
+                    <div class="text-BaseCare mb-4"><i class="fas fa-shield-virus text-2xl"></i></div>
                     <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">JHSC Certification</h4>
                     <p class="text-xs text-slate-500">New hybrid learning standards for Joint Health & Safety Committees take effect <strong>July 1, 2026</strong>.</p>
                 </div>
@@ -208,19 +208,19 @@ btn.addEventListener("click", () => {
 
             <tbody class="divide-y divide-white/5">
                 <tr>
-                    <td class="p-6 font-mono text-carelink">Mar 31, 2026</td>
+                    <td class="p-6 font-mono text-BaseCare">Mar 31, 2026</td>
                     <td class="p-6">EHT Annual Return</td>
                     <td class="p-6 opacity-60 italic">Employer Health Tax Act</td>
                 </tr>
 
                 <tr>
-                    <td class="p-6 font-mono text-carelink">Monthly</td>
+                    <td class="p-6 font-mono text-BaseCare">Monthly</td>
                     <td class="p-6">Occupational Health Inspections</td>
                     <td class="p-6 opacity-60 italic">OHSA Section 9</td>
                 </tr>
 
                 <tr>
-                    <td class="p-6 font-mono text-carelink">July 1, 2026</td>
+                    <td class="p-6 font-mono text-BaseCare">July 1, 2026</td>
                     <td class="p-6">Washroom Cleaning Records</td>
                     <td class="p-6 opacity-60 italic">OHSA New Rule 2026</td>
                 </tr>
@@ -234,7 +234,7 @@ btn.addEventListener("click", () => {
 
 <footer class="py-12 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-6 text-center">
-        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-4">Provided by Carelink Compliance Office</p>
+        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-4">Provided by BaseCare Compliance Office</p>
         <p class="text-xs text-slate-400">Information accurate as of May 2026. This playbook is for operational guidance and does not constitute legal advice.</p>
     </div>
 </footer>

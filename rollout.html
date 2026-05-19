@@ -1,0 +1,855 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BaseCare | Rollout Plan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
+
+
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#07111f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:92%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(14px);
+      background:rgba(5,10,18,.92);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner{
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:1.5rem;
+      font-weight:800;
+      color:#f26522;
+    }
+
+    .logo-box{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#f26522,#ff8b52);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:34px;
+      color:#d5dbe6;
+      font-weight:500;
+    }
+
+    .nav-btn{
+      background:linear-gradient(135deg,#f26522,#ff8b52);
+      padding:14px 24px;
+      border-radius:14px;
+      color:white;
+      font-weight:700;
+      box-shadow:0 14px 40px rgba(242,101,34,.25);
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:120px 0 100px;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(242,101,34,.12);
+      border:1px solid rgba(242,101,34,.24);
+      color:#ff9d6b;
+      padding:12px 18px;
+      border-radius:999px;
+      margin-bottom:28px;
+      font-size:.9rem;
+    }
+
+    .hero h1{
+      font-size:4.2rem;
+      line-height:1.05;
+      margin-bottom:28px;
+      font-weight:800;
+      max-width:720px;
+    }
+
+    .hero h1 span{
+      color:#f26522;
+    }
+
+    .hero p{
+      color:#94a3b8;
+      line-height:1.8;
+      font-size:1.08rem;
+      max-width:650px;
+      margin-bottom:36px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .primary-btn{
+      background:linear-gradient(135deg,#f26522,#ff8b52);
+      padding:16px 28px;
+      border-radius:16px;
+      font-weight:700;
+      color:white;
+      box-shadow:0 16px 40px rgba(242,101,34,.28);
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,.12);
+      padding:16px 28px;
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      color:#d9e0ea;
+      font-weight:600;
+    }
+
+    /* HERO CARD */
+
+    .hero-card{
+      background:linear-gradient(180deg,rgba(16,26,41,.96),rgba(8,14,24,.98));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:34px;
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 40px 100px rgba(0,0,0,.45);
+    }
+
+    .hero-card::before{
+      content:'';
+      position:absolute;
+      top:-120px;
+      right:-100px;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:rgba(242,101,34,.12);
+      filter:blur(10px);
+    }
+
+    .hero-card h3{
+      font-size:1.5rem;
+      margin-bottom:28px;
+    }
+
+    .milestone{
+      display:flex;
+      gap:18px;
+      margin-bottom:28px;
+      position:relative;
+    }
+
+    .milestone::after{
+      content:'';
+      position:absolute;
+      left:18px;
+      top:48px;
+      width:2px;
+      height:calc(100% + 10px);
+      background:rgba(255,255,255,.08);
+    }
+
+    .milestone:last-child::after{
+      display:none;
+    }
+
+    .milestone-icon{
+      min-width:38px;
+      height:38px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#f26522,#ff8b52);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+
+    .milestone h4{
+      margin-bottom:8px;
+      font-size:1rem;
+    }
+
+    .milestone p{
+      color:#8e9aad;
+      line-height:1.6;
+      font-size:.95rem;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title span{
+      color:#f26522;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:.9rem;
+    }
+
+    .section-title h2{
+      margin-top:18px;
+      font-size:3rem;
+      margin-bottom:18px;
+    }
+
+    .section-title p{
+      max-width:760px;
+      margin:auto;
+      color:#94a3b8;
+      line-height:1.8;
+    }
+
+    /* PHASES */
+
+    .phase-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+    }
+
+    .phase-card{
+      background:linear-gradient(180deg,rgba(15,23,38,.96),rgba(9,14,22,.98));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:32px;
+      transition:.3s ease;
+    }
+
+    .phase-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(242,101,34,.25);
+    }
+
+    .phase-number{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      background:rgba(242,101,34,.12);
+      color:#f26522;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.2rem;
+      font-weight:800;
+      margin-bottom:24px;
+    }
+
+    .phase-card h3{
+      font-size:1.4rem;
+      margin-bottom:16px;
+    }
+
+    .phase-card p{
+      color:#95a4b7;
+      line-height:1.8;
+      margin-bottom:24px;
+    }
+
+    .phase-card ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .phase-card li{
+      color:#d9e0ea;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .phase-card li::before{
+      content:'•';
+      color:#f26522;
+      font-size:1.2rem;
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      position:relative;
+      max-width:950px;
+      margin:auto;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      top:0;
+      transform:translateX(-50%);
+      width:2px;
+      height:100%;
+      background:rgba(255,255,255,.08);
+    }
+
+    .timeline-item{
+      width:50%;
+      padding:30px;
+      position:relative;
+    }
+
+    .timeline-item:nth-child(odd){
+      left:0;
+      text-align:right;
+    }
+
+    .timeline-item:nth-child(even){
+      left:50%;
+    }
+
+    .timeline-content{
+      background:linear-gradient(180deg,rgba(15,23,38,.96),rgba(9,14,22,.98));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .timeline-dot{
+      position:absolute;
+      top:48px;
+      width:18px;
+      height:18px;
+      background:#f26522;
+      border-radius:50%;
+      border:4px solid #07111f;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot{
+      right:-9px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot{
+      left:-9px;
+    }
+
+    .timeline-content h4{
+      font-size:1.2rem;
+      margin-bottom:10px;
+    }
+
+    .timeline-content p{
+      color:#97a5b7;
+      line-height:1.7;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding-bottom:120px;
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg,#f26522,#ff8b52);
+      border-radius:36px;
+      padding:70px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-box::before{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(255,255,255,.08);
+      border-radius:50%;
+      top:-220px;
+      right:-180px;
+    }
+
+    .cta-box h2{
+      font-size:3rem;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-box p{
+      max-width:720px;
+      margin:auto auto 34px;
+      line-height:1.8;
+      color:rgba(255,255,255,.92);
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-box a{
+      background:#08111e;
+      padding:18px 34px;
+      border-radius:16px;
+      display:inline-block;
+      font-weight:700;
+      position:relative;
+      z-index:2;
+    }
+
+    footer{
+      padding:34px 0 50px;
+      border-top:1px solid rgba(255,255,255,.06);
+      color:#8795a8;
+      text-align:center;
+    }
+
+    @media(max-width:980px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .timeline::before{
+        left:20px;
+      }
+
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        text-align:left !important;
+        padding-left:60px;
+      }
+
+      .timeline-dot{
+        left:11px !important;
+        right:auto !important;
+      }
+
+      .cta-box{
+        padding:50px 28px;
+      }
+
+      .cta-box h2{
+        font-size:2.2rem;
+      }
+
+    }
+
+    @media(max-width:760px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding-top:90px;
+      }
+
+      .hero h1{
+        font-size:2.4rem;
+      }
+
+      .section-title h2{
+        font-size:2.2rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+
+      <div class="logo">
+        BaseCare
+      </div>
+
+      <div class="nav-links">
+           <a href="Product.html" class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">Product</a>
+            <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
+            <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
+            <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
+            <a href="about.html" class="hover:text-carelink transition">About Us</a>
+        </div>
+
+            <a href="javascript:void(0)"
+               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
+               class="nav-btn">Book Demo</a>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Enterprise Workforce Rollout Strategy
+        </div>
+
+        <h1>
+          A structured implementation plan for
+          <span>modern healthcare operations</span>
+        </h1>
+
+        <p>
+          BaseCare’s rollout framework is designed to minimize operational disruption while accelerating adoption across healthcare environments. Our phased deployment ensures every facility receives strategic onboarding, training, and operational support.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="implementation.html" class="primary-btn">Implementation</a>
+          <a href="Timeline.html" class="secondary-btn">See Timeline</a>
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <h3>Implementation Milestones</h3>
+
+        <div class="milestone">
+          <div class="milestone-icon">1</div>
+
+          <div>
+            <h4>Discovery & Assessment</h4>
+
+            <p>
+              Operational review, staffing analysis, workflow mapping, and stakeholder alignment.
+            </p>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-icon">2</div>
+
+          <div>
+            <h4>Platform Configuration</h4>
+
+            <p>
+              Facility setup, scheduling logic, user permissions, and automation configuration.
+            </p>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-icon">3</div>
+
+          <div>
+            <h4>Training & Adoption</h4>
+
+            <p>
+              Executive onboarding, manager training, staff onboarding, and workflow simulations.
+            </p>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-icon">4</div>
+
+          <div>
+            <h4>Go-Live & Optimization</h4>
+
+            <p>
+              Launch support, operational monitoring, and continuous optimization.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Rollout Phases</span>
+
+        <h2>
+          Implementation designed for operational continuity
+        </h2>
+
+        <p>
+          BaseCare follows a phased deployment model that prioritizes adoption, workforce continuity, compliance readiness, and scalable expansion.
+        </p>
+      </div>
+
+      <div class="phase-grid">
+
+        <div class="phase-card">
+
+          <div class="phase-number">01</div>
+
+          <h3>Operational Assessment</h3>
+
+          <p>
+            We evaluate staffing workflows, scheduling bottlenecks, compliance procedures, and organizational structure.
+          </p>
+
+          <ul>
+            <li>Executive alignment</li>
+            <li>Scheduling review</li>
+            <li>Workflow discovery</li>
+            <li>Compliance mapping</li>
+          </ul>
+
+        </div>
+
+        <div class="phase-card">
+
+          <div class="phase-number">02</div>
+
+          <h3>System Configuration</h3>
+
+          <p>
+            BaseCare is configured to match facility operations, staffing policies, and approval structures.
+          </p>
+
+          <ul>
+            <li>Facility onboarding</li>
+            <li>User role setup</li>
+            <li>Scheduling automation</li>
+            <li>Credential workflows</li>
+          </ul>
+
+        </div>
+
+        <div class="phase-card">
+
+          <div class="phase-number">03</div>
+
+          <h3>Training & Enablement</h3>
+
+          <p>
+            Leadership teams and staff receive guided onboarding and operational training.
+          </p>
+
+          <ul>
+            <li>Executive onboarding</li>
+            <li>Manager education</li>
+            <li>Staff onboarding</li>
+            <li>Simulation workflows</li>
+          </ul>
+
+        </div>
+
+        <div class="phase-card">
+
+          <div class="phase-number">04</div>
+
+          <h3>Launch & Optimization</h3>
+
+          <p>
+            Following deployment, BaseCare monitors adoption and workforce performance.
+          </p>
+
+          <ul>
+            <li>Go-live monitoring</li>
+            <li>Analytics review</li>
+            <li>Performance optimization</li>
+            <li>Continuous support</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Deployment Timeline</span>
+
+        <h2>
+          A structured path to deployment
+        </h2>
+
+        <p>
+          Every rollout is tailored to facility size and operational complexity while maintaining clear implementation milestones.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+
+            <h4>Week 1 — Discovery & Planning</h4>
+
+            <p>
+              Stakeholder meetings, operational discovery sessions, and workforce assessments.
+            </p>
+
+          </div>
+
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+
+            <h4>Week 2 — Platform Setup</h4>
+
+            <p>
+              Facility onboarding, scheduling configuration, and compliance setup.
+            </p>
+
+          </div>
+
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+
+            <h4>Week 3 — Training & Simulation</h4>
+
+            <p>
+              Workflow simulations, onboarding sessions, and scheduling education.
+            </p>
+
+          </div>
+
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+
+            <h4>Week 4 — Go-Live</h4>
+
+            <p>
+              Launch support, adoption monitoring, and operational optimization.
+            </p>
+
+          </div>
+
+          <div class="timeline-dot"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          Ready to modernize workforce operations?
+        </h2>
+
+        <p>
+          BaseCare helps healthcare organizations reduce staffing inefficiencies and streamline workforce management through intelligent scheduling and compliance automation.
+        </p>
+
+        <a href="mailto:info@basecare.ca">
+          Contact BaseCare
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 BaseCare Technologies. All rights reserved.
+  </footer>
+
+</body>
+</html>
+

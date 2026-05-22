@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BaseCare FAQ | Workforce Scheduling & Compliance Questions</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<script>
+(function() {
+  const url = window.location.href;
+  if (url.includes('.html')) {
+    const cleanUrl = url.split('.html')[0];
+    window.history.replaceState(null, null, cleanUrl);
+  }
+})();
+</script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        carelink: '#F26522',
+        dark: '#0B1120'
+      },
+      boxShadow: {
+        soft: '0 10px 30px rgba(0,0,0,0.06)',
+        glow: '0 25px 80px rgba(242,101,34,0.18)',
+        card: '0 20px 60px rgba(15,23,42,0.08)'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background: #FCFCFD;
+}
+
+.hero-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(#f2652209 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: rgba(242,101,34,0.08);
+  filter: blur(120px);
+  border-radius: 9999px;
+  z-index: 0;
+}
+
+#navMenu.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 84px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 24px;
+  gap: 20px;
+  border-bottom: 1px solid #E2E8F0;
+  z-index: 100;
+}
+
+@media(min-width:1024px){
+  #navMenu {
+    display:flex !important;
+  }
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding-top: 20px;
+  opacity: 1;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+</style>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+</head>
+
+<body class="text-slate-800">
+
+<!-- NAV -->
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+  <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+
+    <a href="index.html" class="flex items-center space-x-2">
+      <div class="text-carelink text-2xl font-bold flex items-center">
+        <img src="logo.png" alt="BaseCare Logo" class="h-10">
+        BaseCare
+      </div>
+    </a>
+
+    <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
+      <a href="Product.html" class="hover:text-carelink transition">Product</a>
+      <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
+      <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
+      <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
+      <a href="about.html" class="hover:text-carelink transition">About Us</a>
+      <a href="Support.html" class="hover:text-carelink transition">Support</a>
+    </div>
+
+    <div class="flex items-center space-x-4">
+
+      <a href="Login.html"
+      class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
+      Log in
+      </a>
+
+      <a href="javascript:void(0)"
+      onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
+      class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
+      Book a Demo
+      </a>
+
+      <button id="menuBtn" class="lg:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="relative hero-pattern overflow-hidden">
+
+<div class="glow top-[-200px] left-[-150px]"></div>
+<div class="glow bottom-[-300px] right-[-100px]"></div>
+
+<div class="relative max-w-7xl mx-auto px-8 py-28 lg:py-36 text-center">
+
+<div class="max-w-4xl mx-auto">
+
+<div class="inline-flex items-center gap-3 bg-orange-50 border border-orange-100 px-5 py-2 rounded-full text-carelink text-xs font-black uppercase tracking-[0.25em] mb-8">
+
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-carelink"></span>
+</span>
+
+Frequently Asked Questions
+
+</div>
+
+<h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] text-dark">
+
+Questions about workforce operations,
+<span class="text-carelink">
+compliance, and scheduling automation.
+</span>
+
+</h1>
+
+<p class="mt-8 text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto">
+
+Everything leadership teams, schedulers, HR departments, and healthcare operators need to know about BaseCare.
+
+</p>
+
+<div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+
+<a href="javascript:void(0)"
+onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+class="bg-carelink text-white px-8 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition text-center">
+
+Book a Demo
+
+</a>
+
+<a href="Support.html"
+class="border border-slate-200 bg-white px-8 py-5 rounded-2xl font-bold hover:border-carelink transition text-center">
+
+Contact Support
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ SECTION -->
+
+<section class="py-28 bg-white">
+
+<div class="max-w-5xl mx-auto px-8">
+
+<div class="text-center mb-20">
+
+<span class="text-carelink text-xs font-black uppercase tracking-[0.3em]">
+Knowledge Base
+</span>
+
+<h2 class="text-5xl font-black tracking-tight mt-6 mb-6 text-dark">
+Frequently asked questions
+</h2>
+
+<p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto">
+Learn how BaseCare helps long-term care and healthcare organizations modernize workforce operations.
+</p>
+
+</div>
+
+<div class="space-y-6">
+
+<!-- FAQ ITEM -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<div>
+<h3 class="text-2xl font-black text-dark">
+What is BaseCare?
+</h3>
+</div>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+BaseCare is a workforce operations and scheduling platform designed for Ontario long-term care and regulated healthcare environments. The platform helps organizations automate scheduling workflows, credential governance, staffing visibility, labor rule enforcement, and operational compliance.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Who is BaseCare designed for?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+BaseCare is designed for long-term care homes, retirement communities, healthcare staffing teams, unions, healthcare operators, schedulers, HR departments, executive leadership teams, and regulated healthcare environments requiring workforce governance and compliance visibility.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Does BaseCare support unionized environments?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Yes. BaseCare is built with union-aware scheduling logic that supports seniority workflows, assignment rules, open shift bidding, overtime visibility, and workforce transparency. The platform is designed to reduce manual interpretation of collective agreements and improve auditability.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Can BaseCare prevent non-compliant staff from taking shifts?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Yes. BaseCare includes autonomous credential enforcement that can automatically block staff from accepting or being assigned shifts if required certifications, licenses, training records, or compliance documents are expired or missing.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+What credentials can BaseCare track?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+BaseCare can track CPR certifications, nursing licenses, vulnerable sector checks, onboarding documents, immunization records, training requirements, WSIB documentation, fit testing, mandatory education requirements, and organization-specific compliance workflows.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Can BaseCare reduce agency staffing dependency?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+BaseCare helps organizations improve internal staffing visibility, optimize workforce utilization, accelerate open shift fulfillment, and improve workforce planning. These capabilities may reduce reliance on external staffing agencies over time.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+How long does implementation take?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Implementation timelines vary based on organizational complexity, number of facilities, workforce structure, scheduling requirements, and integration scope. Most implementations begin with operational discovery, workflow mapping, configuration, and phased onboarding.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Does BaseCare integrate with existing systems?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+BaseCare is designed to support integration workflows with HR systems, scheduling infrastructure, payroll systems, credential databases, staffing platforms, and workforce reporting environments depending on implementation requirements.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Is BaseCare cloud-based?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Yes. BaseCare is designed as a modern cloud-based workforce operations platform with secure remote access, workforce visibility, centralized management, and scalable deployment infrastructure.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Does BaseCare provide audit trails?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Yes. BaseCare maintains operational logs and workforce audit visibility across staffing actions, scheduling decisions, credential workflows, and compliance activities to improve transparency and inspection readiness.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+Can staff access BaseCare on mobile devices?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+Yes. Staff can access schedules, open shifts, notifications, credential updates, and workforce communication workflows through mobile-friendly access environments.
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-item bg-white border border-orange-100 rounded-[28px] p-8 shadow-soft cursor-pointer">
+
+<div class="flex items-start justify-between gap-6 faq-toggle">
+
+<h3 class="text-2xl font-black text-dark">
+How does BaseCare support operational leadership?
+</h3>
+
+<div class="faq-icon text-carelink text-2xl">
+<i class="fas fa-plus"></i>
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p class="text-slate-600 leading-relaxed text-lg">
+BaseCare provides leadership teams with workforce dashboards, operational analytics, staffing visibility, compliance oversight, vacancy tracking, overtime exposure monitoring, and workforce reporting to support operational decision-making.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="py-32 bg-[#FFF8F4] border-y border-orange-100">
+
+<div class="max-w-4xl mx-auto px-8 text-center">
+
+<span class="text-carelink text-xs font-black uppercase tracking-[0.25em]">
+Need More Information?
+</span>
+
+<h2 class="text-5xl md:text-6xl font-black tracking-tight leading-[1] mt-6 mb-8 text-dark">
+
+Speak with the BaseCare team.
+
+</h2>
+
+<p class="text-xl text-slate-500 leading-relaxed mb-12">
+
+Schedule a workforce operations consultation and see how BaseCare can support your scheduling, compliance, and staffing workflows.
+
+</p>
+
+<a href="javascript:void(0)"
+onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+class="inline-flex items-center bg-carelink text-white px-10 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition">
+
+Book a Demo
+
+<i class="fas fa-arrow-right ml-3 text-sm"></i>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-dark text-slate-400 py-20">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<div class="grid md:grid-cols-5 gap-14">
+
+<div class="md:col-span-2">
+
+<div class="flex items-center gap-3 mb-6">
+
+<img src="logo.png" class="h-10">
+
+<span class="text-white text-2xl font-black">
+BaseCare
+</span>
+
+</div>
+
+<p class="max-w-sm leading-relaxed">
+
+Operational workforce infrastructure built for long-term care and regulated healthcare environments.
+
+</p>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold mb-6">
+Platform
+</h4>
+
+<ul class="space-y-4 text-sm">
+
+<li><a href="Product.html" class="hover:text-white transition">Product</a></li>
+<li><a href="Solutions.html" class="hover:text-white transition">Solutions</a></li>
+<li><a href="Pricing.html" class="hover:text-white transition">Pricing</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold mb-6">
+Resources
+</h4>
+
+<ul class="space-y-4 text-sm">
+
+<li><a href="Resources.html" class="hover:text-white transition">Resources</a></li>
+<li><a href="implementation.html" class="hover:text-white transition">Implementation</a></li>
+<li><a href="rollout.html" class="hover:text-white transition">Rollout</a></li>
+<li><a href="Compliance.html" class="hover:text-white transition">Compliance</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold mb-6">
+Contact
+</h4>
+
+<ul class="space-y-4 text-sm">
+
+<li>
+<a href="tel:+13653562273" class="hover:text-white transition">
+1 (365) 356-CARE
+</a>
+</li>
+
+<li>
+<a href="mailto:wecare@basecare.ca" class="hover:text-white transition">
+wecare@basecare.ca
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-6 text-xs uppercase tracking-[0.2em]">
+
+<p>
+© 2026 BaseCare Inc.
+</p>
+
+<div class="flex gap-8">
+
+<a href="privacy.html" class="hover:text-white transition">
+Privacy
+</a>
+
+<a href="Terms.html" class="hover:text-white transition">
+Terms
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- MOBILE MENU -->
+
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("navMenu");
+
+btn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("active");
+});
+
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove("active");
+  }
+});
+</script>
+
+<!-- FAQ SCRIPT -->
+
+<script>
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+  item.addEventListener('click', () => {
+
+    const isActive = item.classList.contains('active');
+
+    faqItems.forEach(i => i.classList.remove('active'));
+
+    if(!isActive){
+      item.classList.add('active');
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>

@@ -23,7 +23,7 @@
       theme: {
         extend: {
           colors: {
-            carelink: "#F26522",
+            BaseCare: "#F26522",
             dark: "#0F172A",
           },
           boxShadow: {
@@ -76,7 +76,7 @@
         }
         
         /* Remove the border/underline for About Us on mobile if you want it uniform */
-        #navMenu a.text-carelink {
+        #navMenu a.text-BaseCare {
             border-bottom: none !important;
             padding-bottom: 10px !important;
         }
@@ -98,11 +98,11 @@
 
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center justify-center md:justify-center md:justify-between px-8 py-4 max-w-7xl mx-auto">
         <div class="flex items-center space-x-2">
             <a href="index.html" class="flex items-center space-x-2">
-                <div class="text-carelink text-2xl font-bold flex items-center">
-                    <img src="logo.png" alt="Carelink Logo" class="h-10"> BaseCare
+                <div class="text-BaseCare text-2xl font-bold flex items-center">
+                    <img src="logo.png" alt="BaseCare Logo" class="h-10"> BaseCare
                 </div>
             
             </a>
@@ -111,22 +111,22 @@
         <!-- MENU CONTAINER -->
         <!-- Removed lg:flex to prevent Tailwind override conflicts -->
         <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
-            <a href="Product.html" class="hover:text-carelink transition">Product</a>
-            <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
-            <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
-            <a href="Resources.html" class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">Resources</a>
-            <a href="about.html" class="hover:text-carelink transition">About Us</a>
+            <a href="Product.html" class="hover:text-BaseCare transition">Product</a>
+            <a href="Solutions.html" class="hover:text-BaseCare transition">Solutions</a>
+            <a href="Pricing.html" class="hover:text-BaseCare transition">Pricing</a>
+            <a href="Resources.html" class="text-BaseCare font-bold lg:border-b-2 lg:border-BaseCare lg:pb-1">Resources</a>
+            <a href="about.html" class="hover:text-BaseCare transition">About Us</a>
         </div>
 
         <!-- RIGHT SIDE -->
         <div class="flex items-center space-x-4">
-            <a href="Login.html" class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
+            <a href="Login.html" class="hidden sm:block text-sm font-semibold hover:text-BaseCare transition">
                 Log in
             </a>
 
             <a href="javascript:void(0)"
                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
-               class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
+               class="bg-BaseCare text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
                 Book a Demo
             </a>
 
@@ -171,14 +171,14 @@
 
     <div class="relative max-w-5xl mx-auto text-center px-6">
 
-        <div class="inline-flex items-center px-4 py-2 rounded-full border border-orange-100 bg-white shadow-sm text-[11px] uppercase tracking-[0.25em] font-bold text-carelink mb-8">
+        <div class="inline-flex items-center px-4 py-2 rounded-full border border-orange-100 bg-white shadow-sm text-[11px] uppercase tracking-[0.25em] font-bold text-BaseCare mb-8">
             LTC Operational Intelligence Hub
         </div>
 
         <h1 class="text-5xl md:text-7xl font-black leading-[1.02] tracking-tight text-slate-900">
 
             Resources built for modern
-            <span class="text-carelink">LTC workforce operations</span>
+            <span class="text-BaseCare">LTC workforce operations</span>
 
         </h1>
 
@@ -192,7 +192,7 @@
 
             <a href="javascript:void(0)"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
-            class="bg-carelink text-white px-7 py-3.5 rounded-xl font-semibold shadow-soft hover:scale-[1.02] transition">
+            class="bg-BaseCare text-white px-7 py-3.5 rounded-xl font-semibold shadow-soft hover:scale-[1.02] transition">
 
                 Book a Demo
 
@@ -218,7 +218,7 @@
 
         <div class="flex gap-8 py-5 min-w-max text-sm font-semibold">
 
-            <button class="text-carelink border-b-2 border-carelink pb-2">
+            <button class="text-BaseCare border-b-2 border-BaseCare pb-2">
                 All Resources
             </button>
 
@@ -256,7 +256,7 @@
         <div class="lg:col-span-2 group relative bg-dark rounded-[2rem] overflow-hidden shadow-glow transition-all duration-500 hover:-translate-y-1">
             <!-- Abstract Stripe-style Background -->
             <div class="absolute inset-0">
-                <div class="absolute top-[-20%] right-[-10%] w-96 h-96 bg-carelink/20 blur-[120px] rounded-full"></div>
+                <div class="absolute top-[-20%] right-[-10%] w-96 h-96 bg-BaseCare/20 blur-[120px] rounded-full"></div>
                 <div class="absolute bottom-[-20%] left-[-10%] w-96 h-96 bg-orange-500/10 blur-[100px] rounded-full"></div>
                 <!-- Geometric Grid Overlay -->
                 <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
@@ -268,7 +268,7 @@
                     <div class="relative">
                         <!-- Glassmorphic UI Elements -->
                         <div class="w-48 h-64 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl transform -rotate-6 transition-transform group-hover:-rotate-12 duration-500"></div>
-                        <div class="absolute inset-0 w-48 h-64 bg-gradient-to-br from-carelink to-orange-600 rounded-2xl shadow-xl transform rotate-3 flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-6 duration-500">
+                        <div class="absolute inset-0 w-48 h-64 bg-gradient-to-br from-BaseCare to-orange-600 rounded-2xl shadow-xl transform rotate-3 flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-6 duration-500">
                             <i class="fas fa-shield-halved text-white text-6xl opacity-20 absolute -right-4 -bottom-4"></i>
                             <i class="fas fa-file-invoice text-white text-5xl"></i>
                         </div>
@@ -277,7 +277,7 @@
 
                 <!-- Text Side -->
                 <div class="w-full md:w-1/2 p-10 flex flex-col justify-center text-white">
-                    <div class="inline-flex items-center self-start px-3 py-1 rounded-full bg-carelink/20 border border-carelink/30 text-[10px] uppercase tracking-[0.2em] font-bold text-carelink mb-6">
+                    <div class="inline-flex items-center self-start px-3 py-1 rounded-full bg-BaseCare/20 border border-BaseCare/30 text-[10px] uppercase tracking-[0.2em] font-bold text-BaseCare mb-6">
                         Whitepaper 2026
                     </div>
                     <h2 class="text-3xl font-extrabold leading-tight tracking-tight">
@@ -287,7 +287,7 @@
                         Redefining workforce operational intelligence for the modern healthcare era.
                     </p>
                     <div class="mt-8">
-                        <a href="LTC-Playbook-2026.html" class="inline-flex items-center text-carelink font-bold text-sm hover:translate-x-2 transition-transform">
+                        <a href="LTC-Playbook-2026.html" class="inline-flex items-center text-BaseCare font-bold text-sm hover:translate-x-2 transition-transform">
                             Access the full guide <i class="fas fa-arrow-right ml-2 text-xs"></i>
                         </a>
                     </div>
@@ -298,321 +298,149 @@
         <!-- SIDEBAR (Unchanged) -->
         <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 h-fit">
             <div class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-3 py-1 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-5">
-                <span class="w-2 h-2 rounded-full bg-carelink"></span> Weekly LTC Insights
+                <span class="w-2 h-2 rounded-full bg-BaseCare"></span> Weekly LTC Insights
             </div>
             <h3 class="font-bold text-2xl leading-tight">Stay ahead of staffing and compliance changes</h3>
             <p class="text-sm text-slate-600 mt-4 leading-relaxed">Receive operational guidance, workforce insights, and regulatory updates designed specifically for Ontario LTC environments.</p>
-            <input type="email" placeholder="Enter your email" class="w-full mt-8 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-carelink/20">
-            <button class="w-full mt-4 bg-carelink text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">Subscribe</button>
+            <input type="email" placeholder="Enter your email" class="w-full mt-8 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-BaseCare/20">
+            <button class="w-full mt-4 bg-BaseCare text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">Subscribe</button>
         </div>
     </div>
 
-    <!-- RESOURCE CARDS -->
-    <div class="max-w-7xl mx-auto px-6 mt-16 grid md:grid-cols-3 gap-8">
-        
-        <!-- CARD 1 -->
-        <a href="Reducing-Agency-Spend.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
-            <!-- Icon Placeholder Style from image.png -->
-            <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
-                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
-                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
-                </div>
-                <div class="relative w-16 h-16 bg-carelink/10 rounded-2xl flex items-center justify-center border border-carelink/20">
-                    <i class="fas fa-video text-carelink text-3xl group-hover:scale-110 transition"></i>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-carelink text-xs font-bold uppercase tracking-widest mb-2">Webinar</p>
-                <h3 class="font-bold text-lg leading-snug">Reducing Agency Spend by 35%</h3>
-                <p class="text-sm text-slate-600 mt-3">Real-world staffing optimization strategies for LTC operators managing labor pressure.</p>
-            </div>
-        </a>
-
-        <!-- CARD 2 -->
-        <a href="How.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
-            <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
-                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
-                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
-                </div>
-                <div class="relative w-16 h-16 bg-carelink/10 rounded-2xl flex items-center justify-center border border-carelink/20">
-                    <i class="fas fa-users text-carelink text-3xl group-hover:scale-110 transition"></i>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-carelink text-xs font-bold uppercase tracking-widest mb-2">Case Study</p>
-                <h3 class="font-bold text-lg leading-snug">Seun Supports Transformation</h3>
-                <p class="text-sm text-slate-600 mt-3">How structured workforce planning improved staffing consistency and reduced burnout.</p>
-            </div>
-        </a>
-
-        <!-- CARD 3 -->
-        <a href="Union-Automation.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition duration-300">
-            <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
-                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
-                    <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
-                </div>
-                <div class="relative w-16 h-16 bg-carelink/10 rounded-2xl flex items-center justify-center border border-carelink/20">
-                    <i class="fas fa-shield-alt text-carelink text-3xl group-hover:scale-110 transition"></i>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-carelink text-xs font-bold uppercase tracking-widest mb-2">Compliance</p>
-                <h3 class="font-bold text-lg leading-snug">Union Rule Automation Guide</h3>
-                <p class="text-sm text-slate-600 mt-3">Learn how modern workforce systems automate collective agreement enforcement.</p>
-            </div>
-        </div>
-    </a>
-</section>
 <!-- RESOURCE LIBRARY -->
 <section class="max-w-7xl mx-auto px-6 mt-20">
 
     <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-        <!-- 1 -->
-        <a href="Data-Security.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
+         <!-- CARD 1 -->
+  <a href="Reducing-Agency-Spend.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
+        <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+        <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+      </div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-video text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Webinar</p>
+      <h3 class="font-bold text-lg">Reducing Agency Spend by 35%</h3>
+      <p class="text-sm text-slate-600 mt-3">Staffing optimization strategies for LTC operations.</p>
+    </div>
+  </a>
 
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-shield text-2xl"></i>
-            </div>
+  <!-- CARD 2 -->
+  <a href="How.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
+        <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+        <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+      </div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-users text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Case Study</p>
+      <h3 class="font-bold text-lg">Seun Supports Transformation</h3>
+      <p class="text-sm text-slate-600 mt-3">Workforce planning improvements and burnout reduction.</p>
+    </div>
+  </a>
 
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Security
-            </span>
+  <!-- CARD 3 -->
+  <a href="Union-Automation.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4">
+        <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+        <div class="bg-white rounded-md"></div><div class="bg-white rounded-md"></div>
+      </div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-shield-alt text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Compliance</p>
+      <h3 class="font-bold text-lg">Union Rule Automation Guide</h3>
+      <p class="text-sm text-slate-600 mt-3">Automating collective agreement enforcement systems.</p>
+    </div>
+  </a>
 
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                Data Security Overview
-            </h3>
+  <!-- CARD 4 -->
+  <a href="Data-Security.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4"></div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-shield text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Security</p>
+      <h3 class="font-bold text-lg">Data Security Overview</h3>
+      <p class="text-sm text-slate-600 mt-3">PHI protection and encryption standards.</p>
+    </div>
+  </a>
 
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Learn how BaseCare protects PHI with encryption, audit logs, role-based access controls, and Canadian-hosted infrastructure.
-            </p>
+  <!-- CARD 5 -->
+  <a href="Phipa.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4"></div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-file-lines text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Compliance</p>
+      <h3 class="font-bold text-lg">PHIPA Compliance Guide</h3>
+      <p class="text-sm text-slate-600 mt-3">Privacy and healthcare compliance framework.</p>
+    </div>
+  </a>
 
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
+  <!-- CARD 6 -->
+  <a href="Compliance.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4"></div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-clipboard-check text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Audit</p>
+      <h3 class="font-bold text-lg">MOH Inspection Readiness</h3>
+      <p class="text-sm text-slate-600 mt-3">Audit workflows and inspection readiness tools.</p>
+    </div>
+  </a>
 
-        </a>
+  <!-- CARD 7 -->
+  <a href="Credential-Management.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4"></div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-id-card text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Credentials</p>
+      <h3 class="font-bold text-lg">Credential Expiry Management</h3>
+      <p class="text-sm text-slate-600 mt-3">Track licenses, renewals, and compliance status.</p>
+    </div>
+  </a>
 
-        <!-- 2 -->
-        <a href="Phipa.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
+  <!-- CARD 8 -->
+  <a href="4-Hour-Standard.html" class="group border border-slate-200 rounded-2xl overflow-hidden bg-white hover:shadow-xl transition">
+    <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 grid grid-cols-4 gap-2 p-4"></div>
+      <div class="relative w-16 h-16 bg-BaseCare/10 rounded-2xl flex items-center justify-center border border-BaseCare/20">
+        <i class="fas fa-clock text-BaseCare text-3xl group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-BaseCare text-xs font-bold uppercase tracking-widest mb-2">Operations</p>
+      <h3 class="font-bold text-lg">4-Hour Care Standard</h3>
+      <p class="text-sm text-slate-600 mt-3">Staffing strategies for Ontario care requirements.</p>
+    </div>
+  </a>
 
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-file-lines text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Compliance
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                PHIPA Compliance Guide
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Understand how BaseCare supports privacy safeguards, workforce compliance, and healthcare accountability requirements.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 3 -->
-        <a href="Compliance.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-clipboard-check text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Audit Readiness
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                MOH Inspection Readiness
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Explore staffing documentation workflows, credential tracking, audit trails, and inspection preparation strategies.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 4 -->
-        <a href="LTC-Playbook-2026.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-book-open text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Whitepaper
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                Ontario LTC Compliance Playbook
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Strategic operational guidance for staffing, scheduling, compliance, and workforce modernization in LTC.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 5 -->
-        <a href="Reducing-Agency-Spend.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-chart-line text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Staffing Strategy
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                Reducing Agency Spend by 35%
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Learn proven staffing optimization methods that reduce overtime pressure and agency dependency.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 6 -->
-        <a href="Union-Automation.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-gavel text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Union Operations
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                Union Rule Automation Guide
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                See how BaseCare automates seniority rules, scheduling restrictions, and collective agreement workflows.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 7 -->
-        <a href="How.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-users text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Case Study
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                Workforce Transformation Study
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Discover how structured workforce planning improves retention, staffing stability, and morale.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 8 -->
-        <a href="Credential-Management.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-id-card text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                Credentials
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                Credential Expiry Management
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Manage CNO licenses, TB testing, VSC renewals, certifications, and workforce eligibility in real time.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
-
-        <!-- 9 -->
-        <a href="4-Hour-Standard.html"
-        class="group bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition duration-300">
-
-            <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-carelink mb-6">
-                <i class="fas fa-clock text-2xl"></i>
-            </div>
-
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-carelink">
-                LTC Operations
-            </span>
-
-            <h3 class="text-xl font-bold leading-snug text-slate-900 mt-4">
-                4-Hour Care Standard Planning
-            </h3>
-
-            <p class="text-sm text-slate-600 mt-4 leading-relaxed">
-                Understand staffing allocation strategies aligned with Ontario’s 4-hour direct care requirements.
-            </p>
-
-            <div class="mt-6 flex items-center text-carelink font-semibold text-sm">
-                Open Resource
-                <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition"></i>
-            </div>
-
-        </a>
 
     </div>
 
@@ -622,11 +450,11 @@
 <!-- FINAL CTA -->
 <section class="py-28 bg-[#0F172A] relative overflow-hidden">
 
-    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-carelink/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-BaseCare/10 rounded-full blur-3xl"></div>
 
     <div class="relative max-w-4xl mx-auto text-center px-6 text-white">
 
-        <p class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-5">
+        <p class="text-BaseCare uppercase tracking-[0.3em] text-xs font-bold mb-5">
             Workforce Transformation
         </p>
 
@@ -635,14 +463,14 @@
         </h2>
 
         <p class="text-slate-400 mt-6 text-lg max-w-2xl mx-auto">
-            Speak with the Carelink team to explore staffing optimization, compliance automation, and workforce modernization strategies.
+            Speak with the BaseCare team to explore staffing optimization, compliance automation, and workforce modernization strategies.
         </p>
 
         <div class="mt-10">
 
             <a href="javascript:void(0)"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
-            class="inline-flex items-center bg-carelink text-white px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-[1.02] transition">
+            class="inline-flex items-center bg-BaseCare text-white px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-[1.02] transition">
 
                 Book a Demo
 
@@ -656,48 +484,6 @@
 
 </section>
 
-<!-- FOOTER -->
-<footer class="py-12 border-t border-slate-100 bg-white">
-
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-
-        <div class="flex items-center gap-3">
-
-            <img src="logo.png" alt="Carelink Logo" class="h-10">
-
-            <div>
-
-                <div class="font-bold text-slate-900">
-                    BaseCare
-                </div>
-
-                <div class="text-xs text-slate-400 uppercase tracking-widest">
-                    Ontario, Canada
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="flex items-center gap-8 text-sm text-slate-500">
-
-            <a href="privacy.html" class="hover:text-slate-900 transition">
-                Privacy
-            </a>
-
-            <a href="Terms.html" class="hover:text-slate-900 transition">
-                Terms
-            </a>
-
-            <a href="about.html" class="hover:text-slate-900 transition">
-                About
-            </a>
-
-        </div>
-
-    </div>
-
-</footer>
 
 </body>
 </html>

@@ -1,292 +1,902 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Webinars | BaseCare </title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   <script src="https://cdn.tailwindcss.com"></script>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<title>Compliance & Workforce Governance | BaseCare</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 <link rel="icon" type="image/png" href="favicon.png">
 
- <script>
-      (function() {
-        const url = window.location.href;
-        if (url.includes('.html')) {
-          const cleanUrl = url.split('.html')[0];
-          window.history.replaceState(null, null, cleanUrl);
+<script>
+(function () {
+    const url = window.location.href;
+    if (url.includes('.html')) {
+        const cleanUrl = url.split('.html')[0];
+        window.history.replaceState(null, null, cleanUrl);
+    }
+})();
+</script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                BaseCare: '#F26522',
+                dark: '#0B1120'
+            },
+            boxShadow: {
+                soft: '0 10px 30px rgba(0,0,0,0.06)',
+                glow: '0 25px 80px rgba(242,101,34,0.18)',
+                card: '0 20px 60px rgba(15,23,42,0.08)'
+            }
         }
-      })();
-    </script>
-
-   <script>
-       tailwind.config = {
-           theme: {
-               extend: {
-                   colors: {
-                       BaseCare: '#F06529',
-                       dark: '#0F172A'
-                   },
-                   boxShadow: {
-                       soft: '0 10px 30px rgba(0,0,0,0.06)',
-                       card: '0 20px 50px rgba(0,0,0,0.05)'
-                   },
-               },
-           },
-       };
-   </script>
-
-   <style>
-       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-       body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-       .hero-pattern {
-           background-color: #ffffff;
-           background-image: radial-gradient(#f065290a 1px, transparent 1px);
-           background-size: 20px 20px;
-       }
-       .mobile-menu {
-           display: none;
-           flex-direction: column;
-           padding: 1rem 2rem;
-           background: white;
-           border-top: 1px solid #e2e8f0;
-       }
-       .mobile-menu.active { display: flex; }
-   </style>
-
-   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-</head>
-
-<body class="bg-white text-slate-800">
-
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-        <div class="flex items-center space-x-2">
-            <a href="index.html" class="text-BaseCare text-2xl font-bold flex items-center gap-2">
-                <img src="logo.png" class="h-10" alt="Logo">
-                BaseCare
-            </a>
-        </div>
-
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-            <a href="Product.html">Product</a>
-            <a href="Solutions.html">Solutions</a>
-            <a href="Pricing.html">Pricing</a>
-            <a href="Resources.html">Resources</a>
-            <a href="about.html">About Us</a>
-            <a href="Support.html">Support</a>
-        </div>
-
-        <div class="flex items-center space-x-4">
-            <a href="Login.html" class="text-sm font-semibold text-slate-700">Log in</a>
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
-               class="bg-BaseCare text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-orange-600 transition">
-               Book a Demo
-            </a>
-            <button id="menuBtn" class="md:hidden text-2xl text-slate-700">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </div>
-
-    <div id="navMenu" class="mobile-menu md:hidden">
-        <a href="Product.html">Product</a>
-        <a href="Solutions.html">Solutions</a>
-        <a href="Pricing.html">Pricing</a>
-        <a href="Resources.html">Resources</a>
-        <a href="about.html">About Us</a>
-        <a href="Support.html">Support</a>
-    </div>
-</nav>
+    }
+}
+</script>
 
 <style>
-.mobile-menu {
-    display: none;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background: #FCFCFD;
+}
+
+.hero-pattern {
+    background-color: #ffffff;
+    background-image: radial-gradient(#f2652209 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(242,101,34,0.08);
+    filter: blur(120px);
+    border-radius: 9999px;
+    z-index: 0;
+}
+
+#navMenu.active {
+    display: flex !important;
     flex-direction: column;
-    padding: 1rem 2rem;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    right: 0;
     background: white;
-    border-top: 1px solid #e2e8f0;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid #E2E8F0;
+    z-index: 100;
 }
 
-.mobile-menu a {
-    padding: 12px 0;
-    font-weight: 500;
-    color: #475569;
-}
-
-.mobile-menu.active {
-    display: flex;
+@media(min-width:1024px){
+    #navMenu {
+        display:flex !important;
+    }
 }
 </style>
 
-<!-- MENU SCRIPT -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+</head>
+
+<body class="text-slate-800">
+
+<!-- NAV -->
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+
+        <a href="index.html" class="flex items-center gap-2">
+            <img src="logo.png" class="h-10">
+            <span class="text-2xl font-black text-BaseCare">
+                BaseCare
+            </span>
+        </a>
+
+        <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
+
+            <a href="Product.html" class="hover:text-BaseCare transition">Product</a>
+            <a href="Solutions.html" class="hover:text-BaseCare transition">Solutions</a>
+            <a href="Pricing.html" class="hover:text-BaseCare transition">Pricing</a>
+            <a href="Resources.html" class="hover:text-BaseCare transition">Resources</a>
+            <a href="about.html" class="hover:text-BaseCare transition">About Us</a>
+            <a href="Support.html" class="hover:text-BaseCare transition">Support</a>
+
+        </div>
+
+        <div class="flex items-center space-x-4">
+
+            <a href="Login.html"
+               class="hidden sm:block text-sm font-semibold hover:text-BaseCare transition">
+               Log in
+            </a>
+
+            <a href="javascript:void(0)"
+               onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+               class="bg-BaseCare text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
+
+                Book a Demo
+
+            </a>
+
+            <button id="menuBtn" class="lg:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="relative hero-pattern overflow-hidden border-b border-orange-100">
+
+<div class="glow top-[-200px] left-[-150px]"></div>
+<div class="glow bottom-[-300px] right-[-100px]"></div>
+
+<div class="relative max-w-7xl mx-auto px-8 py-28 lg:py-36">
+
+<div class="max-w-4xl">
+
+<div class="inline-flex items-center gap-3 bg-orange-50 border border-orange-100 px-5 py-2 rounded-full text-BaseCare text-xs font-black uppercase tracking-[0.25em] mb-8">
+
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-BaseCare"></span>
+</span>
+
+Ontario LTC Workforce Governance
+
+</div>
+
+<h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1] text-dark">
+
+Built for Ontario Long-Term Care Compliance, Workforce Governance, and Inspection Readiness.
+
+</h1>
+
+<p class="mt-8 text-xl text-slate-500 leading-relaxed max-w-3xl">
+
+BaseCare helps long-term care operators improve staffing visibility, support Ministry inspection workflows, automate credential enforcement, and strengthen workforce compliance operations across unionized healthcare environments.
+
+</p>
+
+<div class="mt-12 flex flex-col sm:flex-row gap-4">
+
+<a href="javascript:void(0)"
+onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+class="bg-BaseCare text-white px-8 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition text-center">
+
+Book a Compliance Review
+
+</a>
+
+<a href="implementation.html"
+class="border border-slate-200 bg-white px-8 py-5 rounded-2xl font-bold hover:border-BaseCare transition text-center">
+
+View Implementation
+
+</a>
+
+</div>
+
+<div class="mt-10 flex flex-wrap gap-8 text-sm text-slate-400">
+
+<div class="flex items-center gap-2">
+<i class="fas fa-shield-alt text-BaseCare"></i>
+Inspection-ready infrastructure
+</div>
+
+<div class="flex items-center gap-2">
+<i class="fas fa-file-lines text-BaseCare"></i>
+Operational reporting visibility
+</div>
+
+<div class="flex items-center gap-2">
+<i class="fas fa-users text-BaseCare"></i>
+Union-aware workforce governance
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CORE COMPLIANCE -->
+
+<section class="py-28 bg-white">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<div class="text-center max-w-3xl mx-auto mb-20">
+
+<div class="text-BaseCare text-xs uppercase tracking-[0.3em] font-black mb-5">
+Compliance Infrastructure
+</div>
+
+<h2 class="text-5xl font-black tracking-tight text-slate-900 mb-6">
+
+Operational controls built for regulated care environments
+
+</h2>
+
+<p class="text-slate-600 text-lg leading-relaxed">
+
+BaseCare centralizes workforce compliance workflows, staffing governance, credential validation, and operational audit visibility.
+
+</p>
+
+</div>
+
+<div class="grid lg:grid-cols-3 gap-8">
+
+<!-- CARD -->
+
+<div class="bg-slate-50 border border-slate-100 rounded-[32px] p-10 shadow-soft">
+
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-8">
+<i class="fas fa-fingerprint text-BaseCare text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-black mb-5">
+PHIPA & Data Governance
+</h3>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Protect workforce and operational data with encrypted infrastructure, access governance, and secure cloud architecture aligned to healthcare privacy expectations.
+
+</p>
+
+<ul class="space-y-4 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Encrypted data at rest and in transit
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Role-based access controls
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Canadian-hosted cloud infrastructure
+</li>
+
+</ul>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bg-slate-50 border border-slate-100 rounded-[32px] p-10 shadow-soft">
+
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-8">
+<i class="fas fa-clipboard-check text-BaseCare text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-black mb-5">
+MOH Inspection Support
+</h3>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Support staffing documentation and workforce reporting workflows used during Ministry inspections and internal compliance reviews.
+
+</p>
+
+<ul class="space-y-4 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Historical assignment audit logs
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Credential verification history
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Inspection-ready staffing exports
+</li>
+
+</ul>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bg-slate-50 border border-slate-100 rounded-[32px] p-10 shadow-soft">
+
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-8">
+<i class="fas fa-gavel text-BaseCare text-2xl"></i>
+</div>
+
+<h3 class="text-2xl font-black mb-5">
+Union & CBA Enforcement
+</h3>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Automate seniority logic, workforce restrictions, assignment controls, and labor agreement workflows across unionized staffing environments.
+
+</p>
+
+<ul class="space-y-4 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Seniority-aware assignments
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Shift bidding governance
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Reduced grievance exposure
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LTC COMPLIANCE MAPPING -->
+
+<section class="py-28 bg-[#FFF8F4] border-y border-orange-100 relative overflow-hidden">
+
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-BaseCare/10 blur-[140px] rounded-full"></div>
+
+<div class="relative max-w-7xl mx-auto px-8">
+
+<div class="text-center max-w-3xl mx-auto mb-20">
+
+<div class="text-BaseCare text-xs uppercase tracking-[0.3em] font-black mb-5">
+Ontario LTC Mapping
+</div>
+
+<h2 class="text-5xl font-black tracking-tight mb-6 text-dark">
+
+Designed around Ontario LTC operational realities
+
+</h2>
+
+<p class="text-lg text-slate-600 leading-relaxed">
+
+BaseCare supports staffing oversight, worked-hour visibility, credential governance, and workforce auditability across long-term care operations.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<!-- ITEM -->
+
+<div class="bg-white rounded-[32px] border border-orange-100 p-10 shadow-soft">
+
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center">
+<i class="fas fa-clock text-BaseCare text-xl"></i>
+</div>
+
+<h3 class="text-2xl font-black">
+4-Hour Care Standard Visibility
+</h3>
+</div>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Track worked hours across RN, RPN, and PSW staffing categories with operational visibility into care delivery coverage and workforce utilization trends.
+
+</p>
+
+<ul class="space-y-3 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Worked-hour visibility
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Staffing mix analytics
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Coverage gap identification
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Historical staffing retention
+</li>
+
+</ul>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="bg-white rounded-[32px] border border-orange-100 p-10 shadow-soft">
+
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center">
+<i class="fas fa-chart-line text-BaseCare text-xl"></i>
+</div>
+
+<h3 class="text-2xl font-black">
+MLTC Reporting Readiness
+</h3>
+</div>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Centralized staffing records and workforce activity visibility designed to support operational reporting workflows and internal compliance reviews.
+
+</p>
+
+<ul class="space-y-3 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Shift-level traceability
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Historical workforce logs
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Export-ready reporting workflows
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Operational staffing analytics
+</li>
+
+</ul>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="bg-white rounded-[32px] border border-orange-100 p-10 shadow-soft">
+
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center">
+<i class="fas fa-building text-BaseCare text-xl"></i>
+</div>
+
+<h3 class="text-2xl font-black">
+MOH Inspection Readiness
+</h3>
+</div>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Provide administrators and inspectors with centralized staffing documentation, credential records, assignment history, and workforce audit trails.
+
+</p>
+
+<ul class="space-y-3 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Credential verification logs
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Assignment traceability
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Schedule change history
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Inspection support exports
+</li>
+
+</ul>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="bg-white rounded-[32px] border border-orange-100 p-10 shadow-soft">
+
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center">
+<i class="fas fa-user-lock text-BaseCare text-xl"></i>
+</div>
+
+<h3 class="text-2xl font-black">
+Credential Enforcement
+</h3>
+</div>
+
+<p class="text-slate-600 leading-relaxed mb-8">
+
+Automatically prevent non-compliant scheduling activity based on licenses, certifications, onboarding requirements, and organizational policy rules.
+
+</p>
+
+<ul class="space-y-3 text-sm text-slate-500">
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+License validation
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+CPR / TB / VSC tracking
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Automated scheduling lockouts
+</li>
+
+<li class="flex items-start gap-3">
+<i class="fas fa-check text-emerald-600 mt-1"></i>
+Escalation workflows
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DARK SECTION -->
+
+<section class="py-32 bg-dark text-white relative overflow-hidden">
+
+<div class="absolute top-0 left-0 w-full h-full opacity-10">
+<div class="absolute top-20 left-20 w-96 h-96 bg-BaseCare blur-3xl rounded-full"></div>
+</div>
+
+<div class="relative max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+
+<div>
+
+<span class="text-BaseCare text-xs font-black tracking-[0.3em] uppercase">
+Real-Time Workforce Governance
+</span>
+
+<h2 class="text-5xl font-black leading-[1] mt-6 mb-8">
+
+Autonomous credential enforcement and operational oversight.
+
+</h2>
+
+<p class="text-xl text-slate-400 leading-relaxed mb-10">
+
+BaseCare automatically identifies expired certifications, policy gaps, and workforce compliance risks before assignments occur.
+
+</p>
+
+<div class="space-y-8">
+
+<div class="flex items-start gap-4">
+
+<div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center">
+<i class="fas fa-bell text-BaseCare"></i>
+</div>
+
+<div>
+
+<h4 class="font-bold text-xl mb-2">
+Automated Expiry Notifications
+</h4>
+
+<p class="text-slate-400">
+Notify staff and administrators before certifications expire.
+</p>
+
+</div>
+
+</div>
+
+<div class="flex items-start gap-4">
+
+<div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center">
+<i class="fas fa-ban text-BaseCare"></i>
+</div>
+
+<div>
+
+<h4 class="font-bold text-xl mb-2">
+Hard & Soft Scheduling Restrictions
+</h4>
+
+<p class="text-slate-400">
+Prevent ineligible staff from accepting or being assigned shifts.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="bg-white/5 border border-white/10 rounded-[36px] p-8 backdrop-blur-sm">
+
+<div class="space-y-5">
+
+<div class="flex items-center justify-between p-5 bg-white/5 rounded-2xl border border-white/5">
+
+<div>
+<p class="font-bold">
+RN License (CNO)
+</p>
+
+<p class="text-xs text-slate-400 mt-1">
+Validated
+</p>
+</div>
+
+<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+Active
+</span>
+
+</div>
+
+<div class="flex items-center justify-between p-5 bg-white/5 rounded-2xl border border-white/5">
+
+<div>
+<p class="font-bold">
+TB Screening
+</p>
+
+<p class="text-xs text-slate-400 mt-1">
+Renewal Required
+</p>
+</div>
+
+<span class="text-[10px] bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+Expiring Soon
+</span>
+
+</div>
+
+<div class="flex items-center justify-between p-5 bg-white/5 rounded-2xl border border-white/5 opacity-70">
+
+<div>
+<p class="font-bold">
+Vulnerable Sector Check
+</p>
+
+<p class="text-xs text-slate-400 mt-1">
+Scheduling Restricted
+</p>
+</div>
+
+<span class="text-[10px] bg-red-500/20 text-red-400 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+Expired
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="py-28 bg-[#FFF8F4] border-y border-orange-100">
+
+<div class="max-w-4xl mx-auto px-8 text-center">
+
+<span class="text-BaseCare text-xs font-black uppercase tracking-[0.25em]">
+Operational Compliance Infrastructure
+</span>
+
+<h2 class="text-5xl md:text-6xl font-black tracking-tight leading-[1] mt-6 mb-8 text-dark">
+
+Strengthen workforce governance before compliance gaps become operational risk.
+
+</h2>
+
+<p class="text-xl text-slate-500 leading-relaxed mb-12">
+
+See how BaseCare helps long-term care organizations improve staffing visibility, workforce accountability, and operational compliance readiness.
+
+</p>
+
+<a href="javascript:void(0)"
+onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+class="inline-flex items-center bg-BaseCare text-white px-10 py-5 rounded-2xl font-bold shadow-glow hover:bg-orange-600 transition">
+
+Book My Compliance Review
+
+<i class="fas fa-arrow-right ml-3 text-sm"></i>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-dark text-slate-400 py-20">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<div class="grid md:grid-cols-5 gap-14">
+
+<div class="md:col-span-2">
+
+<div class="flex items-center gap-3 mb-6">
+
+<img src="logo.png" class="h-10">
+
+<span class="text-white text-2xl font-black">
+BaseCare
+</span>
+
+</div>
+
+<p class="max-w-sm leading-relaxed">
+
+Operational workforce infrastructure built for long-term care and regulated healthcare environments.
+
+</p>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold mb-6">
+Platform
+</h4>
+
+<ul class="space-y-4 text-sm">
+
+<li><a href="Product.html" class="hover:text-white transition">Product</a></li>
+<li><a href="Solutions.html" class="hover:text-white transition">Solutions</a></li>
+<li><a href="Pricing.html" class="hover:text-white transition">Pricing</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold mb-6">
+Resources
+</h4>
+
+<ul class="space-y-4 text-sm">
+
+<li><a href="Resources.html" class="hover:text-white transition">Resources</a></li>
+<li><a href="implementation.html" class="hover:text-white transition">Implementation</a></li>
+<li><a href="rollout.html" class="hover:text-white transition">Rollout</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold mb-6">
+Contact
+</h4>
+
+<ul class="space-y-4 text-sm">
+
+<li>
+<a href="tel:+13653562273" class="hover:text-white transition">
+1 (365) 356-CARE
+</a>
+</li>
+
+<li>
+<a href="mailto:support@basecare.ca" class="hover:text-white transition">
+support@basecare.ca
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-6 text-xs uppercase tracking-[0.2em]">
+
+<p>
+© 2026 BaseCare Inc.
+</p>
+
+<div class="flex gap-8">
+
+<a href="privacy.html" class="hover:text-white transition">
+Privacy
+</a>
+
+<a href="Terms.html" class="hover:text-white transition">
+Terms
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- MOBILE MENU -->
+
 <script>
+
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("navMenu");
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (e) => {
+    e.stopPropagation();
     menu.classList.toggle("active");
 });
-</script>
 
-<header class="hero-pattern py-20 md:py-32 border-b border-slate-50">
-    <div class="max-w-5xl mx-auto text-center px-6">
-        <div class="inline-flex items-center space-x-2 text-guard font-bold tracking-widest text-[10px] uppercase mb-6 bg-emerald-50 px-4 py-2 rounded-full border border-emerald-100">
-            <i class="fas fa-shield-check"></i>
-            <span>Enterprise-Grade Security</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-dark leading-[1.1] mb-8">
-            Built for <span class="text-BaseCare">Highly Regulated</span> Operations
-        </h1>
-        
-        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            From PHIPA-compliant data handling to Ministry of Health audit readiness, BaseCare provides the framework to keep your facility protected.
-        </p>
-    </div>
-</header>
+document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove("active");
+    }
+});
 
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-3 gap-8">
-            
-            <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
-                <div class="w-12 h-12 bg-white rounded-xl shadow-soft flex items-center justify-center mb-6 text-BaseCare">
-                    <i class="fas fa-fingerprint text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">PHIPA & Data Privacy</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    Full adherence to the Personal Health Information Protection Act (PHIPA). All staff and operational data are encrypted in transit and at rest within SOC2-certified Canadian data centers.
-                </p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-500"><i class="fas fa-check text-guard"></i> End-to-End Encryption</li>
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-500"><i class="fas fa-check text-guard"></i> Canadian Residency (AWS)</li>
-                </ul>
-            </div>
-
-            <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
-                <div class="w-12 h-12 bg-white rounded-xl shadow-soft flex items-center justify-center mb-6 text-BaseCare">
-                    <i class="fas fa-clipboard-check text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">MOH Audit Readiness</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    Instantly generate staffing reports required for Ministry of Health inspections. Prove credential compliance and minimum staffing ratios with one-click export functionality.
-                </p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-500"><i class="fas fa-check text-guard"></i> Instant Staffing Ratios</li>
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-500"><i class="fas fa-check text-guard"></i> Historical Audit Logs</li>
-                </ul>
-            </div>
-
-            <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
-                <div class="w-12 h-12 bg-white rounded-xl shadow-soft flex items-center justify-center mb-6 text-BaseCare">
-                    <i class="fas fa-gavel text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">CBA & Union Rules</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    Our logic engine is built to enforce Collective Bargaining Agreements. Automate seniority-based bidding and prevent scheduling grievances before they happen.
-                </p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-500"><i class="fas fa-check text-guard"></i> Seniority Automation</li>
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-500"><i class="fas fa-check text-guard"></i> Grievance Risk Reduction</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="py-24 bg-dark text-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
-        <div class="lg:w-1/2">
-            <span class="text-BaseCare font-black text-[10px] uppercase tracking-[0.3em] mb-6 block">Real-time Oversight</span>
-            <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">Zero-Gap Credential Monitoring</h2>
-            <p class="text-slate-400 text-lg mb-10">BaseCare automatically locks staff out of the schedule if their Vulnerable Sector Check, CNO registration, or TB skin tests expire. No more manual tracking spreadsheets.</p>
-            
-            <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="w-6 h-6 bg-BaseCare/20 rounded-full flex items-center justify-center mt-1"><i class="fas fa-bell text-BaseCare text-[10px]"></i></div>
-                    <div>
-                        <h4 class="font-bold text-white">Automated Notifications</h4>
-                        <p class="text-sm text-slate-500">Alerts staff 30, 60, and 90 days before credential expiry.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-6 h-6 bg-BaseCare/20 rounded-full flex items-center justify-center mt-1"><i class="fas fa-ban text-BaseCare text-[10px]"></i></div>
-                    <div>
-                        <h4 class="font-bold text-white">Soft & Hard Lockouts</h4>
-                        <p class="text-sm text-slate-500">Prevent shift bidding for staff with lapsed requirements.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="lg:w-1/2 relative">
-            <div class="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-sm">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <span class="text-sm">RN License (CNO)</span>
-                        <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Active</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <span class="text-sm">TB Skin Test</span>
-                        <span class="text-[10px] bg-BaseCare/20 text-BaseCare px-3 py-1 rounded-full font-bold uppercase tracking-wider">Expiring Soon</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5 opacity-50">
-                        <span class="text-sm">Vulnerable Sector Check</span>
-                        <span class="text-[10px] bg-red-500/20 text-red-400 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Expired</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-24 bg-slate-50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-black mb-6">Security Documentation</h2>
-        <p class="text-slate-600 mb-10">Access our technical security whitepapers and compliance certificates.</p>
-        <div class="grid sm:grid-cols-2 gap-4">
-            <a href="Data-Security.html" class="flex items-center justify-between p-6 bg-white rounded-2xl border border-slate-200 hover:border-BaseCare transition group shadow-sm">
-                <div class="flex items-center gap-4 text-left">
-                    <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                    <div>
-                        <div class="text-sm font-bold text-slate-800">Data Security Overview</div>
-                        <div class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">PDF · 2.4 MB</div>
-                    </div>
-                </div>
-                <i class="fas fa-download text-slate-300 group-hover:text-BaseCare transition"></i>
-            </a>
-            <a href="Phipa.html" class="flex items-center justify-between p-6 bg-white rounded-2xl border border-slate-200 hover:border-BaseCare transition group shadow-sm">
-                <div class="flex items-center gap-4 text-left">
-                    <i class="fas fa-file-shield text-BaseCare text-2xl"></i>
-                    <div>
-                        <div class="text-sm font-bold text-slate-800">PHIPA Compliance Guide</div>
-                        <div class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">PDF · 1.8 MB</div>
-                    </div>
-                </div>
-                <i class="fas fa-download text-slate-300 group-hover:text-BaseCare transition"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<footer class="py-12 border-t border-slate-100 bg-white">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p class="text-sm text-slate-400">© 2026 BaseCare Healthcare Inc. · Ontario Compliance Office</p>
-        <div class="flex gap-8 text-sm font-bold text-slate-400">
-            <a href="privacy.html" class="hover:text-BaseCare transition">Privacy</a>
-            <a href="terms.html" class="hover:text-BaseCare transition">Terms</a>
-            <a href="support.html" class="hover:text-BaseCare transition">Support Hub</a>
-        </div>
-    </div>
-</footer>
-
-<script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("navMenu");
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("active");
-    });
 </script>
 
 </body>

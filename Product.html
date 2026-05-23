@@ -1,24 +1,32 @@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BaseCare | Workforce Scheduling for LTC</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+  <title>BaseCare | Workforce Operations Platform for LTC</title>
 
-    <script>
-      (function() {
-        const url = window.location.href;
-        if (url.includes('.html')) {
-          const cleanUrl = url.split('.html')[0];
-          window.history.replaceState(null, null, cleanUrl);
-        }
-      })();
-    </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <script>
+    (function () {
+      const url = window.location.href;
+      if (url.includes(".html")) {
+        const cleanUrl = url.split(".html")[0];
+        window.history.replaceState(null, null, cleanUrl);
+      }
+    })();
+  </script>
+
+  <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -36,638 +44,470 @@
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       scroll-behavior: smooth;
     }
 
-    .glass {
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.75);
+    .hero-grid {
+      background-image:
+        linear-gradient(to right, rgba(15,23,42,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15,23,42,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
 
-    /* =========================
-       FIXED MOBILE NAV DROPDOWN
-    ========================== */
     @media (max-width: 1024px) {
-        #navMenu.active {
-            display: flex !important;
-            flex-direction: column;
-            align-items: center; /* This centers the items horizontally */
-            position: absolute;
-            top: 80px;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 20px;
-            gap: 15px;
-            border-bottom: 1px solid #eee;
-            z-index: 999;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+      #navMenu.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid #eee;
+        z-index: 999;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
 
-        #navMenu a {
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            border-bottom: 1px solid transparent;
-        }
-        
-        /* Remove the border/underline for About Us on mobile if you want it uniform */
-        #navMenu a.text-carelink {
-            border-bottom: none !important;
-            padding-bottom: 10px !important;
-        }
+      #navMenu a {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+      }
     }
 
-    /* Desktop alignment */
     @media (min-width: 1025px) {
-        #navMenu {
-            display: flex !important;
-        }
+      #navMenu {
+        display: flex !important;
+      }
     }
-    </style>
+  </style>
 
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <link
+    href="https://assets.calendly.com/assets/external/widget.css"
+    rel="stylesheet"
+  />
+
+  <script
+    src="https://assets.calendly.com/assets/external/widget.js"
+    async
+  ></script>
 </head>
 
 <body class="bg-white text-slate-800 overflow-x-hidden">
 
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-        <div class="flex items-center space-x-2">
-            <a href="index.html" class="flex items-center space-x-2">
-                <div class="text-carelink text-2xl font-bold flex items-center">
-                    <img src="logo.png" alt="Carelink Logo" class="h-10"> BaseCare
-                </div>
-            
-            </a>
-        </div>
 
-        <!-- MENU CONTAINER -->
-        <!-- Removed lg:flex to prevent Tailwind override conflicts -->
-        <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
-            <a href="Product.html" class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">Product</a>
-            <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
-            <a href="Pricing.html" class="hover:text-carelink transition">Pricing</a>
-            <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
-            <a href="about.html" class="hover:text-carelink transition">About Us</a>
-        </div>
+  <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
 
-        <!-- RIGHT SIDE -->
-        <div class="flex items-center space-x-4">
-            <a href="Login.html" class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
-                Log in
-            </a>
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="logo.png" class="h-10" alt="BaseCare Logo">
+      <span class="text-2xl font-bold text-carelink">BaseCare</span>
+    </a>
 
-            <a href="javascript:void(0)"
-               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
-               class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
-                Book a Demo
-            </a>
+    <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
 
-            <!-- HAMBURGER -->
-            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700 focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+      <a href="Product.html"
+         class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">
+         Product
+      </a>
+
+      <a href="Solutions.html" class="hover:text-carelink transition">
+        Solutions
+      </a>
+
+      <a href="Pricing.html" class="hover:text-carelink transition">
+        Pricing
+      </a>
+
+      <a href="Resources.html" class="hover:text-carelink transition">
+        Resources
+      </a>
+
+      <a href="about.html" class="hover:text-carelink transition">
+        About Us
+      </a>
+
     </div>
+
+    <div class="flex items-center gap-4">
+
+      <a href="Login.html"
+         class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
+         Log in
+      </a>
+
+      <a
+        href="javascript:void(0)"
+        onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+        class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition"
+      >
+        Book a Demo
+      </a>
+
+      <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+
 </nav>
 
-<!-- JS FOR MENU -->
 <script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("navMenu");
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("navMenu");
 
-    btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        menu.classList.toggle("active");
-    });
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu.classList.toggle("active");
+  });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            menu.classList.remove("active");
-        }
-    });
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  });
 </script>
 
+<!-- HERO -->
+<header class="relative overflow-hidden hero-grid">
 
+  <div class="absolute top-[-120px] left-[-100px] w-[500px] h-[500px] bg-orange-100 rounded-full blur-[120px] opacity-70"></div>
 
+  <div class="absolute right-[-120px] top-[100px] w-[450px] h-[450px] bg-orange-200 rounded-full blur-[120px] opacity-40"></div>
 
-  <!-- HERO -->
-  <header class="relative overflow-hidden hero-grid">
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
 
-    <!-- BACKGROUND BLURS -->
-    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-[120px] opacity-70"></div>
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
 
-    <div class="absolute right-0 top-20 w-[400px] h-[400px] bg-orange-200 rounded-full blur-[120px] opacity-40"></div>
+      <!-- LEFT -->
+      <div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.25em] font-bold text-carelink mb-8">
+          Ontario LTC Workforce Platform
+        </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <h1 class="text-5xl lg:text-7xl font-black tracking-tight leading-[1.02] text-slate-900">
 
-        <!-- LEFT -->
-        <div>
+          Workforce operations
+          <span class="text-carelink">
+            built for modern LTC
+          </span>
 
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.2em] font-bold text-carelink mb-8">
-            Ontario LTC Workforce Platform
-          </div>
+        </h1>
 
-          <h1 class="text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-slate-900">
-            Replace staffing chaos with
-            <span class="text-carelink">
-              automated workforce compliance
-            </span>
-          </h1>
+        <p class="mt-8 text-lg text-slate-600 leading-relaxed max-w-2xl">
+          BaseCare helps LTC operators automate scheduling, workforce compliance,
+          credential tracking, and shift fulfillment — without spreadsheets or manual workflows.
+        </p>
 
-          <p class="mt-8 text-lg text-slate-600 leading-relaxed max-w-2xl">
-            BaseCare helps long-term care operators automate seniority scheduling,
-            credential compliance, staffing fairness, and shift fulfillment —
-            without spreadsheets, manual tracking, or union exposure.
-          </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
 
-          <!-- CTA -->
-          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a
+            href="javascript:void(0)"
+            onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+            class="bg-carelink text-white px-7 py-4 rounded-xl font-bold shadow-glow hover:-translate-y-1 transition text-center"
+          >
+            Book a Demo
+          </a>
 
-            <a
-              href="javascript:void(0)"
-              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
-              class="bg-carelink text-white px-7 py-4 rounded-xl font-bold shadow-glow hover:translate-y-[-2px] transition text-center"
-            >
-              Book a Demo
-            </a>
-
-            <a
-              href="How.html"
-              class="border border-slate-200 px-7 py-4 rounded-xl font-semibold hover:bg-slate-50 transition text-center"
-            >
-              See How It Works
-            </a>
-
-          </div>
-
-          <!-- TRUST -->
-          <div class="mt-10 flex flex-wrap gap-6 text-sm text-slate-500">
-
-            <div class="flex items-center gap-2">
-              <i class="fas fa-shield-alt text-carelink"></i>
-              PHIPA-conscious workflows
-            </div>
-
-            <div class="flex items-center gap-2">
-              <i class="fas fa-users text-carelink"></i>
-              Built for LTC operations
-            </div>
-
-            <div class="flex items-center gap-2">
-              <i class="fas fa-clock text-carelink"></i>
-              Reduce scheduling overhead
-            </div>
-
-          </div>
+          <a
+            href="How.html"
+            class="border border-slate-200 px-7 py-4 rounded-xl font-semibold hover:bg-slate-50 transition text-center"
+          >
+            See Platform Workflow
+          </a>
 
         </div>
 
-        <!-- RIGHT MOCKUP -->
-        <div class="relative">
+        <!-- TRUST STRIP -->
+        <div class="mt-12 flex flex-wrap gap-6 text-sm text-slate-500">
 
-          <!-- FLOATING CARD -->
-          <div class="absolute -top-6 -right-6 bg-white rounded-2xl shadow-soft border border-slate-100 p-4 z-20 hidden md:block">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <i class="fas fa-check text-green-600 text-sm"></i>
-              </div>
-
-              <div>
-                <p class="text-xs font-bold text-slate-900">
-                  Credential Verified
-                </p>
-
-                <p class="text-[11px] text-slate-500">
-                  Shift assignment approved
-                </p>
-              </div>
-            </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-shield-alt text-carelink"></i>
+            PHIPA-conscious workflows
           </div>
 
-          <!-- DASHBOARD -->
-          <div class="bg-white border border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-building text-carelink"></i>
+            Built for LTC operations
+          </div>
 
-            <!-- TOP BAR -->
-            <div class="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between">
-
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 rounded-full bg-red-200"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-200"></div>
-                <div class="w-3 h-3 rounded-full bg-green-200"></div>
-              </div>
-
-              <div class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                BaseCare Workforce Dashboard
-              </div>
-
-            </div>
-
-            <!-- CONTENT -->
-            <div class="p-6 bg-gradient-to-br from-white to-slate-50">
-
-              <!-- STATS -->
-              <div class="grid grid-cols-3 gap-4 mb-6">
-
-                <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-soft">
-                  <p class="text-xs text-slate-400 font-semibold uppercase">
-                    Fill Rate
-                  </p>
-
-                  <h3 class="text-2xl font-black mt-2">
-                    98%
-                  </h3>
-                </div>
-
-                <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-soft">
-                  <p class="text-xs text-slate-400 font-semibold uppercase">
-                    Compliance
-                  </p>
-
-                  <h3 class="text-2xl font-black mt-2 text-green-600">
-                    100%
-                  </h3>
-                </div>
-
-                <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-soft">
-                  <p class="text-xs text-slate-400 font-semibold uppercase">
-                    Agency Use
-                  </p>
-
-                  <h3 class="text-2xl font-black mt-2 text-carelink">
-                    12%
-                  </h3>
-                </div>
-
-              </div>
-
-              <!-- SHIFT TABLE -->
-              <div class="bg-white border border-slate-100 rounded-2xl overflow-hidden">
-
-                <div class="grid grid-cols-4 bg-slate-50 text-[11px] uppercase tracking-wider text-slate-400 font-bold px-5 py-3">
-                  <div>Shift</div>
-                  <div>Staff</div>
-                  <div>Status</div>
-                  <div>Compliance</div>
-                </div>
-
-                <!-- ROW -->
-                <div class="grid grid-cols-4 items-center px-5 py-4 border-t border-slate-100 text-sm">
-                  <div>7AM - 3PM</div>
-                  <div>Sarah K.</div>
-
-                  <div>
-                    <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-bold">
-                      Filled
-                    </span>
-                  </div>
-
-                  <div class="text-green-600 font-semibold">
-                    Verified
-                  </div>
-                </div>
-
-                <!-- ROW -->
-                <div class="grid grid-cols-4 items-center px-5 py-4 border-t border-slate-100 text-sm">
-                  <div>3PM - 11PM</div>
-                  <div>Michael R.</div>
-
-                  <div>
-                    <span class="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-bold">
-                      Pending
-                    </span>
-                  </div>
-
-                  <div class="text-slate-500 font-semibold">
-                    Checking
-                  </div>
-                </div>
-
-                <!-- ROW -->
-                <div class="grid grid-cols-4 items-center px-5 py-4 border-t border-slate-100 text-sm">
-                  <div>11PM - 7AM</div>
-                  <div>Agency Pool</div>
-
-                  <div>
-                    <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded-full text-xs font-bold">
-                      Backup
-                    </span>
-                  </div>
-
-                  <div class="text-carelink font-semibold">
-                    Escalated
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-gavel text-carelink"></i>
+            Union-aware scheduling logic
           </div>
 
         </div>
 
       </div>
-    </div>
-  </header>
 
-  <!-- FEATURES -->
-  <section class="py-24 bg-slate-50">
+      <!-- RIGHT -->
+      <div class="relative">
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="absolute -top-5 -right-5 bg-white border border-slate-100 rounded-2xl p-4 shadow-soft z-20 hidden md:block">
 
-      <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="flex items-center gap-3">
 
-        <div class="text-carelink text-xs uppercase tracking-[0.3em] font-bold mb-4">
-          Core Platform
+            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+              <i class="fas fa-check text-green-600 text-sm"></i>
+            </div>
+
+            <div>
+              <p class="text-xs font-bold text-slate-900">
+                Credential Verified
+              </p>
+
+              <p class="text-[11px] text-slate-500">
+                Assignment approved
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
-        <h2 class="text-5xl font-black tracking-tight">
-          Everything staffing teams need in one system
+        <div class="bg-white border border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden">
+
+          <div class="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-200"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-200"></div>
+              <div class="w-3 h-3 rounded-full bg-green-200"></div>
+            </div>
+
+            <div class="text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400">
+              Workforce Dashboard
+            </div>
+
+          </div>
+
+          <img
+            src="Staffing-dash.png"
+            class="w-full object-cover"
+            alt="BaseCare Dashboard"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ENTERPRISE STATS -->
+<section class="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-carelink/20 rounded-full blur-[120px]"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <div class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-5">
+          Workforce Intelligence
+        </div>
+
+        <h2 class="text-5xl font-black leading-tight">
+          Reduce scheduling overhead and workforce risk
         </h2>
 
-        <p class="mt-5 text-slate-600 text-lg">
-          Designed specifically for Ontario long-term care operations,
-          scheduling teams, and workforce administrators.
+        <p class="mt-6 text-slate-400 text-lg leading-relaxed">
+          BaseCare centralizes workforce operations, staffing visibility,
+          and compliance oversight into one operational platform.
         </p>
 
       </div>
 
-      
-    <div class="grid lg:grid-cols-3 gap-7">
+      <div class="grid grid-cols-2 gap-6">
 
-      <!-- CARD -->
-      <div class="group bg-white rounded-[28px] border border-slate-200 overflow-hidden shadow-soft hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-
-        <div class="h-72 overflow-hidden bg-gradient-to-br from-slate-50 to-white flex items-center justify-center">
-          <img
-            src="Staffing-dash.png"
-            class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition duration-500"
-            alt="Scheduling Dashboard"
-          >
-        </div>
-
-        <div class="p-8">
-          <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
-            <i class="fas fa-calendar-check text-carelink text-2xl"></i>
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div class="text-5xl font-black text-carelink">
+            98%
           </div>
 
-          <h3 class="text-2xl font-black text-slate-900">
-            Smart Scheduling
-          </h3>
-
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            Automatically manage staffing assignments, open shifts,
-            and workforce availability while respecting seniority rules.
+          <p class="mt-3 text-slate-300">
+            Workforce shift fill visibility
           </p>
-
-          <a href="Staffing.html" class="inline-flex items-center mt-6 font-bold text-carelink">
-            Explore module
-            <i class="fas fa-arrow-right ml-2 text-xs"></i>
-          </a>
         </div>
 
-      </div>
-
-      <!-- CARD -->
-      <div class="group bg-white rounded-[28px] border border-slate-200 overflow-hidden shadow-soft hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-
-        <div class="h-72 overflow-hidden bg-gradient-to-br from-slate-50 to-white flex items-center justify-center">
-          <img
-            src="Compliance.png"
-            class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition duration-500"
-            alt="Compliance Dashboard"
-          >
-        </div>
-
-        <div class="p-8">
-          <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
-            <i class="fas fa-shield-alt text-carelink text-2xl"></i>
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div class="text-5xl font-black text-carelink">
+            100%
           </div>
 
-          <h3 class="text-2xl font-black text-slate-900">
-            Compliance Oversight
-          </h3>
-
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            Track certifications, staffing risks, expired credentials,
-            and audit readiness from one centralized dashboard.
+          <p class="mt-3 text-slate-300">
+            Credential tracking oversight
           </p>
-
-          <a href="Compliance.html" class="inline-flex items-center mt-6 font-bold text-carelink">
-            Explore module
-            <i class="fas fa-arrow-right ml-2 text-xs"></i>
-          </a>
         </div>
 
-      </div>
-
-      <!-- CARD -->
-      <div class="group bg-white rounded-[28px] border border-slate-200 overflow-hidden shadow-soft hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-
-        <div class="h-72 overflow-hidden bg-gradient-to-br from-slate-50 to-white flex items-center justify-center">
-          <img
-            src="Analytics.png"
-            class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition duration-500"
-            alt="Analytics Dashboard"
-          >
-        </div>
-
-        <div class="p-8">
-          <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
-            <i class="fas fa-chart-line text-carelink text-2xl"></i>
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div class="text-5xl font-black text-carelink">
+            24/7
           </div>
 
-          <h3 class="text-2xl font-black text-slate-900">
-            Workforce Analytics
-          </h3>
-
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            Understand agency usage, staffing efficiency,
-            fulfillment performance, and operational trends in real time.
+          <p class="mt-3 text-slate-300">
+            Operational workforce visibility
           </p>
+        </div>
 
-          <a href="Solutions.html" class="inline-flex items-center mt-6 font-bold text-carelink">
-            Explore module
-            <i class="fas fa-arrow-right ml-2 text-xs"></i>
-          </a>
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div class="text-5xl font-black text-carelink">
+            LTC
+          </div>
+
+          <p class="mt-3 text-slate-300">
+            Purpose-built workflows
+          </p>
         </div>
 
       </div>
 
     </div>
+
   </div>
-</section>
-<!-- ========================================================= -->
-<!-- PLATFORM MODULES -->
-<!-- ========================================================= -->
-<section class="py-28 bg-white">
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-    <div class="text-center max-w-3xl mx-auto mb-20">
-
-      <div class="text-carelink text-xs uppercase tracking-[0.3em] font-bold mb-4">
-        Platform Modules
-      </div>
-
-      <h2 class="text-5xl font-black tracking-tight text-slate-900">
-        Built for every layer of LTC workforce operations
-      </h2>
-
-      <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-        BaseCare combines workforce scheduling, compliance oversight,
-        staffing intelligence, and operational visibility into one
-        centralized platform.
-      </p>
-
-    </div>
-
-    <div class="space-y-24">
-
-      <!-- MODULE -->
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-        <div>
-          <div class="inline-flex items-center px-4 py-2 rounded-full bg-orange-50 text-carelink text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            Scheduling Engine
-          </div>
-
-          <h3 class="text-4xl font-black text-slate-900 leading-tight">
-            Automate scheduling with union-aware workforce logic
-          </h3>
-
-          <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-            Reduce manual scheduling work with automated assignment workflows,
-            seniority enforcement, overtime visibility, and staffing escalation controls.
-          </p>
-
-          <div class="mt-8 grid sm:grid-cols-2 gap-5">
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Open shift automation</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Seniority enforcement</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Availability tracking</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Shift escalation workflows</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="relative">
-          <div class="absolute -top-6 -right-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
-
-          <div class="relative bg-white rounded-[32px] border border-slate-200 shadow-2xl overflow-hidden">
-
-            <img
-              src="Staffing-dash.png"
-              class="w-full h-full object-cover"
-              alt="Scheduling dashboard"
-            >
-
-          </div>
-        </div>
-
-      </div>
-
-      <!-- MODULE -->
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-        <div class="order-2 lg:order-1 relative">
-
-          <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
-
-          <div class="relative bg-white rounded-[32px] border border-slate-200 shadow-2xl overflow-hidden">
-
-            <img
-              src="Compliance.png"
-              class="w-full h-full object-cover"
-              alt="Compliance dashboard"
-            >
-
-          </div>
-
-        </div>
-
-        <div class="order-1 lg:order-2">
-
-          <div class="inline-flex items-center px-4 py-2 rounded-full bg-orange-50 text-carelink text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            Compliance Monitoring
-          </div>
-
-          <h3 class="text-4xl font-black text-slate-900 leading-tight">
-            Prevent staffing risk before it becomes operational exposure
-          </h3>
-
-          <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-            Monitor certifications, compliance expirations,
-            workforce documentation, and audit readiness in real time.
-          </p>
-
-          <div class="mt-8 grid sm:grid-cols-2 gap-5">
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Credential expiration alerts</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Audit visibility</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Workforce verification</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fas fa-check-circle text-carelink mt-1"></i>
-              <span class="text-slate-700">Compliance escalation</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
 </section>
 
-<!-- ========================================================= -->
-<!-- HOW IT WORKS -->
-<!-- ========================================================= -->
+<!-- FEATURES -->
 <section class="py-28 bg-slate-50">
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
     <div class="text-center max-w-3xl mx-auto mb-20">
 
-      <div class="text-carelink text-xs uppercase tracking-[0.3em] font-bold mb-4">
+      <div class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Core Platform
+      </div>
+
+      <h2 class="text-5xl font-black tracking-tight">
+        Everything staffing teams need in one system
+      </h2>
+
+      <p class="mt-6 text-lg text-slate-600">
+        Built specifically for Ontario long-term care operations.
+      </p>
+
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+
+      <!-- CARD -->
+      <div class="group bg-white rounded-[32px] border border-slate-200 overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+
+        <img src="Staffing-dash.png" class="h-72 w-full object-cover">
+
+        <div class="p-8">
+
+          <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+            <i class="fas fa-calendar-check text-carelink text-2xl"></i>
+          </div>
+
+          <h3 class="text-2xl font-black">
+            Smart Scheduling
+          </h3>
+
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            Automate assignments, open shifts, staffing rules,
+            and workforce availability.
+          </p>
+
+          <a href="Staffing.html" class="inline-flex items-center mt-6 font-bold text-carelink">
+            View workflow
+            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="group bg-white rounded-[32px] border border-slate-200 overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+
+        <img src="Compliance.png" class="h-72 w-full object-cover">
+
+        <div class="p-8">
+
+          <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+            <i class="fas fa-shield-alt text-carelink text-2xl"></i>
+          </div>
+
+          <h3 class="text-2xl font-black">
+            Compliance Oversight
+          </h3>
+
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            Track credentials, workforce risk,
+            and operational audit readiness.
+          </p>
+
+          <a href="Compliance.html" class="inline-flex items-center mt-6 font-bold text-carelink">
+            Explore feature
+            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="group bg-white rounded-[32px] border border-slate-200 overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+
+        <img src="Analytics.png" class="h-72 w-full object-cover">
+
+        <div class="p-8">
+
+          <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+            <i class="fas fa-chart-line text-carelink text-2xl"></i>
+          </div>
+
+          <h3 class="text-2xl font-black">
+            Workforce Analytics
+          </h3>
+
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            Monitor staffing efficiency,
+            fulfillment trends, and agency dependency.
+          </p>
+
+          <a href="Solutions.html" class="inline-flex items-center mt-6 font-bold text-carelink">
+            Learn more
+            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-28 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="text-center max-w-3xl mx-auto mb-20">
+
+      <div class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-4">
         Workflow Automation
       </div>
 
@@ -675,209 +515,81 @@
         How BaseCare works
       </h2>
 
-      <p class="mt-5 text-slate-600 text-lg">
-        From open shifts to compliant assignments — fully automated.
-      </p>
-
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft 
-            transition-all duration-300 ease-in-out
-            hover:-translate-y-2 hover:shadow-2xl hover:border-orange-200
-            cursor-pointer">
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition">
 
-  <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6
-              transition-all duration-300
-              hover:bg-orange-100">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
           <i class="fas fa-calendar-plus text-carelink text-2xl"></i>
         </div>
 
         <h3 class="font-black text-xl mb-3">
-          Open Shift Created
+          Staffing Need Identified
         </h3>
 
-        <p class="text-slate-600 leading-relaxed">
-          Managers create staffing requirements or approve workforce needs.
+        <p class="text-slate-600">
+          Workforce needs are created and approved by leadership teams.
         </p>
+
       </div>
 
-      <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft 
-            transition-all duration-300 ease-in-out
-            hover:-translate-y-2 hover:shadow-2xl hover:border-orange-200
-            cursor-pointer">
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition">
 
-  <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6
-              transition-all duration-300
-              hover:bg-orange-100">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
           <i class="fas fa-user-check text-carelink text-2xl"></i>
         </div>
 
         <h3 class="font-black text-xl mb-3">
-          Rules Applied
+          Compliance Validation
         </h3>
 
-        <p class="text-slate-600 leading-relaxed">
-          Seniority, credentials, overtime rules, and availability are checked automatically.
+        <p class="text-slate-600">
+          Seniority, overtime, credentials, and availability are validated automatically.
         </p>
+
       </div>
 
-      <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft 
-            transition-all duration-300 ease-in-out
-            hover:-translate-y-2 hover:shadow-2xl hover:border-orange-200
-            cursor-pointer">
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition">
 
-  <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6
-              transition-all duration-300
-              hover:bg-orange-100">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
           <i class="fas fa-bolt text-carelink text-2xl"></i>
         </div>
 
         <h3 class="font-black text-xl mb-3">
-          Shift Filled
+          Qualified Staff Assigned
         </h3>
 
-        <p class="text-slate-600 leading-relaxed">
-          Qualified staff receive assignments instantly with full audit tracking.
+        <p class="text-slate-600">
+          Approved staff receive assignments instantly with audit visibility.
         </p>
+
       </div>
 
-      <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft 
-            transition-all duration-300 ease-in-out
-            hover:-translate-y-2 hover:shadow-2xl hover:border-orange-200
-            cursor-pointer">
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition">
 
-  <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6
-              transition-all duration-300
-              hover:bg-orange-100">
+        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
           <i class="fas fa-chart-line text-carelink text-2xl"></i>
         </div>
 
         <h3 class="font-black text-xl mb-3">
-          Insights Generated
+          Workforce Analytics
         </h3>
 
-        <p class="text-slate-600 leading-relaxed">
-          Leadership tracks staffing efficiency, agency usage, and workforce trends.
+        <p class="text-slate-600">
+          Leadership monitors staffing performance and workforce trends.
         </p>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
-
-<!-- ========================================================= -->
-<!-- ROLE BASED -->
-<!-- ========================================================= -->
-<section class="py-28 bg-slate-50">
-
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-    <div class="text-center max-w-3xl mx-auto mb-20">
-
-      <div class="text-carelink text-xs uppercase tracking-[0.3em] font-bold mb-4">
-        Built For Teams
-      </div>
-
-      <h2 class="text-5xl font-black tracking-tight">
-        Designed for every operational role
-      </h2>
-
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
-
-  <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft
-              transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:shadow-2xl
-              hover:border-orange-200 hover:bg-orange-50/20
-              group cursor-pointer">
-
-    <i class="fas fa-building text-carelink text-3xl mb-6
-              transition-all duration-300
-              group-hover:scale-110"></i>
-
-    <h3 class="text-2xl font-black mb-4">
-      Administrators
-    </h3>
-
-    <p class="text-slate-600 leading-relaxed">
-      Gain workforce visibility, reduce staffing exposure,
-      and monitor operational performance across homes.
-    </p>
-  </div>
-
-  <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft
-              transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:shadow-2xl
-              hover:border-orange-200 hover:bg-orange-50/20
-              group cursor-pointer">
-
-    <i class="fas fa-calendar-alt text-carelink text-3xl mb-6
-              transition-all duration-300
-              group-hover:scale-110"></i>
-
-    <h3 class="text-2xl font-black mb-4">
-      Scheduling Teams
-    </h3>
-
-    <p class="text-slate-600 leading-relaxed">
-      Fill shifts faster with automated assignment workflows and staffing rules.
-    </p>
-  </div>
-
-  <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft
-              transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:shadow-2xl
-              hover:border-orange-200 hover:bg-orange-50/20
-              group cursor-pointer">
-
-    <i class="fas fa-user-shield text-carelink text-3xl mb-6
-              transition-all duration-300
-              group-hover:scale-110"></i>
-
-    <h3 class="text-2xl font-black mb-4">
-      HR & Compliance
-    </h3>
-
-    <p class="text-slate-600 leading-relaxed">
-      Track workforce certifications, audit readiness,
-      and credential enforcement automatically.
-    </p>
-  </div>
-
-  <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-soft
-              transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:shadow-2xl
-              hover:border-orange-200 hover:bg-orange-50/20
-              group cursor-pointer">
-
-    <i class="fas fa-chart-pie text-carelink text-3xl mb-6
-              transition-all duration-300
-              group-hover:scale-110"></i>
-
-    <h3 class="text-2xl font-black mb-4">
-      Executive Leadership
-    </h3>
-
-    <p class="text-slate-600 leading-relaxed">
-      Monitor agency dependency, workforce trends,
-      and operational staffing performance in real time.
-    </p>
-  </div>
-
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ========================================================= -->
 <!-- SECURITY -->
-<!-- ========================================================= -->
 <section class="py-28 bg-dark text-white relative overflow-hidden">
 
   <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-carelink/20 rounded-full blur-[120px]"></div>
@@ -888,11 +600,11 @@
 
       <div>
 
-        <div class="text-carelink text-xs uppercase tracking-[0.3em] font-bold mb-4">
+        <div class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-4">
           Security & Compliance
         </div>
 
-        <h2 class="text-5xl font-black tracking-tight leading-tight">
+        <h2 class="text-5xl font-black leading-tight">
           Designed with healthcare operational accountability in mind
         </h2>
 
@@ -907,79 +619,174 @@
 
         <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
           <i class="fas fa-lock text-carelink text-2xl mb-5"></i>
-          <h3 class="font-black text-xl mb-2">
-            Role-Based Access
-          </h3>
+          <h3 class="font-black text-xl mb-2">Role-Based Access</h3>
           <p class="text-slate-400">
-            Control workforce visibility and permissions securely.
+            Secure workforce visibility and permissions.
           </p>
         </div>
 
         <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
           <i class="fas fa-file-alt text-carelink text-2xl mb-5"></i>
-          <h3 class="font-black text-xl mb-2">
-            Audit Logging
-          </h3>
+          <h3 class="font-black text-xl mb-2">Audit Logging</h3>
           <p class="text-slate-400">
-            Track scheduling activity and workforce actions.
+            Track workforce actions and scheduling activity.
           </p>
         </div>
 
         <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
           <i class="fas fa-shield-alt text-carelink text-2xl mb-5"></i>
-          <h3 class="font-black text-xl mb-2">
-            PHIPA-Conscious
-          </h3>
+          <h3 class="font-black text-xl mb-2">PHIPA-Conscious</h3>
           <p class="text-slate-400">
-            Operational workflows designed with privacy awareness.
+            Privacy-aware operational workflows.
           </p>
         </div>
 
         <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
           <i class="fas fa-user-check text-carelink text-2xl mb-5"></i>
-          <h3 class="font-black text-xl mb-2">
-            Credential Visibility
-          </h3>
+          <h3 class="font-black text-xl mb-2">Credential Visibility</h3>
           <p class="text-slate-400">
-            Monitor certifications and workforce compliance status.
+            Monitor certifications and workforce compliance.
           </p>
         </div>
 
       </div>
 
     </div>
+
   </div>
+
 </section>
 
+<!-- FINAL CTA -->
+<section class="py-28 bg-white">
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-slate-100 py-10">
+  <div class="max-w-4xl mx-auto text-center px-6">
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="text-carelink uppercase tracking-[0.3em] text-xs font-bold mb-5">
+      Workforce Transformation
+    </div>
 
-      <div class="text-sm text-slate-500">
-        © 2026 BaseCare Inc. · Ontario, Canada
+    <h2 class="text-5xl font-black tracking-tight leading-tight">
+      Modernize workforce operations with BaseCare
+    </h2>
+
+    <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+      Explore scheduling automation, workforce compliance,
+      staffing visibility, and operational intelligence for LTC.
+    </p>
+
+    <div class="mt-10">
+
+      <a
+        href="javascript:void(0)"
+        onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
+        class="inline-flex items-center bg-carelink text-white px-8 py-4 rounded-2xl font-bold shadow-glow hover:-translate-y-1 transition"
+      >
+        Book a Demo
+        <i class="fas fa-arrow-right ml-3 text-sm"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-slate-950 text-white pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+
+      <!-- BRAND -->
+      <div class="md:col-span-2">
+
+        <div class="flex items-center gap-3">
+
+          <img src="logo.png" class="h-10">
+
+          <div class="text-2xl font-bold">
+            BaseCare
+          </div>
+
+        </div>
+
+        <p class="mt-6 text-slate-400 max-w-md leading-relaxed">
+          Workforce operations software designed for Ontario long-term care,
+          staffing coordination, compliance oversight, and workforce intelligence.
+        </p>
+
       </div>
 
-      <div class="flex items-center gap-6 text-sm font-medium text-slate-500">
+      <!-- LINKS -->
+      <div>
 
-        <a href="privacy.html" class="hover:text-carelink transition">
-          Privacy Policy
-        </a>
+        <h3 class="font-bold text-white mb-5">
+          Platform
+        </h3>
 
-        <a href="Terms.html" class="hover:text-carelink transition">
-          Terms of Service
-        </a>
+        <div class="space-y-3 text-slate-400 text-sm">
 
-        <a href="Resources.html" class="hover:text-carelink transition">
-          Resources
-        </a>
+          <a href="Product.html" class="block hover:text-white transition">
+            Product
+          </a>
+
+          <a href="Solutions.html" class="block hover:text-white transition">
+            Solutions
+          </a>
+
+          <a href="Pricing.html" class="block hover:text-white transition">
+            Pricing
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div>
+
+        <h3 class="font-bold text-white mb-5">
+          Company
+        </h3>
+
+        <div class="space-y-3 text-slate-400 text-sm">
+
+          <a href="Resources.html" class="block hover:text-white transition">
+            Resources
+          </a>
+
+          <a href="privacy.html" class="block hover:text-white transition">
+            Privacy
+          </a>
+
+          <a href="Terms.html" class="block hover:text-white transition">
+            Terms
+          </a>
+
+        </div>
 
       </div>
 
     </div>
 
-  </footer>
+    <div class="pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-slate-500">
+
+      <div>
+        © 2026 BaseCare Inc. · Ontario, Canada
+      </div>
+
+      <div>
+        Designed for modern LTC workforce operations
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
+

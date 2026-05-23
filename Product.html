@@ -1,32 +1,24 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaseCare | Workforce Scheduling for LTC</title>
 
-  <title>BaseCare | Workforce Operations Platform for LTC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      (function() {
+        const url = window.location.href;
+        if (url.includes('.html')) {
+          const cleanUrl = url.split('.html')[0];
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      })();
+    </script>
 
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-  />
-
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <script>
-    (function () {
-      const url = window.location.href;
-      if (url.includes(".html")) {
-        const cleanUrl = url.split(".html")[0];
-        window.history.replaceState(null, null, cleanUrl);
-      }
-    })();
-  </script>
-
-  <script>
+    <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -44,138 +36,124 @@
   </script>
 
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
     body {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
     }
 
-    .hero-grid {
-      background-image:
-        linear-gradient(to right, rgba(15,23,42,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15,23,42,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.75);
     }
 
+    /* =========================
+       FIXED MOBILE NAV DROPDOWN
+    ========================== */
     @media (max-width: 1024px) {
-      #navMenu.active {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 20px;
-        gap: 15px;
-        border-bottom: 1px solid #eee;
-        z-index: 999;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      }
+        #navMenu.active {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center; /* This centers the items horizontally */
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 20px;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            z-index: 999;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
 
-      #navMenu a {
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-      }
+        #navMenu a {
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            border-bottom: 1px solid transparent;
+        }
+        
+        /* Remove the border/underline for About Us on mobile if you want it uniform */
+        #navMenu a.text-carelink {
+            border-bottom: none !important;
+            padding-bottom: 10px !important;
+        }
     }
 
+    /* Desktop alignment */
     @media (min-width: 1025px) {
-      #navMenu {
-        display: flex !important;
-      }
+        #navMenu {
+            display: flex !important;
+        }
     }
-  </style>
+    </style>
 
-  <link
-    href="https://assets.calendly.com/assets/external/widget.css"
-    rel="stylesheet"
-  />
-
-  <script
-    src="https://assets.calendly.com/assets/external/widget.js"
-    async
-  ></script>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 
 <body class="bg-white text-slate-800 overflow-x-hidden">
 
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="text-carelink text-2xl font-bold flex items-center">
+                    <img src="logo.png" alt="Carelink Logo" class="h-10"> BaseCare
+                </div>
+   
+            </a>
+        </div>
 
-  <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+        <!-- MENU CONTAINER -->
+        <!-- Removed lg:flex to prevent Tailwind override conflicts -->
+        <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
+            <a href="Product.html" class="hover:text-carelink transition">Product</a>
+            <a href="Solutions.html" class="hover:text-carelink transition">Solutions</a>
+            <a href="Pricing.html" class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">Pricing</a>
+            <a href="Resources.html" class="hover:text-carelink transition">Resources</a>
+            <a href="about.html" class="hover:text-carelink transition">About Us</a>
+        </div>
 
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="logo.png" class="h-10" alt="BaseCare Logo">
-      <span class="text-2xl font-bold text-carelink">BaseCare</span>
-    </a>
+        <!-- RIGHT SIDE -->
+        <div class="flex items-center space-x-4">
+            <a href="Login.html" class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
+                Log in
+            </a>
 
-    <div id="navMenu" class="hidden items-center lg:space-x-8 text-sm font-medium text-slate-600">
+            <a href="javascript:void(0)"
+               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/basecare/30min'});return false;"
+               class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition">
+                Book a Demo
+            </a>
 
-      <a href="Product.html"
-         class="text-carelink font-bold lg:border-b-2 lg:border-carelink lg:pb-1">
-         Product
-      </a>
-
-      <a href="Solutions.html" class="hover:text-carelink transition">
-        Solutions
-      </a>
-
-      <a href="Pricing.html" class="hover:text-carelink transition">
-        Pricing
-      </a>
-
-      <a href="Resources.html" class="hover:text-carelink transition">
-        Resources
-      </a>
-
-      <a href="about.html" class="hover:text-carelink transition">
-        About Us
-      </a>
-
+            <!-- HAMBURGER -->
+            <button id="menuBtn" class="lg:hidden text-2xl text-slate-700 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </div>
-
-    <div class="flex items-center gap-4">
-
-      <a href="Login.html"
-         class="hidden sm:block text-sm font-semibold hover:text-carelink transition">
-         Log in
-      </a>
-
-      <a
-        href="javascript:void(0)"
-        onclick="Calendly.initPopupWidget({url:'https://calendly.com/basecare/30min'});return false;"
-        class="bg-carelink text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-soft hover:scale-[1.02] transition"
-      >
-        Book a Demo
-      </a>
-
-      <button id="menuBtn" class="lg:hidden text-2xl text-slate-700">
-        <i class="fas fa-bars"></i>
-      </button>
-
-    </div>
-
-  </div>
-
 </nav>
 
+<!-- JS FOR MENU -->
 <script>
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("navMenu");
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("navMenu");
 
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    menu.classList.toggle("active");
-  });
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("active");
+    });
 
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.remove("active");
-    }
-  });
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            menu.classList.remove("active");
+        }
+    });
 </script>
 
 <!-- HERO -->
